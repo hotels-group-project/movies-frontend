@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import { FC } from 'react';
 
-import App from './components/App/App';
-
 const Home: FC = () => {
   return (
     <>
@@ -12,7 +10,6 @@ const Home: FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <App />
     </>
   );
 };
