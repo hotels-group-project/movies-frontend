@@ -64,10 +64,10 @@
   }
   // }
 
-@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed) {
+@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px) {
   background-color: $bc;
   border: 1px solid $c;
-  border-radius: 8px;
+  border-radius: $br;
   padding: $p;
   text-align: center;
   color: $colorWhite;
