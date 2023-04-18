@@ -1,4 +1,68 @@
-$breakpointPhone: 420px;
+// Breakpoints {
+  $breakpointPhone: 320px;
+  $breakpointTablet: 600px;
+  $breakpointDesktop: 1160px;
+  // }
+  
+  // Colors {
+  $colorWhite: #fff;
+  $colorGreyTransparent_48: rgba(255, 255, 255, 0.48);
+  $colorGreyTransparent_56: rgba(255, 255, 255, 0.56);
+  $colorLightGrey: #d9d7e0;
+  $colorGrey: #a5a1b2;
+  $colorRed: #ea003d;
+  // }
+  
+  // Text constants {
+  @mixin textGradient {
+    width: max-content;
+    background-image: linear-gradient(-45deg, #c447ff, #ea003d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  @mixin dominantTextSize($lh: 20px, $fw: 400) {
+    font-weight: $fw;
+    font-size: 15px;
+    line-height: $lh;
+  }
+  
+  @mixin movieCompilationTitle($isDesktop: false) {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+  
+    @if $isDesktop {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  
+  @mixin pageTitle($isDesktop: false) {
+    margin: 0;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+  
+    @if $isDesktop {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+  
+  @mixin moviePageTitle($fs: 32px, $lh: 36px) {
+    margin: 0;
+    font-weight: 700;
+    font-size: $fs;
+    line-height: $lh;
+  }
+  
+  @mixin smallTextSize($fw: 400) {
+    font-weight: $fw;
+    font-size: 13px;
+    line-height: 16px;
+  }
+  // }
 
 @mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed) {
   background-color: $bc;
