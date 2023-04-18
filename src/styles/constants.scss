@@ -21,13 +21,13 @@ $colorRed: #ea003d;
   -webkit-text-fill-color: transparent;
 }
 
-@mixin dominantTextSize($lh: 20px) {
+@mixin dominantTextSize($lh: 20px, $fw: 400) {
+  font-weight: $fw;
   font-size: 15px;
   line-height: $lh;
 }
 
 @mixin movieCompilationTitle($isDesktop: false) {
-  margin: 0;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -57,7 +57,8 @@ $colorRed: #ea003d;
   line-height: $lh;
 }
 
-@mixin smallTextSize {
+@mixin smallTextSize($fw: 400) {
+  font-weight: $fw;
   font-size: 13px;
   line-height: 16px;
 }
