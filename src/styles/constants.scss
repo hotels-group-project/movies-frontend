@@ -74,8 +74,6 @@
 }
 
 @mixin buttonArrow($fs: 40px, $lh: 32px, $tr: 0deg, $afs: 30px) {
- 
-  font-family: Arial, Helvetica, sans-serif;
 
   left: 16px;
   right: auto;
@@ -117,8 +115,4 @@
   &:active {
     font-size: $afs;
   }
-}
-
-.button {
-  @include buttonArrow();
 }
