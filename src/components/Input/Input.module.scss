@@ -1,0 +1,14 @@
+@import '../../styles/constants.scss';
+
+.input{
+    background-color: $colorWhite;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+
+    &::placeholder{
+        color: #767676;
+        @include dominantTextSize;
+        font-weight: 500;
+    }
+}
