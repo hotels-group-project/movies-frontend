@@ -43,6 +43,7 @@ input::-ms-clear{
 
 button{
   cursor: pointer;
+  background-color: transparent;
 }
 
 button::-moz-focus-inner{
@@ -59,7 +60,7 @@ a:hover{
   text-decoration: none;
 }
 
-li{
+ol, li{
   list-style:  none;
 }
 
