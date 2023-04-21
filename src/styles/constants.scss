@@ -1,68 +1,75 @@
 // Breakpoints {
-  $breakpointPhone: 320px;
-  $breakpointTablet: 600px;
-  $breakpointDesktop: 1160px;
-  // }
-  
-  // Colors {
-  $colorWhite: #fff;
-  $colorGreyTransparent_48: rgba(255, 255, 255, 0.48);
-  $colorGreyTransparent_56: rgba(255, 255, 255, 0.56);
-  $colorLightGrey: #d9d7e0;
-  $colorGrey: #a5a1b2;
-  $colorRed: #ea003d;
-  // }
-  
-  // Text constants {
-  @mixin textGradient {
-    width: max-content;
-    background-image: linear-gradient(-45deg, #c447ff, #ea003d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  @mixin dominantTextSize($lh: 20px, $fw: 400) {
-    font-weight: $fw;
-    font-size: 15px;
-    line-height: $lh;
-  }
-  
-  @mixin movieCompilationTitle($isDesktop: false) {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-  
-    @if $isDesktop {
-      font-size: 24px;
-      line-height: 28px;
-    }
-  }
-  
-  @mixin pageTitle($isDesktop: false) {
-    margin: 0;
-    font-weight: 900;
+$breakpointPhone: 320px;
+$breakpointTablet: 600px;
+$breakpointDesktop: 1160px;
+// }
+
+// Paddings {
+$pagePadding: 32px;
+// }
+
+// Colors {
+$colorWhite: #fff;
+$colorGreyTransparent_24: rgba(255, 255, 255, 0.24);
+$colorGreyTransparent_48: rgba(255, 255, 255, 0.48);
+$colorGreyTransparent_56: rgba(255, 255, 255, 0.56);
+$colorLightGrey: #d9d7e0;
+$colorGrey: #a5a1b2;
+$colorRed: #ea003d;
+$colorPurple: #c447ff;
+$colorBackgroundPage: #100e19;
+// }
+
+// Text constants {
+@mixin textGradient {
+  width: max-content;
+  background-image: linear-gradient(-45deg, $colorPurple, $colorRed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin dominantTextSize($lh: 20px, $fw: 400) {
+  font-weight: $fw;
+  font-size: 15px;
+  line-height: $lh;
+}
+
+@mixin movieCompilationTitle($isDesktop: false) {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+
+  @if $isDesktop {
     font-size: 24px;
     line-height: 28px;
-  
-    @if $isDesktop {
-      font-size: 28px;
-      line-height: 32px;
-    }
   }
-  
-  @mixin moviePageTitle($fs: 32px, $lh: 36px) {
-    margin: 0;
-    font-weight: 700;
-    font-size: $fs;
-    line-height: $lh;
+}
+
+@mixin pageTitle($isDesktop: false) {
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+
+  @if $isDesktop {
+    font-size: 28px;
+    line-height: 32px;
   }
-  
-  @mixin smallTextSize($fw: 400) {
-    font-weight: $fw;
-    font-size: 13px;
-    line-height: 16px;
-  }
-  // }
+}
+
+@mixin moviePageTitle($fs: 32px, $lh: 36px) {
+  margin: 0;
+  font-weight: 700;
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@mixin smallTextSize($fw: 400) {
+  font-weight: $fw;
+  font-size: 13px;
+  line-height: 16px;
+}
+// }
 
 @mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px) {
   background-color: $bc;
@@ -71,48 +78,4 @@
   padding: $p;
   text-align: center;
   color: $colorWhite;
-}
-
-@mixin buttonArrow($fs: 40px, $lh: 32px, $tr: 0deg, $afs: 30px) {
-
-  left: 16px;
-  right: auto;
-  font-size: $fs;
-  line-height: $lh;
-  font-weight: 900;
-  margin-top: -16px 0 0 0;
-  width: 12px;
-  height: 32px;
-  color: $colorWhite;
-  opacity: .72;
-  position: absolute;
-  top: 50%;
-  transition: transform .4s, opacity .4s;
-  display: inline-block;
-  transform: rotate($tr);
-
-  &::before {
-    content: "⟩";
-    color: $colorWhite;
-    opacity: .72;
-    text-shadow: 0 2px 3px rgba(31, 27, 46, .24);
-  }
-
-  &::after {
-    content: "";
-    bottom: -16px;
-    left: -16px;
-    position: absolute;
-    right: -16px;
-    top: -16px;
-  }
-
-  &:hover {
-    cursor: pointer;
-    opacity: 1;
-  }
-
-  &:active {
-    font-size: $afs;
-  }
 }
