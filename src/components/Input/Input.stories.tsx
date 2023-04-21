@@ -2,11 +2,28 @@ import Input from "./Input";
 
 import styles from './Input.module.scss';
 import '../../styles/constants.scss';
+import { InputProps } from "./Input.types";
 
-export default {
-    title: 'UI/Input',
+import type { StoryObj, Meta } from '@storybook/react';
+
+
+const meta: Meta<InputProps> = {
+    title: 'shared/Input',
     component: Input,
-}
+};
+export default meta;
+type Story = StoryObj<InputProps>;
 
+export const Primary: Story = {
+    args: {
+      inputClassName: 'primary',
+      placeholder: 'Расскажите первым о персоне',
+    },
+  };
 
-export const defaultInput = () => <Input placeholder="Расскажите о персоне"/>
+  export const Secondary: Story = {
+    args: {
+      placeholder: 'Написать отзыв',
+    },
+  };
+
