@@ -3,8 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Breakpoint } from '../../types/types';
 
 const initialState: Breakpoint = {
-  isDesktop: true,
-  isTablet: true,
+  isDesktop: false,
+  isTablet: false,
 };
 
 export const breakpointSlice = createSlice({
