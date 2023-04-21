@@ -4,9 +4,9 @@ import styles from './Button.module.scss';
 
 import { ButtonProps } from './Button.types';
 
-const Button: FC<ButtonProps> = ({ title, titleClassName, buttonClassName, children }) => {
+const Button: FC<ButtonProps> = ({ title, titleClassName, buttonClassName, onClick, children }) => {
   return (
-    <button className={`${styles.button} ${buttonClassName ? buttonClassName : ''}`}>
+    <button onClick={onClick} className={`${styles.button} ${buttonClassName ? buttonClassName : ''}`}>
       {children}
       <span className={`${styles.title} ${titleClassName ? titleClassName : ''}`}>{title}</span>
     </button>
