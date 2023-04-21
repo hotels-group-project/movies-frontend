@@ -1,4 +1,11 @@
-@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap';
-
 @import '../vendor/normalize.css';
-@import './stylesReset';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}

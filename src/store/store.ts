@@ -1,10 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import breakpointReducer from './reducers/breakpointSlice';
-
-const rootReducer = combineReducers({
-  breakpoint: breakpointReducer,
-});
+const rootReducer = combineReducers({});
 
 export const setupStore = () => {
   return configureStore({
