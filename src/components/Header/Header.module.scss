@@ -36,8 +36,8 @@
   justify-content: center;
   background-color: transparent;
   border: 2px solid $colorGreyTransparent_48;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   color: $colorGreyTransparent_48;
 }
 
@@ -80,6 +80,13 @@
   &Icon {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media screen and (min-width: $breakpointTablet) {
+  .changeLang {
+    width: 48px;
+    height: 48px;
   }
 }
 

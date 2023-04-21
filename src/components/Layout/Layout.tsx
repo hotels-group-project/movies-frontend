@@ -12,8 +12,8 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   const dispatch = useAppDispatch();
 
   const handleResize = useCallback(() => {
-    dispatch(setIsDesktop(window.innerWidth > DESKTOP_BREAKPOINT));
-    dispatch(setIsTablet(window.innerWidth > TABLET_BREAKPOINT));
+    dispatch(setIsDesktop(window.innerWidth >= DESKTOP_BREAKPOINT));
+    dispatch(setIsTablet(window.innerWidth >= TABLET_BREAKPOINT));
   }, [dispatch]);
 
   useEffect(() => {
