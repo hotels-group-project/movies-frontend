@@ -7,17 +7,35 @@ import { BiUser } from 'react-icons/bi';
 import { RiSearchLine } from 'react-icons/ri';
 import { SlBell } from 'react-icons/sl';
 
-import { useAppSelector } from '../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { setDropdownMenuHoveredItem } from '../../store/reducers/dropdownMenuSlice';
 import Button from '../Shared/Button/Button';
 
+import DropdownMenu from './DropdownMenu/DropdownMenu';
 import styles from './Header.module.scss';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
+import { HeaderMenuTypes } from './HeaderMenu/HeaderMenu.types';
 
 const Header: FC = () => {
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const { t } = useTranslation('header');
   const isDesktop = useAppSelector(state => state.breakpoint.isDesktop);
   const isTablet = useAppSelector(state => state.breakpoint.isTablet);
+
+  const onMouseEnter = useCallback(
+    (title: HeaderMenuTypes['title']) => {
+      if (title === 'my-ivi' || title === 'new') {
+        return dispatch(setDropdownMenuHoveredItem(''));
+      }
+      dispatch(setDropdownMenuHoveredItem(title));
+    },
+    [dispatch],
+  );
+
+  const onMouseLeave = useCallback(() => {
+    dispatch(setDropdownMenuHoveredItem(''));
+  }, [dispatch]);
 
   const onToggleLanguageClick = useCallback(
     (newLocale: string) => {
@@ -31,7 +49,8 @@ const Header: FC = () => {
 
   return (
     <header className={styles.section}>
-      <div className={styles.leftContainer}>
+      {isDesktop && <DropdownMenu onMouseLeave={onMouseLeave} />}
+      <div className={styles.leftContainer} onMouseEnter={onMouseLeave}>
         <Image
           src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
           width={isTablet ? 66 : 55}
@@ -39,9 +58,9 @@ const Header: FC = () => {
           priority
           alt={t('alt')}
         />
-        {isDesktop && <HeaderMenu translate={t} />}
+        {isDesktop && <HeaderMenu translate={t} onMouseEnter={onMouseEnter} />}
       </div>
-      <div className={styles.rightContainer}>
+      <div className={styles.rightContainer} onMouseEnter={onMouseLeave}>
         <Button buttonClassName={styles.subscribe} titleClassName={styles.subscribeTitle} title={t('subscription')} />
         <Button
           buttonClassName={styles.changeLang}
@@ -49,19 +68,25 @@ const Header: FC = () => {
           onClick={() => onToggleLanguageClick(changeTo)}
         />
         {isDesktop && (
-          <Link className={styles.search} href="/ivi_search">
+          <Link onMouseEnter={onMouseLeave} className={styles.search} href="/ivi_search">
             <RiSearchLine className={styles.searchIcon} />
             <span className={styles.searchText}>{t('search')}</span>
           </Link>
         )}
         {isTablet && (
           <>
-            <Link className={styles.bell} href="https://www.ivi.ru/profile/pull_notifications">
+            <Link
+              onMouseEnter={() => onMouseEnter('bell')}
+              className={styles.bell}
+              href="https://www.ivi.ru/profile/pull_notifications"
+            >
               <SlBell className={styles.bellIcon} />
             </Link>
-            <Link className={styles.user} href="https://www.ivi.ru/profile">
-              <BiUser className={styles.userIcon} />
-            </Link>
+            <div onMouseEnter={() => onMouseEnter('user')} className={styles.userWrapper}>
+              <Link className={styles.user} href="https://www.ivi.ru/profile">
+                <BiUser className={styles.userIcon} />
+              </Link>
+            </div>
           </>
         )}
       </div>

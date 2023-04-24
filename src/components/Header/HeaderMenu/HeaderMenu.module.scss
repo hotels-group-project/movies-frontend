@@ -2,7 +2,13 @@
 
 .list {
   display: flex;
+  height: 100%;
   gap: 16px;
+
+  &Item {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .link {

@@ -8,8 +8,13 @@ $breakpointDesktop: 1160px;
 $pagePadding: 32px;
 // }
 
+// z-index {
+$headerIndex: 3;
+// }
+
 // Colors {
 $colorWhite: #fff;
+$colorGreyTransparent_16: rgba(255, 255, 255, 0.16);
 $colorGreyTransparent_24: rgba(255, 255, 255, 0.24);
 $colorGreyTransparent_48: rgba(255, 255, 255, 0.48);
 $colorGreyTransparent_56: rgba(255, 255, 255, 0.56);
@@ -18,6 +23,7 @@ $colorGrey: #a5a1b2;
 $colorRed: #ea003d;
 $colorPurple: #c447ff;
 $colorBackgroundPage: #100e19;
+$colorBackgroundDropdownMenu: #1f1b2e;
 // }
 
 // Text constants {
