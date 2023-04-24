@@ -1,0 +1,43 @@
+@import '../../../styles/constants.scss';
+
+.input {
+  width: 100%;
+  color: #1f1b2e;
+  @include dominantTextSize($fw: 500);
+  background-color: $colorLightGrey;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+
+  &__placeholder {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    color: $colorGrey;
+    @include dominantTextSize($fw: 500);
+    pointer-events: none;
+    transform-origin: 0 50%;
+    transition: transform 200ms;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid rgba(31, 27, 46, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    padding-top: 17px;
+    padding-bottom: 3px;
+  }
+
+  &:focus ~ &__placeholder,
+  &:not(:placeholder-shown) ~ &__placeholder {
+    transform: translateY(-10px) scale(0.875);
+  }
+}
