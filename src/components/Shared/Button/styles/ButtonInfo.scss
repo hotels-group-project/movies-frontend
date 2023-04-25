@@ -1,0 +1,9 @@
+.info {
+  @include button($p: 10px 12px, $bc: $colorGreyTransparent_08, $c: $colorGreyTransparent_08);
+  color: $colorGreyTransparent_72;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -1,0 +1,4 @@
+.filter {
+  @include button($br: 16px, $bc: #352f4b, $c: #352f4b, $p: 6px 16px);
+  color: $colorGrey;
+}

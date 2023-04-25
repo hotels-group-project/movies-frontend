@@ -1,0 +1,22 @@
+.arrow {
+  border: none;
+  background-color: transparent;
+  color: $colorWhite;
+  opacity: 0.72;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  @media screen and (min-width: $breakpointTablet) {
+    font-size: 32px;
+  }
+}
+
+.arrow_s {
+  @extend .arrow;
+  font-size: 16px;
+}
+
+.arrow_m {
+  @extend .arrow;
+  font-size: 20px;
+}

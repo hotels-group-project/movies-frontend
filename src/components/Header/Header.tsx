@@ -42,12 +42,14 @@ const Header: FC = () => {
         {isDesktop && <HeaderMenu translate={t} />}
       </div>
       <div className={styles.rightContainer}>
-        <Button buttonClassName={styles.subscribe} titleClassName={styles.subscribeTitle} title={t('subscription')} />
+        <Button buttonClassName={styles.subscribe} variant="default">
+          <span className={styles.subscribeTitle}>{t('subscription')}</span>
+        </Button>
         <Button
+          variant="default"
           buttonClassName={styles.changeLang}
-          title={`${changeTo.toUpperCase()}`}
           onClick={() => onToggleLanguageClick(changeTo)}
-        />
+        >{`${changeTo.toUpperCase()}`}</Button>
         {isDesktop && (
           <Link className={styles.search} href="/ivi_search">
             <RiSearchLine className={styles.searchIcon} />
