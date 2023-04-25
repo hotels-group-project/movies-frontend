@@ -1,4 +1,4 @@
-export const HEADER_MENU = [
+export const MAIN_MENU = [
   {
     id: 1,
     title: 'my-ivi',
