@@ -1,0 +1,56 @@
+@import '../../../styles/constants.scss';
+
+.container {
+  background-color: $colorBackgroundButton;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid $colorBackgroundButton;
+  box-sizing: border-box;
+  transition-duration: .4s;
+  column-gap: 8px;
+
+  &:hover {
+    background-color: $colorButtonHover;
+  }
+}
+
+.title {
+  @include dominantTextSize(20px, 500);
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+}
+
+.big {
+  width: 196px;
+  padding: 9px 15px;
+}
+
+.small {
+  width: 40px;
+}
+
+.middle {
+  padding: 4px 16px;
+}
+
+.round {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.large {
+  width: 196px;
+  height: 52px;
+  position: absolute;
+  top: 54px;
+  left: 0;
+  transition-duration: .4s;
+}
