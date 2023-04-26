@@ -23,9 +23,9 @@ $colorPurple: #c447ff;
 $colorBackgroundPage: #100e19;
 $colorBackgroundButton: #1f1b2e;
 $colorButtonHover: #2e2844;
-$startGradientColor: #A869F0;
-$endGradientColor: #834CC2;
-$shadowColor: #A869F0; 
+$startGradientColor: #a869f0;
+$endGradientColor: #834cc2;
+$shadowColor: #a869f0;
 // }
 
 // Text constants {
@@ -79,7 +79,7 @@ $shadowColor: #A869F0;
 }
 // }
 
-@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px, $fw: 500) {
+@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px, $fw: 500, $hbg: #ff0f4d) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,4 +93,7 @@ $shadowColor: #A869F0;
   font-weight: $fw;
   white-space: nowrap;
   cursor: pointer;
+  &:hover {
+    background-color: $hbg;
+  }
 }

@@ -50,30 +50,23 @@ export const ArrowM: ButtonStory = {
   },
 };
 
-export const Filter: ButtonStory = {
+export const Border: ButtonStory = {
   args: {
-    variant: 'filter',
-    children: '2022 год',
-  },
-};
-
-export const Feedback: ButtonStory = {
-  args: {
-    variant: 'feedback',
+    variant: 'border',
     children: 'Оставить отзыв',
   },
 };
 
-export const FeedbackMin: ButtonStory = {
+export const BorderMin: ButtonStory = {
   args: {
-    variant: 'feedback_min',
+    variant: 'border_min',
     children: 'Оценить',
   },
 };
 
-export const FeedbackColumn: ButtonStory = {
+export const BorderColumn: ButtonStory = {
   args: {
-    variant: 'feedback_column',
+    variant: 'border_column',
     children: 'Комедии',
     startIcon: <GiDualityMask />,
   },
@@ -101,10 +94,17 @@ export const InfoFavouriteIcon: ButtonStory = {
   },
 };
 
-export const SortButton: ButtonStory = {
+export const SortButtonSquare: ButtonStory = {
   args: {
-    variant: 'sort',
+    variant: 'sort_square',
     children: 'Жанры',
     endIcon: <SlArrowDown />,
+  },
+};
+
+export const SortButtonCircle: ButtonStory = {
+  args: {
+    variant: 'sort_circle',
+    children: '2022 год',
   },
 };

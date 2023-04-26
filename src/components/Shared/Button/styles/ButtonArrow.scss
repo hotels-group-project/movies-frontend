@@ -9,6 +9,10 @@
   @media screen and (min-width: $breakpointTablet) {
     font-size: 32px;
   }
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .arrow_s {

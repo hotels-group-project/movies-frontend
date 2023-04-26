@@ -1,5 +1,10 @@
 .info {
-  @include button($p: 10px 12px, $bc: $colorGreyTransparent_08, $c: $colorGreyTransparent_08);
+  @include button(
+    $p: 10px 12px,
+    $bc: $colorGreyTransparent_08,
+    $c: $colorGreyTransparent_08,
+    $hbg: rgba(255, 255, 255, 0.16)
+  );
   color: $colorGreyTransparent_72;
 
   svg {

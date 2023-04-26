@@ -1,17 +1,9 @@
 import { ReactNode } from 'react';
 
+import { Variants } from '../../../types/types';
+
 export interface ButtonProps {
-  variant:
-    | 'default'
-    | 'arrow'
-    | 'arrow_s'
-    | 'arrow_m'
-    | 'filter'
-    | 'feedback'
-    | 'feedback_min'
-    | 'feedback_column'
-    | 'info'
-    | 'sort';
+  variant: Variants['variant'];
   buttonClassName?: string;
   onClick?(): void;
   startIcon?: ReactNode;
