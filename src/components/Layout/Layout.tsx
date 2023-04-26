@@ -3,6 +3,7 @@ import { FC, useEffect, useCallback } from 'react';
 import { useAppDispatch } from '../../hooks/redux';
 import { setIsDesktop, setIsTablet } from '../../store/reducers/breakpointSlice';
 import { DESKTOP_BREAKPOINT, TABLET_BREAKPOINT } from '../../utils/constants';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 import styles from './Layout.module.scss';
@@ -12,8 +13,8 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   const dispatch = useAppDispatch();
 
   const handleResize = useCallback(() => {
-    dispatch(setIsDesktop(window.innerWidth > DESKTOP_BREAKPOINT));
-    dispatch(setIsTablet(window.innerWidth > TABLET_BREAKPOINT));
+    dispatch(setIsDesktop(window.innerWidth >= DESKTOP_BREAKPOINT));
+    dispatch(setIsTablet(window.innerWidth >= TABLET_BREAKPOINT));
   }, [dispatch]);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <div className={styles.wrapper}>
         <Header />
         {children}
+        <Footer />
       </div>
     </div>
   );

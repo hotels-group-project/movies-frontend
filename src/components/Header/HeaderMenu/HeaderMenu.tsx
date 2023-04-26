@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import { FC, memo } from 'react';
 
-import { HEADER_MENU } from './HeaderMenu.constants';
+import { MAIN_MENU } from '../../../utils/MainMenu.constants';
+
 import styles from './HeaderMenu.module.scss';
 import { HeaderMenuProps } from './HeaderMenu.types';
 
 const HeaderMenu: FC<HeaderMenuProps> = ({ translate, onMouseEnter }) => {
   return (
     <ul className={styles.list}>
-      {HEADER_MENU.map(({ id, title, link }) => (
+      {MAIN_MENU.map(({ id, title, link }) => (
         <li onMouseEnter={() => onMouseEnter(title)} className={styles.listItem} key={id}>
           <Link className={styles.link} href={link}>
             {translate(title)}

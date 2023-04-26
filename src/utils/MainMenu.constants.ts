@@ -1,6 +1,6 @@
-import { HeaderMenuTypes } from './HeaderMenu.types';
+import { HeaderMenuTypes } from '../components/Header/HeaderMenu/HeaderMenu.types';
 
-export const HEADER_MENU: Array<HeaderMenuTypes> = [
+export const MAIN_MENU: Array<HeaderMenuTypes> = [
   {
     id: 1,
     title: 'my-ivi',
