@@ -7,5 +7,10 @@
   "tvplus": "TV+",
   "alt": "Логотип Иви",
   "subscription": "Оплатить подписку",
-  "search": "Поиск"
+  "search": "Поиск",
+  "notify-menu-text": "Здесь появляются только важные сообщения",
+  "genres": "Жанры",
+  "years": "Годы",
+  "countries": "Страны",
+  "novelties": "Новинки"
 }

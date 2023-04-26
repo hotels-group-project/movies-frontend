@@ -1,32 +1,84 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import { useAppSelector } from '../../../hooks/redux';
 
+import {
+  ALTERNATIVE_FILTERS_CARTOONS,
+  ALTERNATIVE_FILTERS_MOVIES,
+  ALTERNATIVE_FILTERS_SERIALS,
+  COUNTRIES,
+  GENRES,
+  YEARS,
+} from './DropdownMenu.constants';
 import styles from './DropdownMenu.module.scss';
 import { DropdownMenuProps } from './DropdownMenu.types';
+import MoviesDropdownMenu from './MoviesDropdownMenu/MoviesDropdownMenu';
+import NotifyDropdownMenu from './NotifyDropdownMenu/NotifyDropdownMenu';
 
 const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
   const dropdownMenu = useAppSelector(state => state.dropdownMenu.dropdownMenuHoveredItem);
-
-  if (!dropdownMenu) return null;
+  const nodeRef = useRef(null);
 
   return (
-    <div className={`${styles.section} ${dropdownMenu ? styles.sectionActive : ''}`} onMouseLeave={onMouseLeave}>
-      <div className={styles.content} onMouseLeave={onMouseLeave}>
-        {dropdownMenu === 'movies' && <p>movies</p>}
-        {dropdownMenu === 'serial-movies' && (
-          <div>
-            <div>serial-movies</div>
-            <div>serial-movies</div>
-            <div>serial-movies</div>
+    <CSSTransition
+      in={!!dropdownMenu}
+      nodeRef={nodeRef}
+      timeout={250}
+      classNames={{
+        enterActive: styles['section_entering'],
+        enterDone: styles['section_entered'],
+        exitActive: styles['section_exiting'],
+        exitDone: styles['section_exited'],
+      }}
+      unmountOnExit
+    >
+      {state => (
+        <div ref={nodeRef} className={`${styles.section} ${styles[`section_${state}`]}`} onMouseLeave={onMouseLeave}>
+          <div className={`${styles.content} ${dropdownMenu ? styles[`content_${dropdownMenu}`] : ''}`}>
+            {dropdownMenu === 'movies' && (
+              <MoviesDropdownMenu
+                genres={GENRES}
+                countries={COUNTRIES}
+                years={YEARS}
+                alternativeFilters={ALTERNATIVE_FILTERS_MOVIES}
+              />
+            )}
+            {dropdownMenu === 'serial-movies' && (
+              <MoviesDropdownMenu
+                genres={GENRES}
+                countries={COUNTRIES}
+                years={YEARS}
+                alternativeFilters={ALTERNATIVE_FILTERS_SERIALS}
+              />
+            )}
+            {dropdownMenu === 'cartoons' && (
+              <MoviesDropdownMenu
+                genres={GENRES}
+                countries={COUNTRIES}
+                years={YEARS}
+                alternativeFilters={ALTERNATIVE_FILTERS_CARTOONS}
+              />
+            )}
+            {dropdownMenu === 'tvplus' && (
+              <div>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+              </div>
+            )}
+            {dropdownMenu === 'bell' && <NotifyDropdownMenu />}
+            {dropdownMenu === 'user' && (
+              <div>
+                <p>123</p>
+                <p>123</p>
+              </div>
+            )}
           </div>
-        )}
-        {dropdownMenu === 'cartoons' && <p>cartoons</p>}
-        {dropdownMenu === 'tvplus' && <p>tvplus</p>}
-        {dropdownMenu === 'bell' && <p>bell</p>}
-        {dropdownMenu === 'user' && <p>user</p>}
-      </div>
-    </div>
+        </div>
+      )}
+    </CSSTransition>
   );
 };
 
