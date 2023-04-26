@@ -1,10 +1,10 @@
 .sort_circle {
-  @include button($br: 16px, $bc: #312b45, $c: #312b45, $p: 6px 16px, $hbg: #352f4b);
+  @include button($br: 16px, $bc: #312b45, $c: #312b45, $p: 6px 16px, $hbc: #352f4b);
   color: $colorGrey;
 }
 
 .sort_square {
-  @include button($br: 4px, $bc: #312b45, $c: #312b45, $p: 12px 16px, $hbg: none);
+  @include button($br: 4px, $bc: #312b45, $c: #312b45, $p: 12px 16px, $hbc: none);
   justify-content: space-between;
   svg {
     width: 16px;

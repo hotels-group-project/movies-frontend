@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 
-import { Variants } from '../../../types/types';
+import { Variant } from '../../../types/types';
 
 export interface ButtonProps {
-  variant: Variants['variant'];
+  variant: Variant;
   buttonClassName?: string;
   onClick?(): void;
   startIcon?: ReactNode;

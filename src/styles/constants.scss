@@ -79,7 +79,7 @@ $shadowColor: #a869f0;
 }
 // }
 
-@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px, $fw: 500, $hbg: #ff0f4d) {
+@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px, $fw: 500, $hbc: #ff0f4d) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,12 +88,11 @@ $shadowColor: #a869f0;
   border: 1px solid $c;
   border-radius: $br;
   padding: $p;
-  //text-align: center;
   color: $colorWhite;
   font-weight: $fw;
   white-space: nowrap;
   cursor: pointer;
   &:hover {
-    background-color: $hbg;
+    background-color: $hbc;
   }
 }

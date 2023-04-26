@@ -1,5 +1,5 @@
 .border {
-  @include button($c: $colorGreyTransparent_32, $bc: transparent, $p: 7px 11px, $hbg: none);
+  @include button($c: $colorGreyTransparent_32, $bc: transparent, $p: 7px 11px, $hbc: none);
 
   &:hover {
     border-color: $colorGreyTransparent_72;
@@ -13,7 +13,7 @@
 }
 
 .border_column {
-  @include button($c: $colorGreyTransparent_32, $bc: transparent, $p: 7px 11px, $hbg: #7e798f);
+  @include button($c: $colorGreyTransparent_32, $bc: transparent, $p: 7px 11px, $hbc: #7e798f);
   flex-direction: column;
   flex-shrink: 0;
   height: 88px;
