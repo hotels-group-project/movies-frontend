@@ -1,6 +1,6 @@
-@import '../../styles/constants.scss';
+@import '../../../styles/constants.scss';
 
-.manifest {
+.description {
   width: 906px;
 }
 
@@ -17,6 +17,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   row-gap: 8px;
+  margin-bottom: 8px;
 }
 
 .collapse {
@@ -42,11 +43,5 @@
 }
 
 .button {
-  @include  dominantTextSize(22px, 500);
   margin-top: 8px;
-  color: rgba(255, 255, 255, .88);
-
-  &:hover {
-    color: rgb(255, 255, 255);
-  }
 }

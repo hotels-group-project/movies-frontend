@@ -13,4 +13,5 @@ export type Variant =
   | 'border_column'
   | 'info'
   | 'sort_circle'
-  | 'sort_square';
+  | 'sort_square'
+  | 'text';

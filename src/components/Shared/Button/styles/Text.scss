@@ -1,0 +1,8 @@
+.text {
+  @include  dominantTextSize(22px, 500);
+  color: rgba(255, 255, 255, .88);
+
+  &:hover {
+    color: rgb(255, 255, 255);
+  }
+}
