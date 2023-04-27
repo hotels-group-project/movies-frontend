@@ -4,16 +4,16 @@ import { FiShare } from 'react-icons/fi';
 import { GiDualityMask } from 'react-icons/gi';
 import { SlControlPlay, SlArrowRight, SlArrowLeft, SlArrowDown } from 'react-icons/sl';
 
+import { ButtonAndLinkProps } from '../../../types/types';
+
 import Button from './Button';
 
-import { ButtonProps } from './Button.types';
-
-const meta: Meta<ButtonProps> = {
+const meta: Meta<ButtonAndLinkProps> = {
   title: 'shared/Button',
   component: Button,
 };
 export default meta;
-type ButtonStory = StoryObj<ButtonProps>;
+type ButtonStory = StoryObj<ButtonAndLinkProps>;
 
 export const Default: ButtonStory = {
   args: {

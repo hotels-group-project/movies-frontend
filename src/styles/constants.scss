@@ -8,8 +8,13 @@ $breakpointDesktop: 1160px;
 $pagePadding: 32px;
 // }
 
+// z-index {
+$headerIndex: 3;
+// }
+
 // Colors {
 $colorWhite: #fff;
+$colorGreyTransparent_16: rgba(255, 255, 255, 0.16);
 $colorGreyTransparent_24: rgba(255, 255, 255, 0.24);
 $colorGreyTransparent_32: rgba(255, 255, 255, 0.32);
 $colorGreyTransparent_48: rgba(255, 255, 255, 0.48);

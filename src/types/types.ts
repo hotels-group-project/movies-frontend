@@ -30,8 +30,7 @@ export type Variant =
   | 'border_column'
   | 'info'
   | 'sort_circle'
-  | 'sort_square'
-  | 'text';
+  | 'sort_square';
 
 export interface ButtonAndLinkProps {
   variant?: Variant;

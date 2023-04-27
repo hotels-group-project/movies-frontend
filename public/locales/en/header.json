@@ -7,5 +7,10 @@
   "tvplus": "TV+",
   "alt": "Ivi logo",
   "subscription": "Subscribe",
-  "search": "Search"
+  "search": "Search",
+  "notify-menu-text": "Only important messages here",
+  "genres": "Genres",
+  "years": "Years",
+  "countries": "Countries",
+  "novelties": "Novelties"
 }
