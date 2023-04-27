@@ -10,7 +10,7 @@ const Manifest: FC = () => {
   const { t } = useTranslation('manifest');
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
-  const handleExpand = useCallback(() => {
+  const toggleExpand = useCallback(() => {
     setIsExpanded(!isExpanded);
   }, [isExpanded]);
   return (
@@ -28,12 +28,9 @@ const Manifest: FC = () => {
           </ul>
           <p>{t('total')}</p>
         </div>
-        <Button variant="text" onClick={handleExpand}>
+        <Button variant="text" onClick={toggleExpand}>
           {isExpanded ? t('collapse') : t('expand')}
         </Button>
-        {/* <button className={styles.button} type="button" aria-label="expand" onClick={handleExpand}>
-          
-        </button> */}
       </section>
     </>
   );
