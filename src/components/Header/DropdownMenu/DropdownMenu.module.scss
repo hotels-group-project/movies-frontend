@@ -1,0 +1,67 @@
+@import '../../../styles/constants.scss';
+
+.section {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 100%;
+  background-color: $colorBackgroundButton;
+  border-radius: 12px;
+  box-shadow: 0 20px 96px #12101b;
+  z-index: 2;
+  max-height: 100vh;
+  transition: opacity 0.25s ease-out;
+  opacity: 0;
+
+  &_entering {
+    opacity: 1;
+  }
+
+  &_entered {
+    opacity: 1;
+  }
+
+  &_exiting {
+    opacity: 0;
+  }
+
+  &_exited {
+    opacity: 0;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 68px;
+  padding: 32px;
+  width: 100%;
+  height: 0;
+  transition: height 0.3s ease-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $colorGreyTransparent_16;
+  }
+
+  &_movies,
+  &_serial-movies,
+  &_cartoons,
+  &_tvplus {
+    height: 392px;
+  }
+
+  &_bell {
+    height: 276px;
+  }
+
+  &_user {
+    height: 308px;
+  }
+}

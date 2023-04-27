@@ -3,20 +3,26 @@
 .section {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
+  position: relative;
+  height: 64px;
   color: $colorGreyTransparent_48;
+  z-index: $headerIndex;
 }
 
 .leftContainer {
   display: flex;
   align-items: center;
   gap: 32px;
+  z-index: $headerIndex;
 }
 
 .rightContainer {
   display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
   align-items: center;
   gap: 12px;
+  z-index: $headerIndex;
 }
 
 .subscribe {
@@ -73,9 +79,14 @@
   align-items: center;
   justify-content: center;
   width: 48px;
-  height: 100%;
+  height: 48px;
+  padding: 12px 0;
   border: 2px solid $colorGreyTransparent_48;
   border-radius: 8px;
+
+  &Wrapper {
+    padding: 12px 0;
+  }
 
   &Icon {
     width: 20px;
@@ -84,6 +95,10 @@
 }
 
 @media screen and (min-width: $breakpointTablet) {
+  .section {
+    height: 72px;
+  }
+
   .changeLang {
     width: 48px;
     height: 48px;
@@ -91,10 +106,15 @@
 }
 
 @media screen and (min-width: $breakpointDesktop) {
+  .section {
+    padding: 0 12px;
+  }
+
   .changeLang {
     transition: border-color 0.4s, color 0.4s;
 
     &:hover {
+      background-color: transparent;
       border-color: $colorWhite;
       color: $colorWhite;
       transition: border-color 0.4s, color 0.4s;
