@@ -11,8 +11,11 @@ $pagePadding: 32px;
 // Colors {
 $colorWhite: #fff;
 $colorGreyTransparent_24: rgba(255, 255, 255, 0.24);
+$colorGreyTransparent_32: rgba(255, 255, 255, 0.32);
 $colorGreyTransparent_48: rgba(255, 255, 255, 0.48);
 $colorGreyTransparent_56: rgba(255, 255, 255, 0.56);
+$colorGreyTransparent_72: rgba(255, 255, 255, 0.72);
+$colorGreyTransparent_08: rgba(255, 255, 255, 0.08);
 $colorLightGrey: #d9d7e0;
 $colorGrey: #a5a1b2;
 $colorRed: #ea003d;
@@ -20,9 +23,9 @@ $colorPurple: #c447ff;
 $colorBackgroundPage: #100e19;
 $colorBackgroundButton: #1f1b2e;
 $colorButtonHover: #2e2844;
-$startGradientColor: #A869F0;
-$endGradientColor: #834CC2;
-$shadowColor: #A869F0; 
+$startGradientColor: #a869f0;
+$endGradientColor: #834cc2;
+$shadowColor: #a869f0;
 // }
 
 // Text constants {
@@ -76,11 +79,20 @@ $shadowColor: #A869F0;
 }
 // }
 
-@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px) {
+@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px, $fw: 500, $hbc: #ff0f4d) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   background-color: $bc;
   border: 1px solid $c;
   border-radius: $br;
   padding: $p;
-  text-align: center;
   color: $colorWhite;
+  font-weight: $fw;
+  white-space: nowrap;
+  cursor: pointer;
+  &:hover {
+    background-color: $hbc;
+  }
 }

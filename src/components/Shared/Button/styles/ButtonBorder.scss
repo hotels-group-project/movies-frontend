@@ -1,0 +1,24 @@
+.border {
+  @include button($c: $colorGreyTransparent_32, $bc: transparent, $p: 7px 11px, $hbc: none);
+
+  &:hover {
+    border-color: $colorGreyTransparent_72;
+  }
+}
+
+.border_min {
+  @extend .border;
+  font-size: 13px;
+  padding: 3px 7px;
+}
+
+.border_column {
+  @include button($c: $colorGreyTransparent_32, $bc: transparent, $p: 7px 11px, $hbc: #7e798f);
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 88px;
+  svg {
+    width: 34px;
+    height: 34px;
+  }
+}
