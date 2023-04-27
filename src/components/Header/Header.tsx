@@ -51,22 +51,26 @@ const Header: FC = () => {
     <header className={styles.section}>
       {isDesktop && <DropdownMenu onMouseLeave={onMouseLeave} />}
       <div className={styles.leftContainer} onMouseEnter={onMouseLeave}>
-        <Image
-          src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
-          width={isTablet ? 66 : 55}
-          height={isTablet ? 48 : 40}
-          priority
-          alt={t('alt')}
-        />
+        <Link href="/">
+          <Image
+            src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
+            width={isTablet ? 66 : 55}
+            height={isTablet ? 48 : 40}
+            priority
+            alt={t('alt')}
+          />
+        </Link>
         {isDesktop && <HeaderMenu translate={t} onMouseEnter={onMouseEnter} />}
       </div>
       <div className={styles.rightContainer} onMouseEnter={onMouseLeave}>
-        <Button buttonClassName={styles.subscribe} titleClassName={styles.subscribeTitle} title={t('subscription')} />
+        <Button buttonClassName={styles.subscribe} variant="default">
+          <span className={styles.subscribeTitle}>{t('subscription')}</span>
+        </Button>
         <Button
+          variant="default"
           buttonClassName={styles.changeLang}
-          title={`${changeTo.toUpperCase()}`}
           onClick={() => onToggleLanguageClick(changeTo)}
-        />
+        >{`${changeTo.toUpperCase()}`}</Button>
         {isDesktop && (
           <Link onMouseEnter={onMouseLeave} className={styles.search} href="/ivi_search">
             <RiSearchLine className={styles.searchIcon} />

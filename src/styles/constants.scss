@@ -16,8 +16,11 @@ $headerIndex: 3;
 $colorWhite: #fff;
 $colorGreyTransparent_16: rgba(255, 255, 255, 0.16);
 $colorGreyTransparent_24: rgba(255, 255, 255, 0.24);
+$colorGreyTransparent_32: rgba(255, 255, 255, 0.32);
 $colorGreyTransparent_48: rgba(255, 255, 255, 0.48);
 $colorGreyTransparent_56: rgba(255, 255, 255, 0.56);
+$colorGreyTransparent_72: rgba(255, 255, 255, 0.72);
+$colorGreyTransparent_08: rgba(255, 255, 255, 0.08);
 $colorLightGrey: #d9d7e0;
 $colorGrey: #a5a1b2;
 $colorRed: #ea003d;
@@ -81,11 +84,20 @@ $shadowColor: #a869f0;
 }
 // }
 
-@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px) {
+@mixin button($p: 9px 15px, $c: $colorRed, $bc: $colorRed, $br: 8px, $fw: 500, $hbc: #ff0f4d) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   background-color: $bc;
   border: 1px solid $c;
   border-radius: $br;
   padding: $p;
-  text-align: center;
   color: $colorWhite;
+  font-weight: $fw;
+  white-space: nowrap;
+  cursor: pointer;
+  &:hover {
+    background-color: $hbc;
+  }
 }

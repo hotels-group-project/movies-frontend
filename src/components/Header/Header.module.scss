@@ -114,6 +114,7 @@
     transition: border-color 0.4s, color 0.4s;
 
     &:hover {
+      background-color: transparent;
       border-color: $colorWhite;
       color: $colorWhite;
       transition: border-color 0.4s, color 0.4s;

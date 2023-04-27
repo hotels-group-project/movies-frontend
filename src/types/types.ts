@@ -17,3 +17,15 @@ export enum DropdownMenuTypes {
 export interface DropdownMenu {
   dropdownMenuHoveredItem: keyof typeof DropdownMenuTypes | '';
 }
+
+export type Variant =
+  | 'default'
+  | 'arrow'
+  | 'arrow_s'
+  | 'arrow_m'
+  | 'border'
+  | 'border_min'
+  | 'border_column'
+  | 'info'
+  | 'sort_circle'
+  | 'sort_square';
