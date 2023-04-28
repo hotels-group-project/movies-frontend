@@ -35,7 +35,8 @@ export type Variant =
   | 'dark_middle'
   | 'dark_big'
   | 'dark_large'
-  | 'dark_round';
+  | 'dark_round'
+  | 'text';
 
 export interface ButtonProps {
   variant?: Variant;
