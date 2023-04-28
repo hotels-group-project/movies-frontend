@@ -1,0 +1,239 @@
+@import '../../../../styles/constants.scss';
+
+$widgetSidePadding: 16px;
+$widgetBottomPadding: 12px;
+
+$widgetImageWidth: 128px;
+$widgetImagesGap: 8px;
+$widgetImagesCount: 3;
+$widgetAnimationDuration: 20s;
+$widgetImagesWidth: $widgetImageWidth * 3 + $widgetImagesGap * 3;
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  width: 244px;
+  min-width: 244px;
+  height: 100%;
+  background-color: $colorBackgroundButton;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    flex-grow: 1;
+    background-color: $colorBackgroundWidget;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+.shadowBox {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 64px;
+  z-index: 2;
+
+  &_left {
+    left: 0;
+    background-image: linear-gradient(270deg, rgba(49, 43, 69, 0), rgba(49, 43, 69, 0.96));
+  }
+
+  &_right {
+    right: 0;
+    background-image: linear-gradient(90deg, rgba(49, 43, 69, 0), rgba(49, 43, 69, 0.96));
+  }
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  gap: $widgetImagesGap;
+  transform: translateY(-48px);
+
+  &_uneven {
+    animation: unEvenMove $widgetAnimationDuration infinite;
+    animation-timing-function: cubic-bezier(0, 0, 0, 0);
+
+    &_copy {
+      animation: unEvenMoveCopy $widgetAnimationDuration infinite;
+      animation-timing-function: cubic-bezier(0, 0, 0, 0);
+    }
+  }
+
+  &_even {
+    animation: evenMove $widgetAnimationDuration infinite;
+    animation-timing-function: cubic-bezier(0, 0, 0, 0);
+
+    &_copy {
+      animation: evenMoveCopy $widgetAnimationDuration infinite;
+      animation-timing-function: cubic-bezier(0, 0, 0, 0);
+    }
+  }
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  gap: 16px;
+  padding: 0 $widgetSidePadding $widgetBottomPadding;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(49, 43, 69, 0.96);
+  z-index: 3;
+  transition: height 0.3s;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -48px;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background-image: linear-gradient(180deg, rgba(49, 43, 69, 0), rgba(49, 43, 69, 0.96));
+    z-index: 2;
+  }
+
+  &:hover {
+    height: 136px;
+    transition: height 0.3s;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: $colorWhite;
+  }
+
+  &__textWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include movieCompilationTitle;
+  }
+
+  &__text {
+    @include smallTextSize;
+  }
+
+  &__hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - $widgetSidePadding * 2);
+    position: absolute;
+    bottom: $widgetBottomPadding;
+    left: $widgetSidePadding;
+    gap: 16px;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    opacity: 0;
+    transform: translateY(16px);
+
+    &_entering {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &_entered {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &_exiting {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    &_exited {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+
+  &__hoverButton {
+    width: 100%;
+    padding: 7px 11px;
+  }
+
+  &__hoverText {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.logo {
+  border-radius: 8px;
+  background-color: $colorRed;
+}
+
+.watchSmartTV {
+  align-items: center;
+  gap: 6px;
+  background-color: $colorBackgroundButtonLight;
+  border-color: $colorBackgroundButtonLight;
+  @include dominantTextSize($fw: 500);
+
+  &:hover {
+    background-color: $colorBackgroundButtonLightHover;
+  }
+}
+
+.displayIcon {
+  align-self: center;
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes unEvenMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-$widgetImagesWidth);
+  }
+}
+
+@keyframes evenMove {
+  from {
+    transform: translateX(-$widgetImageWidth / 2);
+  }
+  to {
+    transform: translateX($widgetImagesWidth - $widgetImageWidth / 2);
+  }
+}
+
+@keyframes unEvenMoveCopy {
+  from {
+    transform: translateX($widgetImagesWidth);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes evenMoveCopy {
+  from {
+    transform: translateX(-$widgetImageWidth / 2 - $widgetImagesWidth);
+  }
+  to {
+    transform: translateX(-$widgetImageWidth / 2);
+  }
+}
