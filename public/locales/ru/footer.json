@@ -1,7 +1,6 @@
 {
   "what-to-see": "Что посмотреть",
   "certificate-activation": "Активация сертификата",
-
   "compliance": "Комплаенс",
   "privacy-policy": "Политика конфиденциальности",
   "terms-of-use": "Пользовательское соглашение",
@@ -10,13 +9,11 @@
   "beta-program": "Программа бета-тестирования",
   "job-openings": "Вакансии",
   "about-company": "О компании",
-
   "about-us": "О нас",
   "sections": "Разделы",
   "support": "Служба поддержки",
   "support-text": "Мы всегда готовы вам помочь.",
   "support-time": "Наши операторы онлайн 24/7",
-
   "write-in-chat": "Написать в чате",
   "answers": "Ответы на вопросы",
   "without-ads": "Смотрите фильмы, сериалы и мультфильмы без рекламы",
@@ -26,5 +23,10 @@
   "all-devices": "Все устройства",
   "app-store": "App Store",
   "google-play": "Google Play",
-  "smart": "Smart TV"
+  "smart": "Smart TV",
+  "my-ivi": "Мой Иви",
+  "catalog": "Каталог",
+  "search": "Поиск",
+  "tv": "TV+",
+  "more": "Ещё"
 }

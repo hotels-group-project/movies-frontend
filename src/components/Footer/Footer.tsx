@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import { FC, memo } from 'react';
 import { BsHouse } from 'react-icons/bs';
 import { BsFolderSymlink } from 'react-icons/bs';
@@ -15,7 +16,7 @@ import FooterMenu from './FooterMenu/FooterMenu';
 
 const Footer: FC = () => {
   const isDesktop = useAppSelector(state => state.breakpoint.isDesktop);
-
+  const { t } = useTranslation('footer');
   return (
     <>
       <footer className={styles.footer}>
@@ -36,23 +37,23 @@ const Footer: FC = () => {
             <div className={styles.tablet}>
               <LinkComponent link="/" elemClassName="tabletLink" variant="footer_tablet">
                 <BsHouse className={styles.tabletIcon} />
-                <p>Мой Иви</p>
+                <p>{t(`my-ivi`)}</p>
               </LinkComponent>
               <LinkComponent link="/movies" elemClassName="tabletLink" variant="footer_tablet">
                 <BsFolderSymlink className={styles.tabletIcon} />
-                <p>Каталог</p>
+                <p>{t(`catalog`)}</p>
               </LinkComponent>
               <Button variant="footer_tablet">
                 <BsSearch className={styles.tabletIcon} />
-                <p>Поиск</p>
+                <p>{t(`search`)}</p>
               </Button>
               <LinkComponent link="https://www.ivi.ru/tvplus" elemClassName="tabletLink" variant="footer_tablet">
                 <MdMonitor className={styles.tabletIcon} />
-                <p>TV+</p>
+                <p>{t(`tv`)}</p>
               </LinkComponent>
               <Button variant="footer_tablet">
                 <FaEllipsisH className={styles.tabletIcon} />
-                <p>Ещё</p>
+                <p>{t(`more`)}</p>
               </Button>
             </div>
           </>

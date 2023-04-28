@@ -14,12 +14,12 @@
     background-color: $colorButtonHover;
   }
 
-  .h3 {
+  h3 {
     @include dominantTextSize(20px, 500);
     color: $colorWhite;
   }
 
-  .p {
+  p {
     color: rgba(255, 255, 255, 0.72);
     font-size: 10px;
     line-height: 12px;

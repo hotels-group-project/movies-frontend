@@ -23,5 +23,10 @@
   "all-devices": "All devices",
   "app-store": "App Store",
   "google-play": "Google Play",
-  "smart": "Smart TV"
+  "smart": "Smart TV",
+  "my-ivi": "My Ivi",
+  "catalog": "Catalog",
+  "search": "Search",
+  "tv": "TV+",
+  "more": "More"
 }
