@@ -6,8 +6,8 @@ import Button from '../../Shared/Button/Button';
 import { PLUS_LIST } from './Description.constants';
 import styles from './Description.module.scss';
 
-const Manifest: FC = () => {
-  const { t } = useTranslation('manifest');
+const Description: FC = () => {
+  const { t } = useTranslation('description');
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const toggleExpand = useCallback(() => {
@@ -28,7 +28,7 @@ const Manifest: FC = () => {
           </ul>
           <p>{t('total')}</p>
         </div>
-        <Button variant="text" onClick={toggleExpand}>
+        <Button variant="text" onClick={toggleExpand} link="/#">
           {isExpanded ? t('collapse') : t('expand')}
         </Button>
       </section>
@@ -36,4 +36,4 @@ const Manifest: FC = () => {
   );
 };
 
-export default memo(Manifest);
+export default memo(Description);
