@@ -27,6 +27,9 @@ $colorRed: #ea003d;
 $colorPurple: #c447ff;
 $colorBackgroundPage: #100e19;
 $colorBackgroundButton: #1f1b2e;
+$colorBackgroundButtonLight: #282338;
+$colorBackgroundButtonLightHover: #3a3352;
+$colorBackgroundWidget: #312b45;
 $colorButtonHover: #2e2844;
 $startGradientColor: #a869f0;
 $endGradientColor: #834cc2;
@@ -97,7 +100,10 @@ $shadowColor: #a869f0;
   font-weight: $fw;
   white-space: nowrap;
   cursor: pointer;
+  transition: background-color 0.3s;
+
   &:hover {
     background-color: $hbc;
+    transition: background-color 0.3s;
   }
 }

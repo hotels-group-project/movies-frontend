@@ -1,25 +1,49 @@
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import { FC, memo, useState, useCallback } from 'react';
+import { FC, memo, useState, useCallback, MouseEvent } from 'react';
 
-import Button from '../../../Shared/Button/Button';
+import WidgetDropdownMenu from '../WidgetDropdownMenu/WidgetDropdownMenu';
 
+import { WidgetDropdownMenuProps } from '../WidgetDropdownMenu/WidgetDropdownMenu.types';
+
+import { FIRST_GUTTER_STRIPE_HEIGHT, TOTAL_GUTTER_OFFSET } from './MoviesDropdownMenu.constants';
 import styles from './MoviesDropdownMenu.module.scss';
 import { MoviesDropdownMenuProps } from './MoviesDropdownMenu.types';
 
-const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({ genres, countries, years, alternativeFilters }) => {
+const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
+  genres,
+  countries,
+  years,
+  alternativeFilters,
+  animatedImages,
+}) => {
   const { t } = useTranslation('header');
-  const [gutterStripePosition, setGutterStripePosition] = useState(0);
+  const [gutterStripePosition, setGutterStripePosition] = useState({
+    height: FIRST_GUTTER_STRIPE_HEIGHT,
+    top: 0,
+  });
+  const [activeAlternativeFilter, setActiveAlternativeFilter] = useState('Новинки');
+
   const gutterStripeStyles = {
-    transform: `translateY(${gutterStripePosition}px)`,
-    transition: `transform 0.2s`,
+    transform: `translateY(${gutterStripePosition.top}px)`,
+    height: `${gutterStripePosition.height}px`,
   };
 
-  const onMouseEnter = useCallback(
-    (key: number) => {
-      setGutterStripePosition(28 * (key - 1));
+  const onMouseEnter = useCallback((key: number, title: string, evt: MouseEvent<HTMLAnchorElement>) => {
+    const target = evt.target as HTMLAnchorElement;
+    const targetY = target.getBoundingClientRect().top - TOTAL_GUTTER_OFFSET;
+    const targetHeight = target.offsetHeight;
+    setGutterStripePosition({ height: targetHeight, top: targetY });
+    setActiveAlternativeFilter(title);
+  }, []);
+
+  const getCurrentImages = useCallback(
+    (param: string): WidgetDropdownMenuProps['animatedImages'] => {
+      const currentIndex = animatedImages.findIndex(({ title }) => title === param);
+      const currentArray = animatedImages[currentIndex].array;
+      return currentArray;
     },
-    [setGutterStripePosition],
+    [animatedImages],
   );
 
   return (
@@ -65,16 +89,18 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({ genres, countries, ye
           </div>
           <div className={styles.alternativeFilters_list}>
             {alternativeFilters.map(({ id, title, link }) => (
-              <Link href={link} className={styles.link} key={id} onMouseEnter={() => onMouseEnter(id)}>
+              <Link href={link} className={styles.link} key={id} onMouseEnter={evt => onMouseEnter(id, title, evt)}>
                 {title}
               </Link>
             ))}
           </div>
         </div>
-        <div className={styles.widget}>
-          <div className={styles.widget_content} />
-          <Button />
-        </div>
+        {alternativeFilters.map(
+          ({ id, title }) =>
+            activeAlternativeFilter === title && (
+              <WidgetDropdownMenu key={id} animatedImages={getCurrentImages(title)} />
+            ),
+        )}
       </div>
     </div>
   );

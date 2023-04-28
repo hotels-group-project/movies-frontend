@@ -25,6 +25,8 @@
 }
 
 .link {
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: color 0.3s;
 
   &:hover {
@@ -74,9 +76,8 @@
   background-color: $colorGreyTransparent_16;
   &_stripe {
     width: 100%;
-    height: 20px;
     background-color: $colorWhite;
-    transition: transform 0.2s;
+    transition: transform 0.2s, height 0.4s;
   }
 }
 
@@ -87,6 +88,8 @@
   &_list {
     display: flex;
     flex-direction: column;
+    flex-grow: 0;
     gap: 8px;
+    width: auto;
   }
 }

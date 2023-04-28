@@ -8,4 +8,12 @@ const nextConfig = {
 module.exports = {
   nextConfig,
   i18n,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'thumbs.dfs.ivi.ru',
+      },
+    ],
+  },
 };

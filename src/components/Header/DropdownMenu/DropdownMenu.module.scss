@@ -1,10 +1,12 @@
 @import '../../../styles/constants.scss';
 
+$dropdownSidePadding: 12px;
+
 .section {
   position: absolute;
   top: 4px;
-  left: 0;
-  width: 100%;
+  left: -$dropdownSidePadding;
+  width: calc(100% + $dropdownSidePadding * 2);
   background-color: $colorBackgroundButton;
   border-radius: 12px;
   box-shadow: 0 20px 96px #12101b;
@@ -39,6 +41,28 @@
   width: 100%;
   height: 0;
   transition: height 0.3s ease-out;
+
+  &__animation {
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+
+    &_entering {
+      opacity: 1;
+    }
+
+    &_entered {
+      opacity: 1;
+    }
+
+    &_exiting {
+      opacity: 0;
+    }
+
+    &_exited {
+      opacity: 0;
+    }
+  }
 
   &::before {
     content: '';
