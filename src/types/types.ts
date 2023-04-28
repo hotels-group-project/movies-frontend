@@ -37,12 +37,15 @@ export type Variant =
   | 'dark_large'
   | 'dark_round';
 
-export interface ButtonAndLinkProps {
+export interface ButtonProps {
   variant?: Variant;
-  link: string;
   elemClassName?: string;
   onClick?(): void;
   startIcon?: ReactNode;
   children?: ReactNode;
   endIcon?: ReactNode;
+}
+
+export interface ButtonAndLinkProps extends ButtonProps {
+  link: string;
 }
