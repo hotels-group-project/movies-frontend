@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { FC, memo, useCallback, useState, useRef } from 'react';
 import { BsFillDisplayFill } from 'react-icons/bs';
-
 import { CSSTransition } from 'react-transition-group';
 
 import Button from '../../../Shared/Button/Button';
+import LinkComponent from '../../../Shared/LinkComponent/LinkComponent';
 
 import InfinityAnimatedGroup from './InfinityAnimatedGroup/InfinityAnimatedGroup';
 import styles from './WidgetDropdownMenu.module.scss';
@@ -64,7 +64,7 @@ const WidgetDropdownMenu: FC<WidgetDropdownMenuProps> = ({ animatedImages }) => 
             unmountOnExit
           >
             <div ref={nodeRef} className={styles.subscribe__hover}>
-              <Button variant="default" buttonClassName={styles.subscribe__hoverButton}>
+              <Button variant="default" elemClassName={styles.subscribe__hoverButton}>
                 <p>Подключить</p>
               </Button>
               <p className={styles.subscribe__hoverText}>Отключить можно в любой момент</p>
@@ -72,13 +72,14 @@ const WidgetDropdownMenu: FC<WidgetDropdownMenuProps> = ({ animatedImages }) => 
           </CSSTransition>
         </div>
       </div>
-      <Button
+      <LinkComponent
+        link="https://www.ivi.ru/pages/tvsmart/"
         variant="default"
-        buttonClassName={styles.watchSmartTV}
+        elemClassName={styles.watchSmartTV}
         startIcon={<BsFillDisplayFill className={styles.displayIcon} />}
       >
         <p>Смотреть на SmartTV</p>
-      </Button>
+      </LinkComponent>
     </div>
   );
 };

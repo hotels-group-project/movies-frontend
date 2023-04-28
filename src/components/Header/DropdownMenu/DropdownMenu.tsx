@@ -36,7 +36,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
       }}
       unmountOnExit
     >
-      <div ref={nodeRef} className={`${styles.section}`} onMouseLeave={onMouseLeave}>
+      <section ref={nodeRef} className={`${styles.section}`} onMouseLeave={onMouseLeave}>
         <div className={`${styles.content} ${dropdownMenu ? styles[`content_${dropdownMenu}`] : ''}`}>
           {dropdownMenu === 'movies' && (
             <MoviesDropdownMenu
@@ -81,7 +81,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
             </div>
           )}
         </div>
-      </div>
+      </section>
     </CSSTransition>
   );
 };

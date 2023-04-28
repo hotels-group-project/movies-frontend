@@ -63,12 +63,12 @@ const Header: FC = () => {
         {isDesktop && <HeaderMenu translate={t} onMouseEnter={onMouseEnter} />}
       </div>
       <div className={styles.rightContainer} onMouseEnter={onMouseLeave}>
-        <Button buttonClassName={styles.subscribe} variant="default">
+        <Button elemClassName={styles.subscribe} variant="default">
           <span className={styles.subscribeTitle}>{t('subscription')}</span>
         </Button>
         <Button
           variant="default"
-          buttonClassName={styles.changeLang}
+          elemClassName={styles.changeLang}
           onClick={() => onToggleLanguageClick(changeTo)}
         >{`${changeTo.toUpperCase()}`}</Button>
         {isDesktop && (
