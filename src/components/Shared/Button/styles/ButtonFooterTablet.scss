@@ -1,0 +1,22 @@
+.footer_tablet {
+  color: $colorGrey;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+  }
+
+  &:hover {
+    background-image: (url(https://solea-parent.dfs.ivi.ru/picture/7e798f,7e798f/tabBarGlow.svg));
+    color: $colorWhite;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 64px 48px;
+  }
+}

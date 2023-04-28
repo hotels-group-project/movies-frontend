@@ -1,0 +1,30 @@
+.text_element {
+  @include dominantTextSize();
+  color: $colorGreyTransparent_48;
+  transition-duration: .4s;
+
+  &:hover {
+    color: $colorWhite;
+  }
+}
+
+.text_special {
+  p{
+    @include dominantTextSize(20px, 500);
+    @include textGradient;
+  }
+}
+
+.text_reverse {
+  color: $colorWhite;
+  transition-duration: .4s;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+
+
+  &:hover {
+    color: $colorGreyTransparent_48;
+
+  }
+}

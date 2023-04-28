@@ -1,12 +1,5 @@
 @import '../../../styles/constants.scss';
 
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .info {
   display: flex;
   justify-content: space-between;
@@ -15,35 +8,6 @@
   padding: 48px 0;
   border-bottom: 1px solid rgba(255, 255, 255, .16);
   border-top: 1px solid rgba(255, 255, 255, .16);
-}
-
-.links {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 48px 0 33px;
-  width: 100%;
-}
-
-.storeLinks {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  column-gap: 12px;
-}
-
-.socialNetworkLinks {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.copyright {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start; 
-  width: 100%;
 }
 
 .listItem {
@@ -57,24 +21,10 @@
   margin: 8px 0 20px;
 }
 
-.link {
-  @include dominantTextSize();
-  color: $colorGreyTransparent_48;
-  transition-duration: .4s;
-
-  &:hover {
-    color: $colorWhite;
-  }
-}
 
 .title {
   @include dominantTextSize(20px, 700);
   color: $colorWhite
-}
-
-.specialLink {
-  @include dominantTextSize(20px, 500);
-  @include textGradient;
 }
 
 .text {
@@ -82,23 +32,10 @@
   color: $colorGreyTransparent_48;
 }
 
-.linkReverse {
-  color: $colorWhite;
-  transition-duration: .4s;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 400;
-  
-
-  &:hover {
-    color: $colorGreyTransparent_48;
-  
-  }
-}
-
 .icon {
   width: 16px;
   height: 16px; 
+  color: $colorWhite
 }
 
 .support {
@@ -166,4 +103,9 @@
 .horn {
   width: 66px;
   height: 66px;
+}
+
+.titleLink {
+  @include dominantTextSize(20px, 500);
+  color: $colorWhite;
 }

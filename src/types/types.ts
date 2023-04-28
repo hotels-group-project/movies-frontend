@@ -35,7 +35,11 @@ export type Variant =
   | 'dark_middle'
   | 'dark_big'
   | 'dark_large'
-  | 'dark_round';
+  | 'dark_round'
+  | 'text_element'
+  | 'text_special'
+  | 'footer_tablet'
+  | 'text_reverse';
 
 export interface ButtonProps {
   variant?: Variant;
