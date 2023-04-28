@@ -3,11 +3,11 @@ import { FC, memo } from 'react';
 
 import { ButtonAndLinkProps } from '../../../types/types';
 
-import styles from './Link.module.scss';
+import styles from './LinkComponent.module.scss';
 
-const LinkComponent: FC<ButtonAndLinkProps> = ({ link, variant, className, onClick, startIcon, children, endIcon }) => {
+const LinkComponent: FC<ButtonAndLinkProps> = ({ link, variant, elemClassName, startIcon, children, endIcon }) => {
   return (
-    <Link href={link} onClick={onClick} className={`${variant && styles[`${variant}`]} ${className && className}`}>
+    <Link href={link} className={`${variant && styles[`${variant}`]} ${elemClassName ? elemClassName : ''}`}>
       {startIcon && <span>{startIcon}</span>}
       {children}
       {endIcon && <span>{endIcon}</span>}
