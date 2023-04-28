@@ -1,0 +1,43 @@
+@import '../../../styles/constants.scss';
+
+.description {
+  width: 906px;
+}
+
+.title {
+  @include moviePageTitle(20px, 24px);
+  margin-bottom: 12px;
+}
+
+.textContainer {
+  @include dominantTextSize(22px, 400);
+  color: $colorGrey;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: 8px;
+  margin-bottom: 8px;
+}
+
+.collapse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  box-orient: vertical;
+}
+
+.list {
+  list-style-type: disc;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: 8px;
+}

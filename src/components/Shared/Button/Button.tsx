@@ -1,12 +1,12 @@
 import { FC, memo } from 'react';
 
+import { ButtonProps } from '../../../types/types';
+
 import styles from './Button.module.scss';
 
-import { ButtonProps } from './Button.types';
-
-const Button: FC<ButtonProps> = ({ variant, buttonClassName, onClick, startIcon, children, endIcon }) => {
+const Button: FC<ButtonProps> = ({ variant, elemClassName, onClick, startIcon, children, endIcon }) => {
   return (
-    <button onClick={onClick} className={`${styles[`${variant}`]} ${buttonClassName ? buttonClassName : ''}`}>
+    <button onClick={onClick} className={`${styles[`${variant}`]} ${elemClassName ? elemClassName : ''}`}>
       {startIcon && <span>{startIcon}</span>}
       {children}
       {endIcon && <span>{endIcon}</span>}

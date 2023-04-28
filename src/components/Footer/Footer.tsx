@@ -1,46 +1,63 @@
 import { useTranslation } from 'next-i18next';
 import { FC, memo } from 'react';
+import { BsHouse } from 'react-icons/bs';
+import { BsFolderSymlink } from 'react-icons/bs';
+import { BsSearch } from 'react-icons/bs';
+import { FaEllipsisH } from 'react-icons/fa';
+import { MdMonitor } from 'react-icons/md';
 
-import LinkButton from '../Shared/LinkButton/LinkButton';
+import { useAppSelector } from '../../hooks/redux';
+import Button from '../Shared/Button/Button';
+import LinkComponent from '../Shared/LinkComponent/LinkComponent';
 
 import styles from './Footer.module.scss';
+import FooterLinks from './FooterLinks/FooterLinks';
 import FooterMenu from './FooterMenu/FooterMenu';
 
-import { FOOTER_LINKS, FOOTER_SOCIAL_LINKS } from './FooterMenu.constants';
-
 const Footer: FC = () => {
+  const isDesktop = useAppSelector(state => state.breakpoint.isDesktop);
   const { t } = useTranslation('footer');
   return (
     <>
       <footer className={styles.footer}>
-        <FooterMenu />
-        <div className={styles.links}>
-          <ul className={styles.storeLinks}>
-            {FOOTER_LINKS.map(({ id, title, link, text, icon, src }) => (
-              <li key={id}>
-                <LinkButton
-                  link={link}
-                  buttonStyle="middle"
-                  title={t(`${title}`) || undefined}
-                  text={t(`${text}`) || undefined}
-                  src={src}
-                  icon={icon}
-                />
-              </li>
-            ))}
-          </ul>
-          <ul className={styles.storeLinks}>
-            {FOOTER_SOCIAL_LINKS.map(({ id, title, link, src }) => (
-              <li key={id}>
-                <LinkButton link={link} buttonStyle="round" alt={title} src={src} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.copyright}>
-          <p className={styles.text}>© 2023 ООО «Иви.ру»</p>
-          <p className={styles.text}>HBO ® and related service marks are the property of Home Box Office, Inc</p>
-        </div>
+        {isDesktop ? (
+          <>
+            <FooterMenu />
+            <FooterLinks />
+            <div className={styles.copyright}>
+              <p className={styles.text}>© 2023 ООО «Иви.ру»</p>
+              <p className={styles.text}>HBO ® and related service marks are the property of Home Box Office, Inc</p>
+            </div>
+          </>
+        ) : (
+          <>
+            <p className={styles.tabletText}>
+              HBO ® and related service marks are the property of Home Box Office, Inc
+            </p>
+            <div className={styles.tablet}>
+              <LinkComponent link="/" elemClassName="tabletLink" variant="footer_tablet">
+                <BsHouse className={styles.tabletIcon} />
+                <p>{t(`my-ivi`)}</p>
+              </LinkComponent>
+              <LinkComponent link="/movies" elemClassName="tabletLink" variant="footer_tablet">
+                <BsFolderSymlink className={styles.tabletIcon} />
+                <p>{t(`catalog`)}</p>
+              </LinkComponent>
+              <Button variant="footer_tablet">
+                <BsSearch className={styles.tabletIcon} />
+                <p>{t(`search`)}</p>
+              </Button>
+              <LinkComponent link="https://www.ivi.ru/tvplus" elemClassName="tabletLink" variant="footer_tablet">
+                <MdMonitor className={styles.tabletIcon} />
+                <p>{t(`tv`)}</p>
+              </LinkComponent>
+              <Button variant="footer_tablet">
+                <FaEllipsisH className={styles.tabletIcon} />
+                <p>{t(`more`)}</p>
+              </Button>
+            </div>
+          </>
+        )}
       </footer>
     </>
   );

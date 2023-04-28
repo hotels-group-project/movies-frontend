@@ -4,9 +4,9 @@ import { FiShare } from 'react-icons/fi';
 import { GiDualityMask } from 'react-icons/gi';
 import { SlControlPlay, SlArrowRight, SlArrowLeft, SlArrowDown } from 'react-icons/sl';
 
-import Button from './Button';
+import { ButtonProps } from '../../../types/types';
 
-import { ButtonProps } from './Button.types';
+import Button from './Button';
 
 const meta: Meta<ButtonProps> = {
   title: 'shared/Button',
