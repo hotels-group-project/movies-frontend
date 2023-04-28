@@ -30,14 +30,22 @@ export type Variant =
   | 'border_column'
   | 'info'
   | 'sort_circle'
-  | 'sort_square';
+  | 'sort_square'
+  | 'dark_small'
+  | 'dark_middle'
+  | 'dark_big'
+  | 'dark_large'
+  | 'dark_round';
 
-export interface ButtonAndLinkProps {
+export interface ButtonProps {
   variant?: Variant;
-  link: string;
-  className?: string;
+  elemClassName?: string;
   onClick?(): void;
   startIcon?: ReactNode;
   children?: ReactNode;
   endIcon?: ReactNode;
+}
+
+export interface ButtonAndLinkProps extends ButtonProps {
+  link: string;
 }
