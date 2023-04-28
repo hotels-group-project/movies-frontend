@@ -1,0 +1,9 @@
+.text {
+  @include  dominantTextSize(22px, 500);
+  color: rgba(255, 255, 255, .88);
+  transition-duration: 0.4s;
+
+  &:hover {
+    color: rgb(255, 255, 255);
+  }
+}

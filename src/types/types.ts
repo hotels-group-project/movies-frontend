@@ -36,6 +36,7 @@ export type Variant =
   | 'dark_big'
   | 'dark_large'
   | 'dark_round'
+  | 'text'
   | 'text_element'
   | 'text_special'
   | 'footer_tablet'
