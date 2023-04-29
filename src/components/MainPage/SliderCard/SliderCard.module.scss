@@ -1,0 +1,33 @@
+@import '../../../styles/constants.scss';
+
+.sliderCard {
+  position: relative;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 32px;
+}
+
+.card {
+  border-radius: 24px;
+}
+
+.text {
+  @include dominantTextSize(22px, 400);
+  color: $colorWhite;
+  margin: 24px 0 20px;
+  width: 486px;
+}
+
+.slider {
+  width: 200px;
+  height: 40px;
+  @include dominantTextSize(20px, 500)
+}
