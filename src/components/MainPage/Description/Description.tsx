@@ -28,7 +28,7 @@ const Description: FC = () => {
           </ul>
           <p>{t('total')}</p>
         </div>
-        <Button variant="text" onClick={toggleExpand} link="/#">
+        <Button variant="text_element" onClick={toggleExpand}>
           {isExpanded ? t('collapse') : t('expand')}
         </Button>
       </section>
