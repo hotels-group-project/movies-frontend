@@ -12,5 +12,17 @@
   "genres": "Жанры",
   "years": "Годы",
   "countries": "Страны",
-  "novelties": "Новинки"
+  "novelties": "Новинки",
+  "purchases": "Покупки",
+  "watch-later": "Смотреть позже",
+  "history": "История просмотров",
+  "subscriptions": "Подписки",
+  "plug": "Подключить",
+  "certificate": "Активация сертификата",
+  "enter": "Вход по коду",
+  "payment": "Способы оплаты",
+  "friends": "Пригласить друзей",
+  "enter-and-registry": "Войти и зарегистрироваться",
+  "settings": "Настройки",
+  "help": "Помощь"
 }

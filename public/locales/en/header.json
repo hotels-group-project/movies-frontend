@@ -12,5 +12,17 @@
   "genres": "Genres",
   "years": "Years",
   "countries": "Countries",
-  "novelties": "Novelties"
+  "novelties": "Novelties",
+  "purchases": "Purchases",
+  "watch-later": "Watch later",
+  "history": "History",
+  "subscriptions": "Subscriptions",
+  "plug": "To plug",
+  "certificate": "Certificate activation",
+  "enter": "Enter by code",
+  "payment": "Payment methods",
+  "friends": "Invite Friends",
+  "enter-and-registry": "Enter and registry",
+  "settings": "Settings",
+  "help": "Help"
 }

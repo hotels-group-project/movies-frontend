@@ -18,6 +18,7 @@ import styles from './DropdownMenu.module.scss';
 import { DropdownMenuProps } from './DropdownMenu.types';
 import MoviesDropdownMenu from './MoviesDropdownMenu/MoviesDropdownMenu';
 import NotifyDropdownMenu from './NotifyDropdownMenu/NotifyDropdownMenu';
+import UserDropdownMenu from './UserDropdownMenu/UserDropdownMenu';
 
 const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
   const dropdownMenu = useAppSelector(state => state.dropdownMenu.dropdownMenuHoveredItem);
@@ -74,12 +75,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
             </div>
           )}
           {dropdownMenu === 'bell' && <NotifyDropdownMenu />}
-          {dropdownMenu === 'user' && (
-            <div>
-              <p>123</p>
-              <p>123</p>
-            </div>
-          )}
+          {dropdownMenu === 'user' && <UserDropdownMenu />}
         </div>
       </section>
     </CSSTransition>
