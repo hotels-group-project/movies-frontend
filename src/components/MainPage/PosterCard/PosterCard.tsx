@@ -6,10 +6,10 @@ import { useAppSelector } from '../../../hooks/redux';
 import Button from '../../Shared/Button/Button';
 import LinkComponent from '../../Shared/LinkComponent/LinkComponent';
 
-import styles from './SliderCard.module.scss';
-import { SliderCardProps } from './SliderCard.types';
+import styles from './PosterCard.module.scss';
+import { PosterCardProps } from './PosterCard.types';
 
-const SliderCard: FC<SliderCardProps> = ({
+const PosterCard: FC<PosterCardProps> = ({
   img,
   titleImg,
   description,
@@ -23,7 +23,7 @@ const SliderCard: FC<SliderCardProps> = ({
   const isTablet = useAppSelector(state => state.breakpoint.isTablet);
   return (
     <>
-      <div className={styles.sliderCard}>
+      <div className={styles.poster}>
         <LinkComponent link={link}>
           <div className={styles.shadow}>
             <Image
@@ -50,7 +50,7 @@ const SliderCard: FC<SliderCardProps> = ({
               />
             </div>
             <p className={styles.text}>{description}</p>
-            <Button variant="default" elemClassName={styles.slider}>
+            <Button variant="default" elemClassName={styles.posterButton}>
               {buttonTitle}
             </Button>
           </div>
@@ -60,4 +60,4 @@ const SliderCard: FC<SliderCardProps> = ({
   );
 };
 
-export default memo(SliderCard);
+export default memo(PosterCard);

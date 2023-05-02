@@ -1,4 +1,4 @@
-export interface SliderCardProps {
+export interface PosterCardProps {
   img: string;
   titleImg: string;
   description: string;

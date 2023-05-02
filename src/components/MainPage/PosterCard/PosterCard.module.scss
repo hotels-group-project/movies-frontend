@@ -1,6 +1,6 @@
 @import '../../../styles/constants.scss';
 
-.sliderCard {
+.poster {
   position: relative;
   max-width: 1216px;
   min-width: 290px;
@@ -95,7 +95,7 @@
   }
 }
 
-.slider {
+.posterButton {
   width: 200px;
   height: 40px;
   @include dominantTextSize(20px, 500);

@@ -1,4 +1,4 @@
-export const SLIDER_CARDS = [
+export const POSTER_CARDS = [
   {
     id: 1,
     img: 'https://thumbs.dfs.ivi.ru/storage23/contents/3/8/526f5f80dbb34674fde112142fd8d7.jpg/1216x524/?q=85',
