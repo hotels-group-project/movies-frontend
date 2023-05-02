@@ -1,7 +1,15 @@
 @import '../../../styles/constants.scss';
 
 .description {
-  width: 906px;
+  width: 75%;
+  padding: 0 12px;
+
+  @media (max-width: 1159px) {
+    width: 85%;
+  }
+  @media (max-width: 1019px) {
+    width: 100%;
+  }
 }
 
 .title {
