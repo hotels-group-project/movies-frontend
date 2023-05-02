@@ -12,7 +12,7 @@ import { TfiMedall } from 'react-icons/tfi';
 import Button from '../../../Shared/Button/Button';
 import LinkComponent from '../../../Shared/LinkComponent/LinkComponent';
 
-import { linksValue } from './UserDropdownMenu.constants';
+import { LINKS_VALUE } from './UserDropdownMenu.constants';
 import styles from './UserDropdownMenu.module.scss';
 
 const UserDropdownMenu: FC = () => {
@@ -32,7 +32,7 @@ const UserDropdownMenu: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.leftSection}>
-        {linksValue.map(({ id, title, link }) => (
+        {LINKS_VALUE.map(({ id, title, link }) => (
           <div key={id}>
             {title === 'certificate' || title === 'enter' ? (
               <Button key={id} startIcon={getIconByTitle(title)} elemClassName={styles.link}>

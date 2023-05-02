@@ -1,4 +1,4 @@
-export const linksValue = [
+export const LINKS_VALUE = [
   {
     id: 1,
     title: 'purchases',
