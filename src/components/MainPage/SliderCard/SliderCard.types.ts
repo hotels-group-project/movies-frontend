@@ -6,4 +6,6 @@ export interface SliderCardProps {
   title: string;
   link: string;
   height: number;
+  heightTablet: number;
+  imgTablet: string;
 }

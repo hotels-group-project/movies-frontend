@@ -8,6 +8,8 @@ export const SLIDER_CARDS = [
     title: 'Моя Фея проказница',
     link: 'https://www.ivi.ru/watch/506530',
     height: 200,
+    heightTablet: 140,
+    imgTablet: 'https://thumbs.dfs.ivi.ru/storage2/contents/e/5/fbc88041380515de06594076cafa90.jpg/1216x1358/?q=60',
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ export const SLIDER_CARDS = [
     title: 'Чёрная метка',
     link: 'https://www.ivi.ru/watch/493930',
     height: 49,
+    heightTablet: 40,
+    imgTablet: 'https://thumbs.dfs.ivi.ru/storage15/contents/1/c/68f168c876caf4128c14914facbf91.jpg/1216x1358/?q=60',
   },
   {
     id: 3,
@@ -28,6 +32,8 @@ export const SLIDER_CARDS = [
     title: 'Беспринципные в деревне',
     link: 'https://www.ivi.ru/watch/504204',
     height: 138,
+    heightTablet: 120,
+    imgTablet: 'https://thumbs.dfs.ivi.ru/storage33/contents/8/5/f1efb4f8b074d5275e5414569ca667.jpg/1216x1358/?q=60',
   },
   {
     id: 4,
@@ -38,5 +44,7 @@ export const SLIDER_CARDS = [
     title: 'Невский',
     link: 'https://www.ivi.ru/watch/nevskij',
     height: 149,
+    heightTablet: 130,
+    imgTablet: 'https://thumbs.dfs.ivi.ru/storage29/contents/1/9/8a0f8c6cfe0de4457ae4c9e3acaa28.jpg/1216x1358/?q=60',
   },
 ];
