@@ -1,0 +1,131 @@
+@import '../../../styles/constants.scss';
+
+.poster {
+  position: relative;
+  max-width: 1216px;
+  min-width: 290px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+
+  @media screen and (max-width: $breakpointTablet) {
+    max-width: 551px;
+    width: 100%;
+    padding-right: 16px;
+  }
+}
+
+.title {
+  position: relative;
+  height: auto;
+  max-width: 487px;
+  min-width: 200px;
+  width: 100%;
+
+  @media screen and (max-width: $breakpointTablet) {
+    max-width: 76%;
+    max-height: 140px;
+    width: 100%;
+    min-width: 190px;
+    height: auto;
+  }
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 32px;
+  width: calc(40% + 16px);
+  z-index: 2;
+
+  @media (max-width: 920px) {
+    padding: 20px;
+  }
+
+  @media screen and (max-width: $breakpointTablet) {
+    bottom: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    max-width: 551px;
+    min-width: 274px;
+    width: 100%;
+    left: calc(50% - 8px);
+    transform: translate(-50%, 0);
+  }
+}
+
+.text {
+  @include dominantTextSize(22px, 400);
+  color: $colorWhite;
+  margin: 24px 0 20px;
+
+  @media (max-width: 1095px) {
+    @include dominantTextSize(20px, 400);
+    margin: 16px 0;
+  }
+
+  @media (max-width: 919px) {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 12px 0;
+  }
+
+  @media (max-width: 744px) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: $breakpointTablet) {
+    @include dominantTextSize(20px, 400);
+    width: 85%;
+    margin: 16px 0;
+
+    @media (max-width: 512px) {
+      font-size: 13px;
+      line-height: 18px;
+      margin: 12px 0;
+    }
+  }
+}
+
+.posterButton {
+  width: 200px;
+  height: 40px;
+  @include dominantTextSize(20px, 500);
+
+  @media (max-width: 744px) {
+    display: none;
+  }
+}
+
+.shadow {
+  border-radius: 24px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+
+  &::before {
+    background-image: linear-gradient(180deg, rgba(31, 27, 46, 0) 0, rgba(31, 27, 46, .72) 32.5%, #1f1b2e 75%, #1f1b2e);
+    content: "";
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity .5s;
+  }
+  @media screen and (min-width: $breakpointTablet) {
+    &::before {
+    background-image: none;
+    }
+  }
+}
