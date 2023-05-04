@@ -3,7 +3,7 @@
 .page {
   display: flex;
   justify-content: center;
-  padding: 0 $pagePadding;
+  padding: 0 $pagePaddingPhone;
   min-height: 100vh;
   min-width: $breakpointPhone;
   background-color: $colorBackgroundPage;
@@ -17,4 +17,10 @@
   flex-direction: column;
   width: 100%;
   max-width: 1216px;
+}
+
+@media screen and (min-width: $breakpointTablet) {
+  .page {
+    padding: 0 $pagePadding;
+  }
 }

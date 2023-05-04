@@ -1,3 +1,11 @@
 {
-  "head-title": "Movies: Main"
+  "head-title": {
+    "main": "Main",
+    "movies": "Movies",
+    "actor": "Actor",
+    "auth": "Authorization",
+    "admin": "Admin",
+    "movie": "Movie",
+    "not-found": "Not found"
+  }
 }
