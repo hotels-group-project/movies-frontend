@@ -36,7 +36,7 @@ const UserDropdownMenu: FC = () => {
           <div key={id}>
             {title === 'certificate' || title === 'enter' ? (
               <Button key={id} startIcon={getIconByTitle(title)} elemClassName={styles.link}>
-                <p className={styles.link__text}>{t(title)}</p>
+                <p className={styles.link__text}>{t(`user-menu.${title}`)}</p>
               </Button>
             ) : title === 'subscriptions' ? (
               <LinkComponent
@@ -46,13 +46,13 @@ const UserDropdownMenu: FC = () => {
                 elemClassName={`${styles.link} ${styles.link_circle}`}
               >
                 <div className={styles.subscriptions}>
-                  <p className={styles.link__text}>{t(title)}</p>
-                  <p className={styles.link__text_small}>{t('plug')}</p>
+                  <p className={styles.link__text}>{t(`user-menu.${title}`)}</p>
+                  <p className={styles.link__text_small}>{t('user-menu.plug')}</p>
                 </div>
               </LinkComponent>
             ) : (
               <LinkComponent key={id} link={link} startIcon={getIconByTitle(title)} elemClassName={styles.link}>
-                <p className={styles.link__text}>{t(title)}</p>
+                <p className={styles.link__text}>{t(`user-menu.${title}`)}</p>
               </LinkComponent>
             )}
           </div>
@@ -60,14 +60,14 @@ const UserDropdownMenu: FC = () => {
       </div>
       <div className={styles.rightSection}>
         <Button variant="default" elemClassName={styles.button}>
-          <p>{t('enter-and-registry')}</p>
+          <p>{t('user-menu.enter-and-registry')}</p>
         </Button>
         <div className={styles.settings}>
           <LinkComponent link="https://www.ivi.ru/profile/settings">
-            <p className={styles.settings__link}>{t('settings')}</p>
+            <p className={styles.settings__link}>{t('user-menu.settings')}</p>
           </LinkComponent>
           <LinkComponent link="https://ask.ivi.ru/">
-            <p className={styles.settings__link}>{t('help')}</p>
+            <p className={styles.settings__link}>{t('user-menu.help')}</p>
           </LinkComponent>
         </div>
       </div>

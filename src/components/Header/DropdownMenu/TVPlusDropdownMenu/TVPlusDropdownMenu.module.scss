@@ -1,0 +1,55 @@
+@import '../../../../styles/constants.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 48px;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: calc(100% * 1 / 6);
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: -24px;
+    width: 1px;
+    height: 100%;
+    background-color: $colorGreyTransparent_16;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  transition: color 0.4s;
+
+  &:hover {
+    color: $colorWhite;
+    transition: color 0.4s;
+  }
+
+  &_active {
+    color: $colorWhite;
+    font-weight: 700;
+  }
+}
+
+.program__link {
+  background-color: $colorBackgroundButtonLight;
+  border-color: $colorBackgroundButtonLight;
+  @include dominantTextSize($fw: 500);
+
+  &:hover {
+    background-color: $colorBackgroundButtonLightHover;
+  }
+}

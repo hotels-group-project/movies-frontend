@@ -16,7 +16,7 @@ const CARTOONS_ANIMATION_3 = [
 
 export const CARTOONS_ANIMATION_BLOCK = [
   {
-    title: 'Новинки',
+    title: 'news',
     array: [
       { id: 1, images: CARTOONS_ANIMATION_1 },
       { id: 2, images: CARTOONS_ANIMATION_2 },
@@ -24,7 +24,7 @@ export const CARTOONS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Мультики в HD',
+    title: 'cartoons-hd',
     array: [
       { id: 1, images: CARTOONS_ANIMATION_3 },
       { id: 2, images: CARTOONS_ANIMATION_1 },
@@ -32,7 +32,7 @@ export const CARTOONS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Мультфильмы Paramount Play / Nickelodeon',
+    title: 'paramount-play-cartoons',
     array: [
       { id: 1, images: CARTOONS_ANIMATION_2 },
       { id: 2, images: CARTOONS_ANIMATION_3 },
@@ -40,7 +40,7 @@ export const CARTOONS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Мультфильмы Dreamworks',
+    title: 'dreamworks-cartoons',
     array: [
       { id: 1, images: CARTOONS_ANIMATION_1 },
       { id: 2, images: CARTOONS_ANIMATION_2 },
@@ -48,7 +48,7 @@ export const CARTOONS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Мультфильмы СТС Kids',
+    title: 'sts-kids-cartoons',
     array: [
       { id: 1, images: CARTOONS_ANIMATION_3 },
       { id: 2, images: CARTOONS_ANIMATION_1 },

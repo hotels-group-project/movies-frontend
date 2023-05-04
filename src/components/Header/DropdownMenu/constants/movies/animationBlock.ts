@@ -16,7 +16,7 @@ const MOVIES_ANIMATION_3 = [
 
 export const MOVIES_ANIMATION_BLOCK = [
   {
-    title: 'Новинки',
+    title: 'news',
     array: [
       { id: 1, images: MOVIES_ANIMATION_1 },
       { id: 2, images: MOVIES_ANIMATION_2 },
@@ -24,7 +24,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Подборки',
+    title: 'collections',
     array: [
       { id: 1, images: MOVIES_ANIMATION_3 },
       { id: 2, images: MOVIES_ANIMATION_1 },
@@ -32,7 +32,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'ИВИ.Рейтинг',
+    title: 'ivi-rating',
     array: [
       { id: 1, images: MOVIES_ANIMATION_2 },
       { id: 2, images: MOVIES_ANIMATION_3 },
@@ -40,7 +40,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Скоро на Иви',
+    title: 'ivi-soon',
     array: [
       { id: 1, images: MOVIES_ANIMATION_1 },
       { id: 2, images: MOVIES_ANIMATION_2 },
@@ -48,7 +48,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Трейлеры',
+    title: 'trailers',
     array: [
       { id: 1, images: MOVIES_ANIMATION_3 },
       { id: 2, images: MOVIES_ANIMATION_1 },
@@ -56,7 +56,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Что посмотреть',
+    title: 'what-to-see',
     array: [
       { id: 1, images: MOVIES_ANIMATION_2 },
       { id: 2, images: MOVIES_ANIMATION_3 },
@@ -64,7 +64,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Фильмы в HD',
+    title: 'movies-hd',
     array: [
       { id: 1, images: MOVIES_ANIMATION_1 },
       { id: 2, images: MOVIES_ANIMATION_2 },
@@ -72,7 +72,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Выбор Иви',
+    title: 'choice',
     array: [
       { id: 1, images: MOVIES_ANIMATION_3 },
       { id: 2, images: MOVIES_ANIMATION_1 },
@@ -80,7 +80,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Новинки подписки',
+    title: 'subscription-news',
     array: [
       { id: 1, images: MOVIES_ANIMATION_2 },
       { id: 2, images: MOVIES_ANIMATION_3 },
@@ -88,7 +88,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Фильмы Amediateka',
+    title: 'amediateka-movies',
     array: [
       { id: 1, images: MOVIES_ANIMATION_1 },
       { id: 2, images: MOVIES_ANIMATION_2 },
@@ -96,7 +96,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Популярные фильмы',
+    title: 'popular-movies',
     array: [
       { id: 1, images: MOVIES_ANIMATION_3 },
       { id: 2, images: MOVIES_ANIMATION_1 },
@@ -104,7 +104,7 @@ export const MOVIES_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Фильмы Иви',
+    title: 'ivi-movies',
     array: [
       { id: 1, images: MOVIES_ANIMATION_2 },
       { id: 2, images: MOVIES_ANIMATION_3 },
