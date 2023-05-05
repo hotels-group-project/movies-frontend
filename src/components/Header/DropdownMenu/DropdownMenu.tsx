@@ -18,6 +18,8 @@ import styles from './DropdownMenu.module.scss';
 import { DropdownMenuProps } from './DropdownMenu.types';
 import MoviesDropdownMenu from './MoviesDropdownMenu/MoviesDropdownMenu';
 import NotifyDropdownMenu from './NotifyDropdownMenu/NotifyDropdownMenu';
+import TVPlusDropdownMenu from './TVPlusDropdownMenu/TVPlusDropdownMenu';
+import UserDropdownMenu from './UserDropdownMenu/UserDropdownMenu';
 
 const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
   const dropdownMenu = useAppSelector(state => state.dropdownMenu.dropdownMenuHoveredItem);
@@ -65,21 +67,9 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
               animatedImages={CARTOONS_ANIMATION_BLOCK}
             />
           )}
-          {dropdownMenu === 'tvplus' && (
-            <div>
-              <p>123</p>
-              <p>123</p>
-              <p>123</p>
-              <p>123</p>
-            </div>
-          )}
+          {dropdownMenu === 'tvplus' && <TVPlusDropdownMenu />}
           {dropdownMenu === 'bell' && <NotifyDropdownMenu />}
-          {dropdownMenu === 'user' && (
-            <div>
-              <p>123</p>
-              <p>123</p>
-            </div>
-          )}
+          {dropdownMenu === 'user' && <UserDropdownMenu />}
         </div>
       </section>
     </CSSTransition>

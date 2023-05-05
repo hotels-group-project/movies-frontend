@@ -1,0 +1,106 @@
+@import '../../../../styles/constants.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 48px;
+}
+
+.leftSection {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(155px, 1fr));
+  grid-template-rows: repeat(2, auto);
+  gap: 24px;
+  width: calc(100% * 2 / 3);
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: calc(100% * 1 / 3);
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    width: 1px;
+    height: 100%;
+    background-color: $colorGreyTransparent_16;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  width: 100%;
+  height: 108px;
+  border-radius: 8px;
+  background-color: $colorBackgroundWidget;
+  transition: background-color 0.3s;
+
+  &_circle {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $colorRed;
+      box-shadow: 0 2px 8px rgba(234, 0, 61, 0.8);
+    }
+  }
+
+  &__text {
+    text-align: start;
+    color: $colorWhite;
+
+    &_small {
+      @include smallTextSize;
+    }
+  }
+
+  &__icon {
+    color: $colorGreyTransparent_48;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: #3e3758;
+    transition: background-color 0.3s;
+  }
+}
+
+.subscriptions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.button {
+  @include dominantTextSize;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__link {
+    transition: color 0.4s;
+
+    &:hover {
+      color: $colorWhite;
+      transition: color 0.4s;
+    }
+  }
+}

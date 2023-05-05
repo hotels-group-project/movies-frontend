@@ -16,7 +16,7 @@ const SERIALS_ANIMATION_3 = [
 
 export const SERIALS_ANIMATION_BLOCK = [
   {
-    title: 'Новинки',
+    title: 'news',
     array: [
       { id: 1, images: SERIALS_ANIMATION_1 },
       { id: 2, images: SERIALS_ANIMATION_2 },
@@ -24,7 +24,7 @@ export const SERIALS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'ИВИ.Рейтинг',
+    title: 'ivi-rating',
     array: [
       { id: 1, images: SERIALS_ANIMATION_3 },
       { id: 2, images: SERIALS_ANIMATION_1 },
@@ -32,7 +32,7 @@ export const SERIALS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Сериалы в HD',
+    title: 'serials-hd',
     array: [
       { id: 1, images: SERIALS_ANIMATION_2 },
       { id: 2, images: SERIALS_ANIMATION_3 },
@@ -40,7 +40,7 @@ export const SERIALS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Бесплатные сериалы',
+    title: 'free-serials',
     array: [
       { id: 1, images: SERIALS_ANIMATION_1 },
       { id: 2, images: SERIALS_ANIMATION_2 },
@@ -48,7 +48,7 @@ export const SERIALS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Сериалы Amediateka',
+    title: 'amediateka-serials',
     array: [
       { id: 1, images: SERIALS_ANIMATION_3 },
       { id: 2, images: SERIALS_ANIMATION_1 },
@@ -56,7 +56,7 @@ export const SERIALS_ANIMATION_BLOCK = [
     ],
   },
   {
-    title: 'Сериалы Paramount Play',
+    title: 'paramount-play-serials',
     array: [
       { id: 1, images: SERIALS_ANIMATION_2 },
       { id: 2, images: SERIALS_ANIMATION_3 },

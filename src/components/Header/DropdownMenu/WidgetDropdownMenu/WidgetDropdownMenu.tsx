@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 import { FC, memo, useCallback, useState, useRef } from 'react';
 import { BsFillDisplayFill } from 'react-icons/bs';
 import { CSSTransition } from 'react-transition-group';
@@ -11,6 +12,7 @@ import styles from './WidgetDropdownMenu.module.scss';
 import { WidgetDropdownMenuProps } from './WidgetDropdownMenu.types';
 
 const WidgetDropdownMenu: FC<WidgetDropdownMenuProps> = ({ animatedImages }) => {
+  const { t } = useTranslation('header');
   const [onSubscribe, setOnSubscribe] = useState(false);
   const nodeRef = useRef(null);
 
@@ -47,8 +49,8 @@ const WidgetDropdownMenu: FC<WidgetDropdownMenuProps> = ({ animatedImages }) => 
               className={styles.logo}
             />
             <div className={styles.subscribe__textWrapper}>
-              <h3 className={styles.subscribe__title}>Подписка Иви</h3>
-              <p className={styles.subscribe__text}>От 199 ₽ за месяц</p>
+              <h3 className={styles.subscribe__title}>{t('widget.subscription')}</h3>
+              <p className={styles.subscribe__text}>{t('widget.price')}</p>
             </div>
           </div>
           <CSSTransition
@@ -65,9 +67,9 @@ const WidgetDropdownMenu: FC<WidgetDropdownMenuProps> = ({ animatedImages }) => 
           >
             <div ref={nodeRef} className={styles.subscribe__hover}>
               <Button variant="default" elemClassName={styles.subscribe__hoverButton}>
-                <p>Подключить</p>
+                <p>{t('widget.activate')}</p>
               </Button>
-              <p className={styles.subscribe__hoverText}>Отключить можно в любой момент</p>
+              <p className={styles.subscribe__hoverText}>{t('widget.turn-off')}</p>
             </div>
           </CSSTransition>
         </div>
@@ -78,7 +80,7 @@ const WidgetDropdownMenu: FC<WidgetDropdownMenuProps> = ({ animatedImages }) => 
         elemClassName={styles.watchSmartTV}
         startIcon={<BsFillDisplayFill className={styles.displayIcon} />}
       >
-        <p>Смотреть на SmartTV</p>
+        <p>{t('widget.watch-smart-tv')}</p>
       </LinkComponent>
     </div>
   );

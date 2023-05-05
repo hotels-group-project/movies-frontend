@@ -26,7 +26,6 @@
 }
 
 .subscribe {
-  margin-right: 8px;
   padding: 7px 11px;
   background: linear-gradient(270deg, $colorRed, $colorPurple);
   border: none;
@@ -111,10 +110,6 @@
 }
 
 @media screen and (min-width: $breakpointDesktop) {
-  .section {
-    padding: 0 12px;
-  }
-
   .changeLang {
     transition: border-color 0.4s, color 0.4s;
 

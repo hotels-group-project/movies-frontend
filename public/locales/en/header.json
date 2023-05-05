@@ -9,8 +9,61 @@
   "subscription": "Subscribe",
   "search": "Search",
   "notify-menu-text": "Only important messages here",
-  "genres": "Genres",
-  "years": "Years",
-  "countries": "Countries",
-  "novelties": "Novelties"
+  "genres-menu": {
+    "genres": "Genres",
+    "years": "Years",
+    "countries": "Countries"
+  },
+  "user-menu": {
+    "purchases": "Purchases",
+    "watch-later": "Watch later",
+    "history": "History",
+    "subscriptions": "Subscriptions",
+    "plug": "To plug",
+    "certificate": "Certificate activation",
+    "enter": "Enter by code",
+    "payment": "Payment methods",
+    "friends": "Invite Friends",
+    "enter-and-registry": "Enter and registry",
+    "settings": "Settings",
+    "help": "Help"
+  },
+  "tvplus-menu": {
+    "online": "TV online",
+    "channels": "TV channels",
+    "entertaining": "Entertaining",
+    "kids": "Kids",
+    "sport": "Sport TV",
+    "documentary": "Documentary",
+    "TV-program": "TV program"
+  },
+  "widget": {
+    "subscription": "Subscription Ivi",
+    "price": "From 199 ₽ per month",
+    "activate": "Activate",
+    "turn-off": "You can turn it off at any time",
+    "watch-smart-tv": "Watch on SmartTV"
+  },
+  "alternative-filters": {
+    "news": "News",
+    "collections": "Collections",
+    "ivi-rating": "Ivi.Rating",
+    "ivi-soon": "Coming soon to Ivi",
+    "trailers": "Trailers",
+    "what-to-see": "What to see",
+    "movies-hd": "HD movies",
+    "choice": "Ivi's choice",
+    "subscription-news": "Subscription news",
+    "amediateka-movies": "Amediateka movies",
+    "popular-movies": "Popular movies",
+    "ivi-movies": "Ivi movies",
+    "serials-hd": "HD serials",
+    "free-serials": "Free serials",
+    "amediateka-serials": "Amediateka serials",
+    "paramount-play-serials": "Paramount Play serials",
+    "cartoons-hd": "HD cartoons",
+    "paramount-play-cartoons": "Paramount Play / Nickelodeon cartoons",
+    "dreamworks-cartoons": "Dreamworks cartoons",
+    "sts-kids-cartoons": "СТС Kids cartoons"
+  }
 }

@@ -3,7 +3,6 @@ import { useTranslation } from 'next-i18next';
 import { FC, memo, useState, useCallback, MouseEvent } from 'react';
 
 import WidgetDropdownMenu from '../WidgetDropdownMenu/WidgetDropdownMenu';
-
 import { WidgetDropdownMenuProps } from '../WidgetDropdownMenu/WidgetDropdownMenu.types';
 
 import { FIRST_GUTTER_STRIPE_HEIGHT, TOTAL_GUTTER_OFFSET } from './MoviesDropdownMenu.constants';
@@ -22,14 +21,14 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
     height: FIRST_GUTTER_STRIPE_HEIGHT,
     top: 0,
   });
-  const [activeAlternativeFilter, setActiveAlternativeFilter] = useState('Новинки');
+  const [activeAlternativeFilter, setActiveAlternativeFilter] = useState('news');
 
   const gutterStripeStyles = {
     transform: `translateY(${gutterStripePosition.top}px)`,
     height: `${gutterStripePosition.height}px`,
   };
 
-  const onMouseEnter = useCallback((key: number, title: string, evt: MouseEvent<HTMLAnchorElement>) => {
+  const onMouseEnter = useCallback((title: string, evt: MouseEvent<HTMLAnchorElement>) => {
     const target = evt.target as HTMLAnchorElement;
     const targetY = target.getBoundingClientRect().top - TOTAL_GUTTER_OFFSET;
     const targetHeight = target.offsetHeight;
@@ -50,7 +49,7 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
     <div className={styles.container}>
       <div className={styles.leftSection}>
         <div className={styles.genres}>
-          <h3 className={styles.title}>{t('genres')}</h3>
+          <h3 className={styles.title}>{t('genres-menu.genres')}</h3>
           <div className={styles.genres_list}>
             {genres.map((genre: string) => (
               <Link href="/" className={styles.link} key={genre}>
@@ -61,7 +60,7 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
         </div>
         <div className={styles.wrapper}>
           <div className={styles.filterSection}>
-            <h3 className={styles.title}>{t('countries')}</h3>
+            <h3 className={styles.title}>{t('genres-menu.countries')}</h3>
             <div className={styles.filterSection_filters}>
               {countries.map((country: string) => (
                 <Link href="/" className={styles.link} key={country}>
@@ -71,7 +70,7 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
             </div>
           </div>
           <div className={styles.filterSection}>
-            <h3 className={styles.title}>{t('years')}</h3>
+            <h3 className={styles.title}>{t('genres-menu.years')}</h3>
             <div className={styles.filterSection_filters}>
               {years.map((year: string) => (
                 <Link href="/" className={styles.link} key={year}>
@@ -89,8 +88,8 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
           </div>
           <div className={styles.alternativeFilters_list}>
             {alternativeFilters.map(({ id, title, link }) => (
-              <Link href={link} className={styles.link} key={id} onMouseEnter={evt => onMouseEnter(id, title, evt)}>
-                {title}
+              <Link href={link} className={styles.link} key={id} onMouseEnter={evt => onMouseEnter(title, evt)}>
+                {t(`alternative-filters.${title}`)}
               </Link>
             ))}
           </div>
