@@ -8,17 +8,8 @@ import MovieCardButtons from '../../Shared/MovieCard/MovieCardButtons/MovieCardB
 import styles from './MovieCard.module.scss';
 import { MovieCardProps } from './MovieCard.types';
 
-const MovieCard: FC<MovieCardProps> = ({
-  poster,
-  name,
-  link,
-  ageRating,
-  genres,
-  year,
-  moveLength,
-  kprating,
-  alternativeName,
-}) => {
+const MovieCard: FC<MovieCardProps> = ({ movie }) => {
+  const { poster, name, link, ageRating, genres, year, moveLength, kprating, alternativeName } = movie;
   const router = useRouter();
   return (
     <>
