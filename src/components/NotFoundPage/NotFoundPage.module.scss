@@ -1,0 +1,52 @@
+@import '../../styles/constants.scss';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex-grow: 1;
+  gap: 8px;
+  overflow: visible;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 380px;
+  background: url(https://www.ivi.ru/images/_main/pageNotFound/bg404.png?ver=fc692232fc07e54ca53a317f4173bbb2) no-repeat
+    center/auto 380px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 244px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.subtitle {
+  @include dominantTextSize($lh: 22px);
+  text-align: center;
+  color: $colorGrey;
+}
+
+@media screen and (min-width: $breakpointTablet) {
+  .wrapper {
+    min-height: 348px;
+  }
+
+  .image {
+    height: 540px;
+    background-size: auto 540px;
+  }
+}

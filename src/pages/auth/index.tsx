@@ -3,13 +3,13 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Auth: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { t } = useTranslation(['common']);
 
   return (
     <>
       <Head>
-        <title>{t('head-title.main')}</title>
+        <title>{t('head-title.auth')}</title>
       </Head>
     </>
   );
@@ -17,8 +17,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'ru', ['common', 'header', 'footer', 'description'])),
+    ...(await serverSideTranslations(locale ?? 'ru', ['common', 'header', 'footer'])),
   },
 });
 
-export default Home;
+export default Auth;

@@ -1,5 +1,7 @@
 @import '../../styles/constants.scss';
 
+$tabletHeight: 48px;
+
 .footer {
   display: flex;
   justify-content: center;
@@ -23,16 +25,16 @@
 .tabletText {
   color: #312b45;
   @include smallTextSize;
-  margin: 24px 0;
+  margin: $tabletHeight + 16px 0;
   align-self: flex-start;
 }
 
 .tablet {
-  background-color: rgba(31, 27, 46, .88);
-  box-shadow: 0 -20px 40px rgba(7, 5, 14, .24);
+  background-color: rgba(31, 27, 46, 0.88);
+  box-shadow: 0 -20px 40px rgba(7, 5, 14, 0.24);
   display: grid;
   grid-template-columns: repeat(5, minmax(64px, 120px));
-  height: 48px;
+  height: $tabletHeight;
   justify-content: center;
   width: 100vw;
   position: fixed;
@@ -40,4 +42,10 @@
   left: 0;
   right: 0;
   z-index: $footerIndex;
+}
+
+@media screen and (min-width: $breakpointTablet) {
+  .tabletText {
+    margin: $tabletHeight + 24px 0;
+  }
 }
