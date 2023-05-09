@@ -1,0 +1,99 @@
+@import '../../../styles/constants.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.poster {
+  position: relative;
+  padding: 0px 0px 235/153 * 100% 0px;
+  border-radius: 8px;
+  background-color: $colorBackgroundButton;
+}
+
+.img {
+  border-radius: 8px;
+}
+
+.ageRating {
+  width: 24px;
+  height: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  color: $colorGrey;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.title {
+  @include dominantTextSize(20px, 500);
+  color: $colorLightGrey;
+  margin-top: 8px;
+  transition-duration: .4s;
+  width: 153px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  box-orient: vertical;
+
+  &:hover {
+    color: $colorWhite
+  }
+}
+
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 5, 14, .8);
+  z-index: 2;
+  transition-duration: .4s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 16px;
+
+  .poster:hover & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.info {
+  color: $colorLightGrey;
+  @include smallTextSize();
+}
+
+.rating {
+  margin-bottom: 15px;
+  color: $colorWhite;
+  @include movieCompilationTitle(true);
+
+  span {
+    @include movieCompilationTitle(false);
+  }
+}
+
+.year {
+  margin-bottom: 6px;
+}

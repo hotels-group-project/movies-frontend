@@ -17,7 +17,13 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'ru', ['common', 'header', 'footer', 'description'])),
+    ...(await serverSideTranslations(locale ?? 'ru', [
+      'common',
+      'header',
+      'footer',
+      'description',
+      'movieCardTooltips',
+    ])),
   },
 });
 

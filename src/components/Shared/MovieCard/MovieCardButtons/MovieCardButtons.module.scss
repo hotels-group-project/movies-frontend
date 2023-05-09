@@ -1,0 +1,72 @@
+@import '../../../../styles/constants.scss';
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  align-self: flex-end;
+  z-index: 3;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.icon {
+  font-size: 25px;
+  line-height: 20;
+  color: $colorWhite;
+
+  &:hover .buble {
+    display: block !important;
+  }
+}
+
+.iconWand {
+  transform: rotate(90deg);
+}
+
+.tooltip {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: attr(data-title);
+    position: absolute;
+    background-color: $colorBackgroundButton;
+    color: $colorWhite;
+    @include smallTextSize();
+    top: -43px;
+    left: -5px;
+    padding: 6px 8px;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 40px rgba(7, 5, 14, .4);
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: .4s;
+  }
+
+  &::after {
+    content: "";
+    border-color: $colorBackgroundButton transparent transparent;
+    height: 6px;
+    display: block;
+    border-width: 6px 6px 0;
+    left: 1px;
+    top: -15px;
+    border-style: solid;
+    height: 0;
+    position: absolute;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
