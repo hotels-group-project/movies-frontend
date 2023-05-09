@@ -1,12 +1,9 @@
-export type SliderItemProps = {
-  id: number;
-  src: string;
-};
-
-export type SliderItemsProps = Array<SliderItemProps>;
+import { ReactNode } from 'react';
 
 export type Props = {
-  items: SliderItemsProps;
   slidesCount: number;
   autoplayDelay?: boolean;
+  children?: ReactNode;
+  spaceBetween: number;
+  sliderClassName?: string;
 };

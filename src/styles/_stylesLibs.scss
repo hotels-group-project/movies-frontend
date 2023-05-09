@@ -1,0 +1,102 @@
+@import './constants.scss';
+@import '../components/Shared/Button/styles/ButtonArrow.scss';
+
+//Change navigation styles for all sliders
+.swiper-button-prev,
+.swiper-button-next {
+  @extend .arrow;
+  &::after {
+    font-size: 15px;
+    @media screen and (min-width: $breakpointTablet) {
+      font-size: 18px;
+    }
+  }
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 0;
+}
+
+//MainSlider styles
+.swiper-centered {
+  overflow: initial;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 20px;
+    z-index: 4;
+    width: 8%;
+    height: 100%;
+    &:active {
+      transform: scale(0.8);
+      transition: transform 80ms;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      display: flex;
+      &::after {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.24;
+    transition: opacity 0.4s;
+  }
+
+  .swiper-slide-active {
+    position: relative;
+    z-index: 3;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 20%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    &::after {
+      top: 0;
+      right: -20%;
+      background-image: linear-gradient(90deg, rgba(31, 27, 46, 0), rgba(31, 27, 46, 0.72));
+    }
+
+    &::before {
+      top: 0;
+      left: -20%;
+      background-image: linear-gradient(270deg, rgba(31, 27, 46, 0), rgba(31, 27, 46, 0.72));
+    }
+  }
+}
+
+//TVSlider styles
+
+.TVSlider_tvSliderContainer__AHTzp {
+  .swiper {
+    position: static;
+  }
+  .swiper-button-next {
+    right: 40px;
+    transform: translate(100%, 0);
+  }
+  .swiper-button-prev {
+    left: 40px;
+    transform: translate(-100%, 0);
+    flex-direction: row-reverse;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  &:hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: flex;
+    }
+  }
+}

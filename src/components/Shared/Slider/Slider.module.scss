@@ -2,18 +2,6 @@
 
 .slider {
   width: 100%;
-  height: 100%;
-  div {
-    &::after {
-      color: $colorWhite;
-      opacity: 0.72;
-      font-size: 20px;
-      font-weight: 900;
-      cursor: pointer;
-
-      @media screen and (min-width: $breakpointTablet) {
-        font-size: 32px;
-      }
-    }
-  }
+  height: auto;
+  overflow: initial;
 }

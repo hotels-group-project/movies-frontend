@@ -1,4 +1,5 @@
 export interface PosterCardProps {
+  id: number;
   img: string;
   titleImg: string;
   description: string;
@@ -8,4 +9,8 @@ export interface PosterCardProps {
   height: number;
   heightTablet: number;
   imgTablet: string;
+}
+
+export interface Props {
+  cardElem: PosterCardProps;
 }

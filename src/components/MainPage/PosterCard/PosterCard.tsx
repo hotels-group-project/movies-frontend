@@ -7,20 +7,11 @@ import Button from '../../Shared/Button/Button';
 import LinkComponent from '../../Shared/LinkComponent/LinkComponent';
 
 import styles from './PosterCard.module.scss';
-import { PosterCardProps } from './PosterCard.types';
+import { Props } from './PosterCard.types';
 
-const PosterCard: FC<PosterCardProps> = ({
-  img,
-  titleImg,
-  description,
-  buttonTitle,
-  title,
-  link,
-  height,
-  heightTablet,
-  imgTablet,
-}) => {
+const PosterCard: FC<Props> = ({ cardElem }: Props) => {
   const isTablet = useAppSelector(state => state.breakpoint.isTablet);
+  const { img, titleImg, description, buttonTitle, title, link, height, heightTablet, imgTablet } = cardElem;
   return (
     <>
       <div className={styles.poster}>

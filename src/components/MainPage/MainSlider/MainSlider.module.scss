@@ -1,0 +1,24 @@
+.mainSlider {
+  width: 100%;
+  height: auto;
+  background-color: inherit;
+  margin: 30px 0;
+  &Slide {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: 1400px) {
+      width: 1200px !important;
+      margin: 0;
+    }
+  }
+}
+
+.container {
+  @media screen and (min-width: 1400px) {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+  }
+}
