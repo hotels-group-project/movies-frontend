@@ -9,7 +9,7 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "pg-restore": "docker exec movies-frontend-postgres-1 pg_restore -d postgres -U postgres docker-db/BackUp040523.sql"
+    "pg-restore": "docker exec movies-frontend-postgres-1 pg_restore -d postgres -U postgres docker-db/dbbackup.sql"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.4",
