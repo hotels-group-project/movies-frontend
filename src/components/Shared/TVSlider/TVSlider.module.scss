@@ -9,7 +9,6 @@ $colorBlueGradient_1: rgba(31, 27, 46, 1);
 .tvSlider {
   overflow: initial;
   background-color: inherit;
-
   &:hover {
     &::before,
     &::after {
@@ -37,7 +36,8 @@ $colorBlueGradient_1: rgba(31, 27, 46, 1);
     }
 
     &::after {
-      right: 30px;
+      right: 0;
+      //right: 30px;
       background: linear-gradient(
         90deg,
         $colorBlueGradient_0 2%,
@@ -51,7 +51,8 @@ $colorBlueGradient_1: rgba(31, 27, 46, 1);
     }
 
     &::before {
-      left: 30px;
+      left: 0;
+      //left: 30px;
       background: linear-gradient(
         270deg,
         $colorBlueGradient_0 2%,
@@ -69,9 +70,21 @@ $colorBlueGradient_1: rgba(31, 27, 46, 1);
     position: relative;
     width: 100%;
     padding: 0 40px;
+
+    &:hover {
+      .tvSliderButtonPrev,
+      .tvSliderButtonNext {
+        display: flex;
+      }
+    }
   }
 
   img {
     border-radius: 8px;
+  }
+
+  &ButtonPrev,
+  &ButtonNext {
+    display: none;
   }
 }

@@ -1,4 +1,4 @@
-export interface PosterCardProps {
+export interface PosterCard {
   id: number;
   img: string;
   titleImg: string;
@@ -11,6 +11,6 @@ export interface PosterCardProps {
   imgTablet: string;
 }
 
-export interface Props {
-  cardElem: PosterCardProps;
+export interface PosterCardProps {
+  cardElem: PosterCard;
 }

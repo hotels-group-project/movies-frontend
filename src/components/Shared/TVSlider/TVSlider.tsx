@@ -9,7 +9,13 @@ import { TVSliderProps } from './TVSlider.types';
 const TVSlider: FC<TVSliderProps> = ({ slidesCount, children }) => {
   return (
     <div className={styles.tvSliderContainer}>
-      <Slider slidesCount={slidesCount} spaceBetween={30} sliderClassName={styles.tvSlider}>
+      <Slider
+        slidesCount={slidesCount}
+        spaceBetween={30}
+        sliderClassName={styles.tvSlider}
+        prevButtonClassName={styles.tvSliderButtonPrev}
+        nextButtonClassName={styles.tvSliderButtonNext}
+      >
         {children}
       </Slider>
     </div>

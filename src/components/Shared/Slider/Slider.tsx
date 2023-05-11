@@ -1,23 +1,34 @@
-// eslint-disable-next-line no-restricted-imports
-import React from 'react';
-import { memo } from 'react';
+import { useRef } from 'react';
+import { FC, memo } from 'react';
 
-import { Autoplay, Navigation, FreeMode } from 'swiper';
-
+import { SlArrowRight, SlArrowLeft } from 'react-icons/sl';
+import { Swiper as SwiperType, Navigation, Autoplay, FreeMode } from 'swiper';
 import { Swiper } from 'swiper/react';
 
+import Button from '../Button/Button';
+
 import styles from './Slider.module.scss';
-import { Props } from './Slider.types';
+import { SliderProps } from './Slider.types';
 
 import '../../../../node_modules/swiper/swiper.scss';
 import '../../../../node_modules/swiper/modules/navigation/navigation.scss';
 
-function Slider({ slidesCount, autoplayDelay = false, children, spaceBetween, sliderClassName }: Props) {
-  const autoPlayParams = {
-    delay: 2000,
-    disableOnInteraction: false,
-  };
+const autoPlayParams = {
+  delay: 2000,
+  disableOnInteraction: false,
+};
+
+const Slider: FC<SliderProps> = ({
+  slidesCount,
+  autoplayDelay = false,
+  children,
+  spaceBetween,
+  sliderClassName,
+  prevButtonClassName,
+  nextButtonClassName,
+}) => {
   const isAutoPlay = autoplayDelay ? autoPlayParams : false;
+  const swiperRef = useRef<SwiperType>();
   return (
     <>
       <Swiper
@@ -29,12 +40,28 @@ function Slider({ slidesCount, autoplayDelay = false, children, spaceBetween, sl
         autoplay={isAutoPlay}
         modules={[Navigation, Autoplay, FreeMode]}
         className={`${styles.slider} ${sliderClassName ? sliderClassName : ''}`}
-        navigation
+        onBeforeInit={swiper => {
+          swiperRef.current = swiper;
+        }}
       >
         {children}
+        <Button
+          variant="arrow_s"
+          elemClassName={`${styles.sliderButtonPrev} ${prevButtonClassName ? prevButtonClassName : ''}`}
+          onClick={() => swiperRef.current?.slidePrev()}
+        >
+          <SlArrowLeft />
+        </Button>
+        <Button
+          variant="arrow_s"
+          elemClassName={`${styles.sliderButtonNext} ${nextButtonClassName ? nextButtonClassName : ''}`}
+          onClick={() => swiperRef.current?.slideNext()}
+        >
+          <SlArrowRight />
+        </Button>
       </Swiper>
     </>
   );
-}
+};
 
 export default memo(Slider);

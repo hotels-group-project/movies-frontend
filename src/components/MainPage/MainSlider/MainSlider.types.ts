@@ -1,7 +1,7 @@
-import { PosterCardProps } from '../PosterCard/PosterCard.types';
+import { PosterCard } from '../PosterCard/PosterCard.types';
 
-export type MainSliderItemsProps = Array<PosterCardProps>;
+export type MainSliderItemsProps = Array<PosterCard>;
 
-export type MainProps = {
+export type MainSliderProps = {
   items: MainSliderItemsProps;
 };

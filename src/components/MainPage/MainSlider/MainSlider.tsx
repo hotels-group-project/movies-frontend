@@ -1,23 +1,31 @@
+import { useRef } from 'react';
 import { FC, memo } from 'react';
-import { Autoplay, Navigation } from 'swiper';
+import { SlArrowRight, SlArrowLeft } from 'react-icons/sl';
+import { Swiper as SwiperType, Navigation, Autoplay } from 'swiper';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import Button from '../../Shared/Button/Button';
 
 import PosterCard from '../PosterCard/PosterCard';
 
 import styles from './MainSlider.module.scss';
 
-import { MainProps } from './MainSlider.types';
+import { MainSliderProps } from './MainSlider.types';
 
 import '../../../../node_modules/swiper/swiper.scss';
 import '../../../../node_modules/swiper/modules/navigation/navigation.scss';
 
-const MainSlider: FC<MainProps> = ({ items }) => {
+const MainSlider: FC<MainSliderProps> = ({ items }) => {
+  const swiperRef = useRef<SwiperType>();
   const slides = items.map(item => {
     return (
       <SwiperSlide key={item.id} className={styles.mainSliderSlide}>
-        <div className="swiper-slide-transform">
-          <PosterCard cardElem={item} />
-        </div>
+        {({ isActive }) => (
+          <div className={`${isActive ? `${styles.slideContainerActive}` : `${styles.slideContainerNotActive}`}`}>
+            <PosterCard cardElem={item} />
+          </div>
+        )}
       </SwiperSlide>
     );
   });
@@ -35,12 +43,28 @@ const MainSlider: FC<MainProps> = ({ items }) => {
         }}
         modules={[Navigation, Autoplay]}
         className={styles.mainSlider}
-        navigation
+        onBeforeInit={swiper => {
+          swiperRef.current = swiper;
+        }}
         loop
         loopedSlides={1}
         speed={700}
       >
         {slides}
+        <Button
+          variant="arrow"
+          elemClassName={styles.mainSliderButtonPrev}
+          onClick={() => swiperRef.current?.slidePrev()}
+        >
+          <SlArrowLeft />
+        </Button>
+        <Button
+          variant="arrow"
+          elemClassName={styles.mainSliderButtonNext}
+          onClick={() => swiperRef.current?.slideNext()}
+        >
+          <SlArrowRight />
+        </Button>
       </Swiper>
     </section>
   );
