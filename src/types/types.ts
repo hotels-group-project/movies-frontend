@@ -5,6 +5,13 @@ export interface Breakpoint {
   isTablet: boolean;
 }
 
+type Genre = {
+  name: string;
+};
+export interface Genres {
+  genres: Array<Genre>;
+}
+
 export enum DropdownMenuTypes {
   'my-ivi' = 'my-ivi',
   'new' = 'new',

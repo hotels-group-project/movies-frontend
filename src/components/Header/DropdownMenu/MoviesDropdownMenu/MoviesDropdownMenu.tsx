@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { FC, memo, useState, useCallback, MouseEvent } from 'react';
 
+import { useAppSelector } from '../../../../hooks/redux';
 import WidgetDropdownMenu from '../WidgetDropdownMenu/WidgetDropdownMenu';
 import { WidgetDropdownMenuProps } from '../WidgetDropdownMenu/WidgetDropdownMenu.types';
 
@@ -9,14 +10,9 @@ import { FIRST_GUTTER_STRIPE_HEIGHT, TOTAL_GUTTER_OFFSET } from './MoviesDropdow
 import styles from './MoviesDropdownMenu.module.scss';
 import { MoviesDropdownMenuProps } from './MoviesDropdownMenu.types';
 
-const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
-  genres,
-  countries,
-  years,
-  alternativeFilters,
-  animatedImages,
-}) => {
+const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({ countries, years, alternativeFilters, animatedImages }) => {
   const { t } = useTranslation('header');
+  const genres = useAppSelector(state => state.genres.genres);
   const [gutterStripePosition, setGutterStripePosition] = useState({
     height: FIRST_GUTTER_STRIPE_HEIGHT,
     top: 0,
@@ -51,9 +47,9 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
         <div className={styles.genres}>
           <h3 className={styles.title}>{t('genres-menu.genres')}</h3>
           <div className={styles.genres_list}>
-            {genres.map((genre: string) => (
-              <Link href="/" className={styles.link} key={genre}>
-                {genre}
+            {genres.slice(0, 22).map(({ name }) => (
+              <Link href={`/movies/genres=${name}`} className={styles.link} key={name}>
+                {t(`genres.${name}`)}
               </Link>
             ))}
           </div>

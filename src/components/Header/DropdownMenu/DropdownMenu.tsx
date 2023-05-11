@@ -9,7 +9,6 @@ import {
   ALTERNATIVE_FILTERS_SERIALS,
   CARTOONS_ANIMATION_BLOCK,
   COUNTRIES,
-  GENRES,
   MOVIES_ANIMATION_BLOCK,
   SERIALS_ANIMATION_BLOCK,
   YEARS,
@@ -42,7 +41,6 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
         <div className={`${styles.content} ${dropdownMenu ? styles[`content_${dropdownMenu}`] : ''}`}>
           {dropdownMenu === 'movies' && (
             <MoviesDropdownMenu
-              genres={GENRES}
               countries={COUNTRIES}
               years={YEARS}
               alternativeFilters={ALTERNATIVE_FILTERS_MOVIES}
@@ -51,7 +49,6 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
           )}
           {dropdownMenu === 'serial-movies' && (
             <MoviesDropdownMenu
-              genres={GENRES}
               countries={COUNTRIES}
               years={YEARS}
               alternativeFilters={ALTERNATIVE_FILTERS_SERIALS}
@@ -60,7 +57,6 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ onMouseLeave }) => {
           )}
           {dropdownMenu === 'cartoons' && (
             <MoviesDropdownMenu
-              genres={GENRES}
               countries={COUNTRIES}
               years={YEARS}
               alternativeFilters={ALTERNATIVE_FILTERS_CARTOONS}
