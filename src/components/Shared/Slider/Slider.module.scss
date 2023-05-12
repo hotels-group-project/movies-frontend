@@ -1,0 +1,28 @@
+@import '../../../styles/constants.scss';
+
+.slider {
+  position: static;
+  width: 100%;
+  height: auto;
+  overflow: initial;
+
+  &ButtonPrev,
+  &ButtonNext {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    &:disabled {
+      opacity: 0;
+    }
+  }
+  &ButtonPrev {
+    left: -6px;
+    transform: translate(-100%, -50%);
+    flex-direction: row-reverse;
+  }
+
+  &ButtonNext {
+    right: -6px;
+    transform: translate(100%, -50%);
+  }
+}

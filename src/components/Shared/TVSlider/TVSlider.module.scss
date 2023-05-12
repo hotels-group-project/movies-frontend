@@ -1,0 +1,90 @@
+$colorBlueGradient_0: rgba(31, 27, 46, 0);
+$colorBlueGradient_65: rgba(31, 27, 46, 0.65);
+$colorBlueGradient_74: rgba(31, 27, 46, 0.74);
+$colorBlueGradient_85: rgba(31, 27, 46, 0.85);
+$colorBlueGradient_94: rgba(31, 27, 46, 0.94);
+$colorBlueGradient_96: rgba(31, 27, 46, 0.96);
+$colorBlueGradient_1: rgba(31, 27, 46, 1);
+
+.tvSlider {
+  overflow: initial;
+  background-color: inherit;
+  &:hover {
+    &::before,
+    &::after {
+      animation: emersionSliderShadow 3s ease-in-out;
+      @keyframes emersionSliderShadow {
+        0% {
+          opacity: 0;
+        }
+
+        1% {
+          opacity: 0.5;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 44px;
+      z-index: 2;
+    }
+
+    &::after {
+      right: 0;
+      //right: 30px;
+      background: linear-gradient(
+        90deg,
+        $colorBlueGradient_0 2%,
+        $colorBlueGradient_65 18%,
+        $colorBlueGradient_74 27%,
+        $colorBlueGradient_85 38%,
+        $colorBlueGradient_94 53%,
+        $colorBlueGradient_96 74%,
+        $colorBlueGradient_1 93%
+      );
+    }
+
+    &::before {
+      left: 0;
+      //left: 30px;
+      background: linear-gradient(
+        270deg,
+        $colorBlueGradient_0 2%,
+        $colorBlueGradient_65 18%,
+        $colorBlueGradient_74 27%,
+        $colorBlueGradient_85 38%,
+        $colorBlueGradient_94 53%,
+        $colorBlueGradient_96 74%,
+        $colorBlueGradient_1 93%
+      );
+    }
+  }
+
+  &Container {
+    position: relative;
+    width: 100%;
+    padding: 0 40px;
+
+    &:hover {
+      .tvSliderButtonPrev,
+      .tvSliderButtonNext {
+        display: flex;
+      }
+    }
+  }
+
+  img {
+    border-radius: 8px;
+  }
+
+  &ButtonPrev,
+  &ButtonNext {
+    display: none;
+  }
+}
