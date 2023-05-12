@@ -43,3 +43,6 @@ dist/
 
 # editors
 .vscode
+
+# data base
+db
