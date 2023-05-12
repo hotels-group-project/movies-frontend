@@ -8,13 +8,13 @@ services:
       - rabbitmq
 
   film-service:
-    image: di828/movies-backend:film
+    image: di828/movies-backend:film-service
     depends_on:
       - rabbitmq
       - postgres    
   
   auth-service:    
-    image: di828/movies-backend:auth
+    image: di828/movies-backend:auth-service
     depends_on:
       - rabbitmq
       - postgres
@@ -27,7 +27,7 @@ services:
       - 5672:5672
 
   postgres:
-    image: di828/movies-backend:dbbackup
+    image: di828/movies-backend:backup
     hostname: postgres    
     environment:
       POSTGRES_DB: "postgres"
