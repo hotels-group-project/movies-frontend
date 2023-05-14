@@ -2,12 +2,14 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import breakpointReducer from './reducers/breakpointSlice';
 import dropdownMenuReducer from './reducers/dropdownMenuSlice';
+import filteredMoviesReducer from './reducers/filteredMoviesSlice';
 import genresReducer from './reducers/genresSlice';
 
 const rootReducer = combineReducers({
   breakpoint: breakpointReducer,
-  genres: genresReducer,
   dropdownMenu: dropdownMenuReducer,
+  filteredMovies: filteredMoviesReducer,
+  genres: genresReducer,
 });
 
 export const setupStore = () => {

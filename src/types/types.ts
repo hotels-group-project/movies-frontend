@@ -61,15 +61,21 @@ export interface ButtonAndLinkProps extends ButtonProps {
   link: string;
 }
 
-export interface IMovieCard {
+export interface MovieCard {
   film_id: number;
   poster: string;
   name: string;
+  type?: string;
   ageRating: number;
   link: string;
   genres: Array<string>;
+  countries?: Array<string>;
   year: number;
   kprating: number;
   moveLength: number;
   alternativeName: string;
+}
+
+export interface FilteredMovies {
+  filteredMovies: Array<MovieCard>;
 }

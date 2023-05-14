@@ -44,6 +44,17 @@
     "криминал": "Crime",
     "документальный": "Documentary"
   },
+  "countries": {
+    "Россия": "Russian",
+    "США": "American",
+    "Корея Южная": "Korean"
+  },
+  "years": {
+    "2023": "Movies 2023",
+    "2022": "Movies 2022",
+    "2021": "Movies 2021",
+    "2020": "Movies 2020"
+  },
   "user-menu": {
     "purchases": "Purchases",
     "watch-later": "Watch later",
@@ -65,7 +76,10 @@
     "kids": "Kids",
     "sport": "Sport TV",
     "documentary": "Documentary",
-    "TV-program": "TV program"
+    "TV-program": "TV program",
+    "federal-channels": "Federal channels",
+    "sports-channels": "Sports channels",
+    "popular-broadcasts": "Popular broadcasts"
   },
   "widget": {
     "subscription": "Subscription Ivi",

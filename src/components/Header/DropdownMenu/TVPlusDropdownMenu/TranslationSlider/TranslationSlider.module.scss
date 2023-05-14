@@ -1,0 +1,42 @@
+@import '../../../../../styles/constants.scss';
+
+.translationSlider {
+  &Container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: $colorGreyTransparent_56;
+  }
+
+  &Img {
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.25s;
+    }
+  }
+  &Title {
+    @include dominantTextSize($fw: 500);
+    transition: all 5s ease-in-out;
+    margin-top: 0;
+    margin-bottom: 5px;
+    &:hover {
+      color: $colorWhite;
+      transition: color 0.4s;
+    }
+  }
+
+  &Description {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    @include smallTextSize($fw: 300);
+    margin-bottom: 0;
+    margin-top: auto;
+
+    svg {
+      width: 7px;
+      height: 7px;
+      margin: 0 3px;
+    }
+  }
+}

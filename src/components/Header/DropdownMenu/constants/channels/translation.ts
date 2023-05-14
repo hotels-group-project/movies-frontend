@@ -1,0 +1,42 @@
+export const TRANSLATION_SLIDER = [
+  {
+    id: 1,
+    src: 'https://thumbs.dfs.ivi.ru/storage28/contents/1/1/ba97ee51bb4bcc0dfc9d39063c2d87.jpg/116x76//?q=85',
+    link: 'https://www.ivi.ru/broadcast/8079',
+    title: 'Реал - Манчеcтер Сити',
+    description: 'сегодня 21.35',
+    category: 'Общее',
+  },
+  {
+    id: 2,
+    src: 'https://thumbs.dfs.ivi.ru/storage9/contents/3/1/2674e5e9ddc0a3fbfde594158392a9.jpg/116x76//?q=85',
+    link: 'https://www.ivi.ru/broadcast/8081',
+    title: 'Локомотив - Сочи',
+    description: 'Трансляция идет',
+    category: 'Футбол',
+  },
+  {
+    id: 3,
+    src: 'https://thumbs.dfs.ivi.ru/storage28/contents/1/9/c5e78c517781b1c300aeaa01bdacb2.jpg/116x76//?q=85',
+    link: 'https://www.ivi.ru/broadcast/8082',
+    title: 'Удинезе – Сампдория',
+    description: 'сегодня 21.35',
+    category: 'Футбол',
+  },
+  {
+    id: 4,
+    src: 'https://thumbs.dfs.ivi.ru/storage2/contents/e/b/b185e8646f9806c2ac9f070e76e1f9.jpg/116x76//?q=85',
+    link: 'https://www.ivi.ru/broadcast/8083',
+    title: 'Эмполи – Салернитана',
+    description: 'сегодня 19.30',
+    category: 'Футбол',
+  },
+  {
+    id: 5,
+    src: 'https://thumbs.dfs.ivi.ru/storage33/contents/2/0/a7ebad157391b073ac45857bf5b4e3.jpg/116x76//?q=85',
+    link: 'https://www.ivi.ru/broadcast/8084',
+    title: 'Сассуоло – Болонья',
+    description: 'сегодня 21.35',
+    category: 'Футбол',
+  },
+];

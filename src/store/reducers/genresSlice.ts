@@ -1,10 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { GENRES } from '../../components/Header/DropdownMenu/DropdownMenu.constants';
 import { Genres } from '../../types/types';
 
 const initialState: Genres = {
-  genres: GENRES,
+  genres: [],
 };
 
 export const genresSlice = createSlice({

@@ -3,13 +3,8 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { useAppDispatch } from '../hooks/redux';
-import { setGenres } from '../store/reducers/genresSlice';
-
 const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { t } = useTranslation(['common']);
-  const dispatch = useAppDispatch();
-  dispatch(setGenres(_props.genres));
 
   return (
     <>
@@ -21,9 +16,6 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const responseGenres = await fetch('http://localhost:5000/movies/genres');
-  const genres = await responseGenres.json();
-
   return {
     props: {
       ...(await serverSideTranslations(locale ?? 'ru', [
@@ -33,7 +25,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         'description',
         'movieCardTooltips',
       ])),
-      genres: genres,
     },
   };
 };

@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  server:
+    image: di828/movies-backend:server
+    ports:
+      - "5000:5000"
+    depends_on:
+      - rabbitmq
+
+  film-service:
+    image: di828/movies-backend:film-service
+    depends_on:
+      - rabbitmq
+      - postgres    
+  
+  auth-service:    
+    image: di828/movies-backend:auth-service
+    depends_on:
+      - rabbitmq
+      - postgres
+
+  rabbitmq:
+    image: rabbitmq:3.10.7-management
+    hostname: rabbitmq    
+    ports:
+      - 15672:15672
+      - 5672:5672
+
+  postgres:
+    image: di828/movies-backend:backup
+    hostname: postgres    
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: 123123
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/data:/var/lib/postgresql/data

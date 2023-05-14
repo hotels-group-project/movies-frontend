@@ -9,18 +9,9 @@ import LinkComponent from '../../Shared/LinkComponent/LinkComponent';
 import styles from './PosterCard.module.scss';
 import { PosterCardProps } from './PosterCard.types';
 
-const PosterCard: FC<PosterCardProps> = ({
-  img,
-  titleImg,
-  description,
-  buttonTitle,
-  title,
-  link,
-  height,
-  heightTablet,
-  imgTablet,
-}) => {
+const PosterCard: FC<PosterCardProps> = ({ cardElem }) => {
   const isTablet = useAppSelector(state => state.breakpoint.isTablet);
+  const { img, titleImg, description, buttonTitle, title, link, height, heightTablet, imgTablet } = cardElem;
   return (
     <>
       <div className={styles.poster}>
