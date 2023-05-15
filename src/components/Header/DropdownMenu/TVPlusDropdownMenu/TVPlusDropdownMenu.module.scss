@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 48px;
 }
 
 .leftSection {
@@ -22,6 +21,13 @@
     height: 100%;
     background-color: $colorGreyTransparent_16;
   }
+}
+
+.rightSection {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% * 5 / 6);
+  padding-left: 48px;
 }
 
 .links {
@@ -51,5 +57,18 @@
 
   &:hover {
     background-color: $colorBackgroundButtonLightHover;
+  }
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 244px - 25px);
+
+  &__channels {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 }
