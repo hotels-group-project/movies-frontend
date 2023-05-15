@@ -66,3 +66,12 @@ export interface IMovieCard {
   moveLength: number;
   alternativeName: string;
 }
+
+export interface ITopCard {
+  id: number;
+  poster: string;
+  title: string;
+  titleImg: string;
+  link: string;
+  number: string;
+}
