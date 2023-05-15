@@ -1,4 +1,4 @@
-export const CHANNEL_SLIDER = [
+export const FEDERAL_CHANNEL_SLIDER = [
   {
     id: 1,
     src: 'https://thumbs.dfs.ivi.ru/storage2/contents/5/5/f1e86a30aa3728b2b939bb60a3e204.jpg/391x220/?q=85',

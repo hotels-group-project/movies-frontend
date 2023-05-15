@@ -1,19 +1,18 @@
 import Image from 'next/image';
 import { FC, memo } from 'react';
-
 import { TbPointFilled } from 'react-icons/tb';
 import { SwiperSlide } from 'swiper/react';
 
-import TVSlider from '../../../Shared/TVSlider/TVSlider';
+import TVSlider from '../../../../Shared/TVSlider/TVSlider';
 
 import styles from './TranslationSlider.module.scss';
 import { TranslationSliderProps } from './TranslationSlider.types';
 
 const TranslationSlider: FC<TranslationSliderProps> = ({ images, slidesCount }) => {
-  const slides = images.map(image => {
-    return (
-      <SwiperSlide key={image.id}>
-        <div className="swiper-slide-transform">
+  return (
+    <TVSlider slidesCount={slidesCount}>
+      {images.map(image => (
+        <SwiperSlide key={image.id}>
           <a href={image.link} className={styles.translationSliderContainer}>
             <Image
               key={image.id}
@@ -32,14 +31,9 @@ const TranslationSlider: FC<TranslationSliderProps> = ({ images, slidesCount }) 
               </div>
             </div>
           </a>
-        </div>
-      </SwiperSlide>
-    );
-  });
-  return (
-    <div className="slider-container">
-      <TVSlider slidesCount={slidesCount}>{slides}</TVSlider>
-    </div>
+        </SwiperSlide>
+      ))}
+    </TVSlider>
   );
 };
 
