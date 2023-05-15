@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import MoviesPage from '../../components/MoviesPage/MoviesPage';
+
 const Movies: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { t } = useTranslation(['common']);
 
@@ -11,6 +13,7 @@ const Movies: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>
       <Head>
         <title>{t('head-title.movies')}</title>
       </Head>
+      <MoviesPage />
     </>
   );
 };
