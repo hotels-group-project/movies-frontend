@@ -1,11 +1,10 @@
-@import '../../../../styles/constants.scss';
+@import '../../../../../styles/constants.scss';
 
 .translationSlider {
   &Container {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 7px 0;
     color: $colorGreyTransparent_56;
   }
 

@@ -51,9 +51,9 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
         <div className={styles.genres}>
           <h3 className={styles.title}>{t('genres-menu.genres')}</h3>
           <div className={styles.genres_list}>
-            {genres.map((genre: string) => (
-              <Link href="/" className={styles.link} key={genre}>
-                {genre}
+            {genres.slice(0, 22).map(genre => (
+              <Link href={`/movies/?genres=${genre}`} className={styles.link} key={genre}>
+                {t(`genres.${genre}`)}
               </Link>
             ))}
           </div>
@@ -63,8 +63,8 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
             <h3 className={styles.title}>{t('genres-menu.countries')}</h3>
             <div className={styles.filterSection_filters}>
               {countries.map((country: string) => (
-                <Link href="/" className={styles.link} key={country}>
-                  {country}
+                <Link href={`/movies/?countries=${country}`} className={styles.link} key={country}>
+                  {t(`countries.${country}`)}
                 </Link>
               ))}
             </div>
@@ -73,8 +73,8 @@ const MoviesDropdownMenu: FC<MoviesDropdownMenuProps> = ({
             <h3 className={styles.title}>{t('genres-menu.years')}</h3>
             <div className={styles.filterSection_filters}>
               {years.map((year: string) => (
-                <Link href="/" className={styles.link} key={year}>
-                  {year}
+                <Link href={`/movies/?years=${year}`} className={styles.link} key={year}>
+                  {t(`years.${year}`)}
                 </Link>
               ))}
             </div>

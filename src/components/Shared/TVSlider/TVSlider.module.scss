@@ -6,6 +6,8 @@ $colorBlueGradient_94: rgba(31, 27, 46, 0.94);
 $colorBlueGradient_96: rgba(31, 27, 46, 0.96);
 $colorBlueGradient_1: rgba(31, 27, 46, 1);
 
+$buttonPadding: 40px;
+
 .tvSlider {
   overflow: initial;
   background-color: inherit;
@@ -37,7 +39,6 @@ $colorBlueGradient_1: rgba(31, 27, 46, 1);
 
     &::after {
       right: 0;
-      //right: 30px;
       background: linear-gradient(
         90deg,
         $colorBlueGradient_0 2%,
@@ -52,7 +53,6 @@ $colorBlueGradient_1: rgba(31, 27, 46, 1);
 
     &::before {
       left: 0;
-      //left: 30px;
       background: linear-gradient(
         270deg,
         $colorBlueGradient_0 2%,
@@ -69,7 +69,9 @@ $colorBlueGradient_1: rgba(31, 27, 46, 1);
   &Container {
     position: relative;
     width: 100%;
-    padding: 0 40px;
+    padding: 0 $buttonPadding;
+    margin: 0 (-$buttonPadding);
+    width: calc(100% + $buttonPadding * 2);
 
     &:hover {
       .tvSliderButtonPrev,
