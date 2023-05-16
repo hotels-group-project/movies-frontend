@@ -1,0 +1,29 @@
+@import '../MoviesFilter.module.scss';
+
+.filter {
+  position: relative;
+  min-width: $tabletButtonWidth;
+  height: 56px;
+
+  &__title {
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &_active {
+    background-color: #7e798f;
+  }
+
+  &__icon {
+    &_rotate {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpointTabletLocal) {
+  .filter {
+    min-width: $desktopButtonWidth;
+  }
+}

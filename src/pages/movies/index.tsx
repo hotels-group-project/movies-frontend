@@ -5,12 +5,13 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 
+import MoviesPage from '../../components/MoviesPage/MoviesPage';
 import { useAppDispatch } from '../../hooks/redux';
+import { setFilterActivated } from '../../store/reducers/filterActivatedSlice';
 import { setFilteredMovies } from '../../store/reducers/filteredMoviesSlice';
 import { setGenres } from '../../store/reducers/genresSlice';
 import { findMovies, getGenres } from '../../utils/Api';
-
-import MoviesPage from '../../components/MoviesPage/MoviesPage';
+import { routerQueryToString } from '../../utils/helpers';
 
 const Movies: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const routerQuery = useRouter().query;
@@ -26,9 +27,19 @@ const Movies: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>
   }, [dispatch]);
 
   useEffect(() => {
-    findMovies(routerQuery.genres, routerQuery.years, routerQuery.countries)
+    if (!routerQuery.genres && !routerQuery.years && !routerQuery.countries) {
+      dispatch(setFilterActivated(false));
+      return;
+    }
+
+    const genresUrl = routerQueryToString(routerQuery.genres);
+    const yearsUrl = routerQueryToString(routerQuery.years);
+    const countriesUrl = routerQueryToString(routerQuery.countries);
+
+    findMovies(genresUrl, yearsUrl, countriesUrl)
       .then(res => dispatch(setFilteredMovies(res)))
       .catch(err => console.log(err));
+    dispatch(setFilterActivated(true));
   }, [dispatch, routerQuery]);
 
   return (
@@ -41,10 +52,12 @@ const Movies: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? 'ru', ['common', 'header', 'footer', 'description'])),
-  },
-});
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'ru', ['common', 'header', 'footer', 'moviesPage'])),
+    },
+  };
+};
 
 export default Movies;

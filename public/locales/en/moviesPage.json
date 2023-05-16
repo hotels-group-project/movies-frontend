@@ -1,0 +1,11 @@
+{
+  "movies-filters": {
+    "genres": "Genres",
+    "countries": "Countries",
+    "years": "Years",
+    "rating": "Rating",
+    "producer": "Producer",
+    "actor": "Actor"
+  },
+  "reset-filters": "Reset filters"
+}

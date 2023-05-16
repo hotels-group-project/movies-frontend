@@ -6,7 +6,6 @@ import styles from './MoviesPage.module.scss';
 const MoviesPage: FC = () => {
   return (
     <main className={styles.main}>
-      <p>MoviesPage</p>
       <MoviesFilter />
     </main>
   );

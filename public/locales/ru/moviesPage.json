@@ -1,0 +1,11 @@
+{
+  "movies-filters": {
+    "genres": "Жанры",
+    "countries": "Страны",
+    "years": "Годы",
+    "rating": "Рейтинг",
+    "producer": "Режиссёр",
+    "actor": "Актёр"
+  },
+  "reset-filters": "Сбросить фильтры"
+}

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { FC, useCallback } from 'react';
+import { FC, memo, useCallback, useMemo } from 'react';
 import { BiUser } from 'react-icons/bi';
 import { RiSearchLine } from 'react-icons/ri';
 import { SlBell } from 'react-icons/sl';
@@ -45,7 +45,7 @@ const Header: FC = () => {
     [router],
   );
 
-  const changeTo = router.locale === 'en' ? 'ru' : 'en';
+  const changeTo = useMemo(() => (router.locale === 'en' ? 'ru' : 'en'), [router.locale]);
 
   return (
     <header className={styles.section}>
@@ -98,4 +98,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

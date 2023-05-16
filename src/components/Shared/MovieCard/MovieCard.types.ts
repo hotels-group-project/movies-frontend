@@ -1,5 +1,5 @@
-import { IMovieCard } from '../../../types/types';
+import { MovieCard } from '../../../types/types';
 
 export interface MovieCardProps {
-  movie: IMovieCard;
+  movie: MovieCard;
 }
