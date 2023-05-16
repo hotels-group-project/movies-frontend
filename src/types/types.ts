@@ -80,7 +80,7 @@ export interface FilteredMovies {
   filteredMovies: Array<MovieCard>;
 }
 
-export interface ITopCard {
+export interface TopCard {
   id: number;
   poster: string;
   title: string;
