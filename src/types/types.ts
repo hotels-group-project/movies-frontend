@@ -58,3 +58,12 @@ export interface ActiveFilters {
   producer: Array<string>;
   actor: Array<string>;
 }
+
+export interface TopCard {
+  id: number;
+  poster: string;
+  title: string;
+  titleImg: string;
+  link: string;
+  number: string;
+}
