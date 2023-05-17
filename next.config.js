@@ -5,12 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   i18n,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'thumbs.dfs.ivi.ru',
-      },
-    ],
+    domains: ['thumbs.dfs.ivi.ru', 'solea-parent.dfs.ivi.ru'],
   },
 };
 

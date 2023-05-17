@@ -79,3 +79,12 @@ export interface MovieCard {
 export interface FilteredMovies {
   filteredMovies: Array<MovieCard>;
 }
+
+export interface TopCard {
+  id: number;
+  poster: string;
+  title: string;
+  titleImg: string;
+  link: string;
+  number: string;
+}
