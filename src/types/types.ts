@@ -3,11 +3,13 @@ export interface Breakpoint {
   isTablet: boolean;
 }
 
-type Genre = {
+type Filter = {
   name: string;
 };
-export interface Genres {
-  genres: Array<Genre>;
+
+export interface Filters {
+  genres: Array<Filter>;
+  countries: Array<Filter>;
 }
 
 export enum DropdownMenuTypes {
@@ -46,4 +48,13 @@ export interface FilteredMovies {
 
 export interface FilterActivated {
   filterActivated: boolean;
+}
+
+export interface ActiveFilters {
+  genres: Array<string>;
+  countries: Array<string>;
+  years: Array<string>;
+  rating: Array<string>;
+  producer: Array<string>;
+  actor: Array<string>;
 }

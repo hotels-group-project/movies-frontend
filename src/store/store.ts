@@ -1,17 +1,19 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
+import activeFiltersReducer from './reducers/activeFiltersSlice';
 import breakpointReducer from './reducers/breakpointSlice';
 import dropdownMenuReducer from './reducers/dropdownMenuSlice';
 import filterActivatedReducer from './reducers/filterActivatedSlice';
 import filteredMoviesReducer from './reducers/filteredMoviesSlice';
-import genresReducer from './reducers/genresSlice';
+import filtersReducer from './reducers/filtresSlice';
 
 const rootReducer = combineReducers({
+  activeFilters: activeFiltersReducer,
   breakpoint: breakpointReducer,
   dropdownMenu: dropdownMenuReducer,
   filterActivated: filterActivatedReducer,
   filteredMovies: filteredMoviesReducer,
-  genres: genresReducer,
+  filters: filtersReducer,
 });
 
 export const setupStore = () => {

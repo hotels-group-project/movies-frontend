@@ -1,5 +1,7 @@
 @import '../../../../styles/constants.scss';
 
+$breakpointTabletLocale: 744px;
+
 .popup {
   display: flex;
   flex-direction: column;
@@ -10,4 +12,24 @@
   padding: 16px;
   border-radius: 4px;
   background-color: $colorBackgroundWidget;
+  width: 100%;
+  z-index: 10;
+}
+
+@media screen and (min-width: $breakpointTablet) {
+  .popup {
+    &_genres,
+    &_countries {
+      width: 416px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpointTabletLocale) {
+  .popup {
+    &_genres,
+    &_countries {
+      width: 630px;
+    }
+  }
 }

@@ -2,9 +2,10 @@ import { useEffect, RefObject } from 'react';
 
 type Handler = (evt: MouseEvent) => void;
 
-const useOnClickOutside = (ref: RefObject<HTMLButtonElement>, onClose: Handler) => {
+const useOnClickOutside = (ref: RefObject<HTMLDivElement>, onClose: Handler, isOpened: boolean) => {
   useEffect(() => {
-    const handleClick = (evt: MouseEvent) => {
+    if (!isOpened) return;
+    const handleClick: Handler = evt => {
       if (!ref.current || ref.current.contains(evt.target as Node)) {
         return;
       }
@@ -14,7 +15,7 @@ const useOnClickOutside = (ref: RefObject<HTMLButtonElement>, onClose: Handler) 
     return () => {
       document.removeEventListener('click', handleClick);
     };
-  }, [ref, onClose]);
+  }, [ref, onClose, isOpened]);
 };
 
 export default useOnClickOutside;

@@ -5,13 +5,14 @@ import { SwiperSlide } from 'swiper/react';
 
 import TVSlider from '../../../../Shared/TVSlider/TVSlider';
 
+import styles from './ChannelSlider.module.scss';
 import { ChannelSliderProps } from './ChannelSlider.types';
 
-const ChannelSlider: FC<ChannelSliderProps> = ({ images, slidesCount }) => {
+const ChannelSlider: FC<ChannelSliderProps> = ({ images }) => {
   return (
-    <TVSlider slidesCount={slidesCount}>
+    <TVSlider spaceBetween={16} slidesPerView="auto" slidesCount={5}>
       {images.map(image => (
-        <SwiperSlide key={image.id}>
+        <SwiperSlide className={styles.slide} key={image.id}>
           <Link href={image.link}>
             <Image key={image.id} src={image.src} alt="Постер фильма" width={88} height={58} />
           </Link>

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
 export interface FilterButtonProps {
-  title: string;
+  title: 'genres' | 'years' | 'countries' | 'rating' | 'producer' | 'actor';
   children?: ReactNode;
 }
