@@ -1,0 +1,45 @@
+.movieGenresSlider {
+  padding: 30px 0;
+  overflow: visible;
+  &Slide {
+    height: 100%;
+    width: 100%;
+    a {
+      height: 108px;
+      width: 100%;
+    }
+  }
+  &Container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    h3 {
+      white-space: nowrap;
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &Img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.prevButton,
+.nextButton {
+  &:active {
+    font-size: 12px;
+    transition: font-size 400ms;
+  }
+  @media screen and (min-width: 1272px) {
+    font-size: 32px;
+    &:active {
+      font-size: 28px;
+    }
+  }
+}
