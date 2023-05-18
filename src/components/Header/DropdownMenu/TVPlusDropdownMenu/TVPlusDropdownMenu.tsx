@@ -43,15 +43,15 @@ const TVPlusDropdownMenu: FC = () => {
         <div className={styles.sliders}>
           <div className={styles.sliders__channels}>
             <p className={styles.link_active}>{t(`tvplus-menu.federal-channels`)}</p>
-            <ChannelSlider images={FEDERAL_CHANNEL_SLIDER} slidesCount={6.4} />
+            <ChannelSlider images={FEDERAL_CHANNEL_SLIDER} />
           </div>
           <div className={styles.sliders__channels}>
             <p className={styles.link_active}>{t(`tvplus-menu.sports-channels`)}</p>
-            <ChannelSlider images={SPORTS_CHANNEL_SLIDER} slidesCount={6.4} />
+            <ChannelSlider images={SPORTS_CHANNEL_SLIDER} />
           </div>
           <div className={styles.sliders__channels}>
             <p className={styles.link_active}>{t(`tvplus-menu.popular-broadcasts`)}</p>
-            <TranslationSlider images={TRANSLATION_SLIDER} slidesCount={2.5} />
+            <TranslationSlider images={TRANSLATION_SLIDER} />
           </div>
         </div>
         <WidgetDropdownMenu animatedImages={TV_PLUS_ANIMATION_BLOCK} />

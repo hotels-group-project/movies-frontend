@@ -1,0 +1,26 @@
+@import '../../../../../../styles/constants.scss';
+
+.item {
+  &Input {
+    display: none;
+  }
+
+  &Label {
+    flex-grow: 1;
+    cursor: pointer;
+
+    &_active {
+      color: $colorWhite;
+    }
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: $colorLightGreyTransparent_08;
+
+  &_active {
+    color: $colorWhite;
+  }
+}

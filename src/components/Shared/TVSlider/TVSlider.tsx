@@ -6,12 +6,13 @@ import styles from './TVSlider.module.scss';
 
 import { TVSliderProps } from './TVSlider.types';
 
-const TVSlider: FC<TVSliderProps> = ({ slidesCount, children }) => {
+const TVSlider: FC<TVSliderProps> = ({ spaceBetween, slidesPerView, slidesCount, children }) => {
   return (
     <div className={styles.tvSliderContainer}>
       <Slider
+        slidesPerView={slidesPerView}
         slidesCount={slidesCount}
-        spaceBetween={30}
+        spaceBetween={spaceBetween}
         sliderClassName={styles.tvSlider}
         prevButtonClassName={styles.tvSliderButtonPrev}
         nextButtonClassName={styles.tvSliderButtonNext}
