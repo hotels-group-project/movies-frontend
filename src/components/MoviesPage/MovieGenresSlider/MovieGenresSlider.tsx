@@ -33,16 +33,19 @@ const MovieGenresSlider: FC = () => {
   });
   return (
     <>
-      <Slider
-        slidesCount={7}
-        slidesPerView="auto"
-        spaceBetween={24}
-        sliderClassName={styles.movieGenresSlider}
-        prevButtonClassName={styles.prevButton}
-        nextButtonClassName={styles.nextButton}
-      >
-        {slides}
-      </Slider>
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Жанры</h2>
+        <Slider
+          slidesCount={7}
+          slidesPerView="auto"
+          spaceBetween={24}
+          sliderClassName={styles.movieGenresSlider}
+          prevButtonClassName={styles.prevButton}
+          nextButtonClassName={styles.nextButton}
+        >
+          {slides}
+        </Slider>
+      </section>
     </>
   );
 };
