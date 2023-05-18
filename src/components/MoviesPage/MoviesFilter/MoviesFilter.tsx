@@ -7,6 +7,7 @@ import { useAppSelector } from '../../../hooks/redux';
 import Button from '../../Shared/Button/Button';
 
 import FilterButton from './FilterButton/FilterButton';
+import { FilterTitle } from './FilterButton/FilterButton.types';
 import { MOVIES_FILTERS_TITLE } from './MoviesFilter.constants';
 import styles from './MoviesFilter.module.scss';
 
@@ -23,7 +24,7 @@ const MoviesFilter: FC = () => {
     <section className={styles.section}>
       <div className={styles.filters}>
         {MOVIES_FILTERS_TITLE.map(title => (
-          <FilterButton key={title} title={title} />
+          <FilterButton key={title} title={title as FilterTitle} />
         ))}
       </div>
       <Button
