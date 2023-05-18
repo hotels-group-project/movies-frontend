@@ -17,9 +17,9 @@ const MovieGenresSlider: FC = () => {
   const { t } = useTranslation('moviesPage');
   const moviesGenres = useAppSelector(store => store.filters).genres;
 
-  const slides = moviesGenres.map((item, i) => {
+  const slides = moviesGenres.map(item => {
     return (
-      <SwiperSlide key={i} className={styles.movieGenresSliderSlide}>
+      <SwiperSlide key={item.name} className={styles.movieGenresSliderSlide}>
         <LinkComponent variant="dark_middle" link={`${BASE_URL}/movies?genres=${item.name}`}>
           <div className={styles.movieGenresSliderContainer}>
             <div className={styles.movieGenresSliderImg}>
