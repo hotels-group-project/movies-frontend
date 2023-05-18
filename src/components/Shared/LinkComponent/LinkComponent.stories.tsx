@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/react';
 
-import { ButtonAndLinkProps } from '../../../types/types';
+import { ButtonAndLinkProps } from '../Button/Button.types';
 
 import LinkComponent from './LinkComponent';
 

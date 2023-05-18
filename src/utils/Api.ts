@@ -18,16 +18,17 @@ export const getGenres = () => {
   }).then(res => checkResponse(res));
 };
 
-export const findMovies = (
-  genres: string | Array<string> | undefined,
-  years: string | Array<string> | undefined,
-  countries: string | Array<string> | undefined,
-) => {
-  const genresURL = genres && `genres=${genres}`;
-  const yearsURL = years && `years=${years}`;
-  const countriesURL = countries && `countries=${countries}`;
+export const getCountries = () => {
+  return fetch(`${BASE_URL}/movies/countries`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(res => checkResponse(res));
+};
 
-  return fetch(`${BASE_URL}/movies/search?${genresURL}&${yearsURL}&${countriesURL}`, {
+export const findMovies = (genres: string, years: string, countries: string, page: string) => {
+  return fetch(`${BASE_URL}/movies/search?genres=${genres}&year=${years}&country=${countries}&page${page}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
