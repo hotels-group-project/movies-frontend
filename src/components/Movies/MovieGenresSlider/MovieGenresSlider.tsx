@@ -37,7 +37,6 @@ const MovieGenresSlider: FC<GenresSliderProps> = ({ items }) => {
         sliderClassName={styles.movieGenresSlider}
         prevButtonClassName={styles.prevButton}
         nextButtonClassName={styles.nextButton}
-        isBreakpoints
       >
         {slides}
       </Slider>
