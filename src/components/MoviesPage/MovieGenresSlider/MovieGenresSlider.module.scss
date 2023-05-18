@@ -1,12 +1,13 @@
 .movieGenresSlider {
+  width: 100%;
   padding: 30px 0;
   overflow: visible;
   &Slide {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
     a {
       height: 108px;
-      width: 100%;
+      width: 153px;
     }
   }
   &Container {

@@ -3,19 +3,21 @@ import { useTranslation } from 'next-i18next';
 import { FC, memo } from 'react';
 import { SwiperSlide } from 'swiper/react';
 
+import { useAppSelector } from '../../../hooks/redux';
+
 import LinkComponent from '../../Shared/LinkComponent/LinkComponent';
 import Slider from '../../Shared/Slider/Slider';
 
 import { MOVIE_GENRES_ICON } from './icons';
 import styles from './MovieGenresSlider.module.scss';
-import { GenresSliderProps } from './MovieGenresSlider.types';
 
 export const BASE_URL = 'http://localhost:3000';
 
-const MovieGenresSlider: FC<GenresSliderProps> = ({ items }) => {
-  const { t } = useTranslation('header');
+const MovieGenresSlider: FC = () => {
+  const { t } = useTranslation('moviesPage');
+  const moviesGenres = useAppSelector(store => store.filters).genres;
 
-  const slides = items.map((item, i) => {
+  const slides = moviesGenres.map((item, i) => {
     return (
       <SwiperSlide key={i} className={styles.movieGenresSliderSlide}>
         <LinkComponent variant="dark_middle" link={`${BASE_URL}/movies?genres=${item.name}`}>
@@ -33,7 +35,8 @@ const MovieGenresSlider: FC<GenresSliderProps> = ({ items }) => {
     <>
       <Slider
         slidesCount={7}
-        spaceBetween={20}
+        slidesPerView="auto"
+        spaceBetween={24}
         sliderClassName={styles.movieGenresSlider}
         prevButtonClassName={styles.prevButton}
         nextButtonClassName={styles.nextButton}
