@@ -1,15 +1,15 @@
-import { ReactNode } from 'react';
-
 export interface Breakpoint {
   isDesktop: boolean;
   isTablet: boolean;
 }
 
-type Genre = {
+type Filter = {
   name: string;
 };
-export interface Genres {
-  genres: Array<Genre>;
+
+export interface Filters {
+  genres: Array<Filter>;
+  countries: Array<Filter>;
 }
 
 export enum DropdownMenuTypes {
@@ -25,40 +25,6 @@ export enum DropdownMenuTypes {
 
 export interface DropdownMenu {
   dropdownMenuHoveredItem: keyof typeof DropdownMenuTypes | '';
-}
-
-export type Variant =
-  | 'default'
-  | 'arrow'
-  | 'arrow_s'
-  | 'arrow_m'
-  | 'border'
-  | 'border_min'
-  | 'border_column'
-  | 'info'
-  | 'sort_circle'
-  | 'sort_square'
-  | 'dark_small'
-  | 'dark_middle'
-  | 'dark_big'
-  | 'dark_large'
-  | 'dark_round'
-  | 'text_element'
-  | 'text_special'
-  | 'footer_tablet'
-  | 'text_reverse';
-
-export interface ButtonProps {
-  variant?: Variant;
-  elemClassName?: string;
-  onClick?(): void;
-  startIcon?: ReactNode;
-  children?: ReactNode;
-  endIcon?: ReactNode;
-}
-
-export interface ButtonAndLinkProps extends ButtonProps {
-  link: string;
 }
 
 export interface MovieCard {
@@ -78,6 +44,19 @@ export interface MovieCard {
 
 export interface FilteredMovies {
   filteredMovies: Array<MovieCard>;
+}
+
+export interface FilterActivated {
+  filterActivated: boolean;
+}
+
+export interface ActiveFilters {
+  genres: Array<string>;
+  countries: Array<string>;
+  years: Array<string>;
+  rating: Array<string>;
+  producer: Array<string>;
+  actor: Array<string>;
 }
 
 export interface TopCard {

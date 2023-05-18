@@ -20,6 +20,7 @@ const autoPlayParams = {
 
 const Slider: FC<SliderProps> = ({
   slidesCount,
+  slidesPerView,
   autoplayDelay = false,
   children,
   spaceBetween,
@@ -34,7 +35,7 @@ const Slider: FC<SliderProps> = ({
       <Swiper
         cssMode
         spaceBetween={spaceBetween}
-        slidesPerView={slidesCount}
+        slidesPerView={slidesPerView}
         slidesPerGroup={slidesCount}
         freeMode
         autoplay={isAutoPlay}

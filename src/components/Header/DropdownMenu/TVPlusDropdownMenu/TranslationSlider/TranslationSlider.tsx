@@ -8,11 +8,11 @@ import TVSlider from '../../../../Shared/TVSlider/TVSlider';
 import styles from './TranslationSlider.module.scss';
 import { TranslationSliderProps } from './TranslationSlider.types';
 
-const TranslationSlider: FC<TranslationSliderProps> = ({ images, slidesCount }) => {
+const TranslationSlider: FC<TranslationSliderProps> = ({ images }) => {
   return (
-    <TVSlider slidesCount={slidesCount}>
+    <TVSlider spaceBetween={16} slidesPerView="auto" slidesCount={2}>
       {images.map(image => (
-        <SwiperSlide key={image.id}>
+        <SwiperSlide className={styles.slide} key={image.id}>
           <a href={image.link} className={styles.translationSliderContainer}>
             <Image
               key={image.id}

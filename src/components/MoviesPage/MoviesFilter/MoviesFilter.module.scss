@@ -1,0 +1,73 @@
+@import '../../../styles/constants.scss';
+
+$breakpointTabletLocal: 1024px;
+$tabletButtonWidth: calc(50% - 6px);
+$desktopButtonWidth: calc(calc(100% / 6) - 12px);
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+  background-color: $colorBackgroundButton;
+  border-radius: 6px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 12px;
+}
+
+.cross {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+
+  &__title {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &_disabled {
+    color: $colorGreyTransparent_48;
+
+    &:hover {
+      color: $colorGreyTransparent_48;
+      transition: none;
+      cursor: auto;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpointTablet) {
+  .filters {
+    grid-template-columns: repeat(auto-fit, minmax(calc($tabletButtonWidth), 1fr));
+  }
+}
+
+@media screen and (min-width: $breakpointTabletLocal) {
+  .filters {
+    grid-template-columns: repeat(auto-fit, minmax(calc($desktopButtonWidth), 1fr));
+  }
+}
+
+@media screen and (min-width: $breakpointDesktop) {
+  .cross {
+    &_active {
+      transition: color 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        color: $colorRed;
+        transition: color 0.4s;
+      }
+    }
+  }
+}

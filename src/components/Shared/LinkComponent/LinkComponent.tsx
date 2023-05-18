@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FC, memo } from 'react';
 
-import { ButtonAndLinkProps } from '../../../types/types';
+import { ButtonAndLinkProps } from '../Button/Button.types';
 
 import styles from './LinkComponent.module.scss';
 
