@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
-import { FC, memo } from 'react';
+import { FC, memo, useMemo } from 'react';
 import { SwiperSlide } from 'swiper/react';
 
 import { useAppSelector } from '../../../hooks/redux';
@@ -15,7 +15,13 @@ export const BASE_URL = 'http://localhost:3000';
 
 const MovieGenresSlider: FC = () => {
   const { t } = useTranslation('moviesPage');
+  const isDesktop = useAppSelector(state => state.breakpoint.isDesktop);
+  const isTablet = useAppSelector(state => state.breakpoint.isTablet);
   const moviesGenres = useAppSelector(store => store.filters).genres;
+
+  const AdaptiveSlidesCount = useMemo(() => {
+    return isDesktop ? 7 : isTablet ? 3 : 1;
+  }, [isDesktop, isTablet]);
 
   const slides = moviesGenres.map(item => {
     return (
@@ -36,7 +42,7 @@ const MovieGenresSlider: FC = () => {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Жанры</h2>
         <Slider
-          slidesCount={7}
+          slidesCount={AdaptiveSlidesCount}
           slidesPerView="auto"
           spaceBetween={24}
           sliderClassName={styles.movieGenresSlider}
