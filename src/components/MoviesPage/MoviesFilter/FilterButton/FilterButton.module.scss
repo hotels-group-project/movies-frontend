@@ -16,15 +16,6 @@
     text-overflow: ellipsis;
   }
 
-  &__subtitle {
-    width: 100%;
-    @include smallTextSize($fw: 500);
-    color: $colorGrey;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: start;
-  }
-
   &_active {
     background-color: $colorFilterHover;
   }

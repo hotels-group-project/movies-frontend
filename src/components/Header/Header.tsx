@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { FC, memo, useCallback, useMemo } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { BiUser } from 'react-icons/bi';
 import { RiSearchLine } from 'react-icons/ri';
 import { SlBell } from 'react-icons/sl';
@@ -15,13 +14,13 @@ import DropdownMenu from './DropdownMenu/DropdownMenu';
 import styles from './Header.module.scss';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
 import { HeaderMenuTypes } from './HeaderMenu/HeaderMenu.types';
+import LanguageChange from './LanguageChange/LanguageChange';
 
 const Header: FC = () => {
   const dispatch = useAppDispatch();
-  const router = useRouter();
   const { t } = useTranslation('header');
-  const isDesktop = useAppSelector(state => state.breakpoint.isDesktop);
-  const isTablet = useAppSelector(state => state.breakpoint.isTablet);
+  const { isDesktop } = useAppSelector(state => state.breakpoint);
+  const { isTablet } = useAppSelector(state => state.breakpoint);
 
   const onMouseEnter = useCallback(
     (title: HeaderMenuTypes['title']) => {
@@ -36,16 +35,6 @@ const Header: FC = () => {
   const onMouseLeave = useCallback(() => {
     dispatch(setDropdownMenuHoveredItem(''));
   }, [dispatch]);
-
-  const onToggleLanguageClick = useCallback(
-    (newLocale: string) => {
-      const { pathname, asPath, query } = router;
-      router.push({ pathname, query }, asPath, { locale: newLocale });
-    },
-    [router],
-  );
-
-  const changeTo = useMemo(() => (router.locale === 'en' ? 'ru' : 'en'), [router.locale]);
 
   return (
     <header className={styles.section}>
@@ -66,11 +55,7 @@ const Header: FC = () => {
         <Button elemClassName={styles.subscribe} variant="default">
           <span className={styles.subscribeTitle}>{t('subscription')}</span>
         </Button>
-        <Button
-          variant="default"
-          elemClassName={styles.changeLang}
-          onClick={() => onToggleLanguageClick(changeTo)}
-        >{`${changeTo.toUpperCase()}`}</Button>
+        <LanguageChange />
         {isDesktop && (
           <Link onMouseEnter={onMouseLeave} className={styles.search} href="/ivi_search">
             <RiSearchLine className={styles.searchIcon} />

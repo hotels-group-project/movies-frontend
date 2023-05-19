@@ -4,13 +4,11 @@ import { appWithTranslation } from 'next-i18next';
 import { Provider } from 'react-redux';
 
 import Layout from '../components/Layout/Layout';
-import { setupStore } from '../store/store';
+import { store } from '../store/store';
 
 import '../styles/globals.scss';
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const store = setupStore();
-
   return (
     <Provider store={store}>
       <Head>

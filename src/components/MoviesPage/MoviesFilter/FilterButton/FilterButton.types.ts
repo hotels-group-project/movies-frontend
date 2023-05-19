@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type FilterTitle = 'genres' | 'years' | 'countries' | 'rating' | 'producer' | 'actor';
+import { FilterTitle } from '../../../../types/types';
 
 export interface FilterButtonProps {
   title: FilterTitle;
