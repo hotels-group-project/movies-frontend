@@ -1,0 +1,82 @@
+@import '../../../styles/constants.scss';
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px 0;
+  gap: 24px;
+  &Title {
+    @include pageTitle;
+  }
+}
+.moviesPersonsSlider {
+  width: 100%;
+  overflow: visible;
+  &Slide {
+    height: auto;
+    width: auto;
+    a {
+      height: 217px;
+      width: 153px;
+    }
+  }
+
+  &Wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &Img {
+    height: 153px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+
+  &Badge {
+    position: absolute;
+    left: 4px;
+    bottom: 0;
+    &Text {
+      background-color: #a869f0;
+      height: 30px;
+      padding: 5px 8px;
+      border-radius: 2px;
+    }
+    &Back {
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      top: -2px;
+      bottom: 100%;
+      border-top-left-radius: 1px;
+      border-top-right-radius: 1px;
+      background-color: rgba(168, 105, 240, 0.64);
+    }
+  }
+
+  &Name {
+    white-space: pre-wrap;
+    width: 70%;
+    @include dominantTextSize($fw: 500);
+    color: $colorLightGrey;
+  }
+
+  &FilmsAmount {
+    @include smallTextSize;
+    color: $colorGrey;
+  }
+}
+
+.prevButton,
+.nextButton {
+  &:active {
+    font-size: 12px;
+    transition: font-size 400ms;
+  }
+  @media screen and (min-width: 1272px) {
+    font-size: 32px;
+    &:active {
+      font-size: 28px;
+    }
+  }
+}
