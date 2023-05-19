@@ -1,7 +1,10 @@
 @import '../../../styles/constants.scss';
 
 .section {
+  display: flex;
+  flex-wrap: wrap;
   padding: 24px 0;
+  gap: 24px;
   &Title {
     @include pageTitle;
   }
@@ -9,7 +12,6 @@
 
 .movieGenresSlider {
   width: 100%;
-  margin-top: 24px;
   overflow: visible;
   &Slide {
     height: auto;
