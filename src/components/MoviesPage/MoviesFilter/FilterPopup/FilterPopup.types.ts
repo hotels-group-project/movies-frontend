@@ -1,6 +1,6 @@
-import { FilterButtonProps } from '../FilterButton/FilterButton.types';
+import { FilterTitle } from '../../../../types/types';
 
 export interface FilterPopupProps {
-  title: FilterButtonProps['title'];
+  title: FilterTitle;
   className?: string;
 }

@@ -35,22 +35,6 @@
   }
 }
 
-.changeLang {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: 2px solid $colorGreyTransparent_48;
-  width: 40px;
-  height: 40px;
-  color: $colorGreyTransparent_48;
-
-  &:hover {
-    background-color: transparent;
-    transition: none;
-  }
-}
-
 .search {
   display: flex;
   align-items: center;
@@ -102,25 +86,9 @@
   .section {
     height: 72px;
   }
-
-  .changeLang {
-    width: 48px;
-    height: 48px;
-  }
 }
 
 @media screen and (min-width: $breakpointDesktop) {
-  .changeLang {
-    transition: border-color 0.4s, color 0.4s;
-
-    &:hover {
-      background-color: transparent;
-      border-color: $colorWhite;
-      color: $colorWhite;
-      transition: border-color 0.4s, color 0.4s;
-    }
-  }
-
   .search {
     transition: color 0.4s;
 

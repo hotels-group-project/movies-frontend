@@ -12,6 +12,8 @@ export interface Filters {
   countries: Array<Filter>;
 }
 
+export type FilterTitle = 'genres' | 'years' | 'countries' | 'rating' | 'producer' | 'actor';
+
 export enum DropdownMenuTypes {
   'my-ivi' = 'my-ivi',
   'new' = 'new',

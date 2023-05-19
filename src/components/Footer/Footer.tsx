@@ -15,7 +15,7 @@ import FooterLinks from './FooterLinks/FooterLinks';
 import FooterMenu from './FooterMenu/FooterMenu';
 
 const Footer: FC = () => {
-  const isDesktop = useAppSelector(state => state.breakpoint.isDesktop);
+  const { isDesktop } = useAppSelector(state => state.breakpoint);
   const { t } = useTranslation('footer');
   return (
     <>

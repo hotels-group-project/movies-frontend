@@ -11,7 +11,7 @@ import styles from './GenresFilter.module.scss';
 import { GenresFilterProps } from './GenresFilter.types';
 import GenresFilterItem from './GenresFilterItem/GenresFilterItem';
 
-const GenresFilter: FC<GenresFilterProps> = ({ filters, type }) => {
+const GenresFilter: FC<GenresFilterProps> = ({ filters, type, removeQueryParam }) => {
   const router = useRouter();
   const { t } = useTranslation('moviesPage');
   const activeFilters = useAppSelector(state => state.activeFilters[type]);
@@ -19,6 +19,7 @@ const GenresFilter: FC<GenresFilterProps> = ({ filters, type }) => {
   const onFilterClick = useCallback(
     (item: string) => {
       let newItems = [...activeFilters];
+
       if (newItems.includes(item)) {
         newItems = activeFilters.filter(value => value !== item);
       } else {
@@ -26,26 +27,18 @@ const GenresFilter: FC<GenresFilterProps> = ({ filters, type }) => {
       }
 
       if (newItems.length === 0) {
-        // Проходимся по существующим query-параметрам
-        Object.keys(router.query).forEach(key => {
-          if (key !== type) {
-            // Отображаем все query-параметры, кроме текущего
-            return router.replace({
-              query: { [key]: router.query[key] },
-            });
-          }
-          // Удаляем все query-параметры,
-          return router.replace({
-            query: {},
-          });
-        });
+        removeQueryParam(type);
       } else {
-        router.replace({
-          query: { ...router.query, [type]: newItems.join('+') },
-        });
+        router.replace(
+          {
+            query: { ...router.query, [type]: newItems.join('+') },
+          },
+          undefined,
+          { shallow: true },
+        );
       }
     },
-    [activeFilters, router, type],
+    [activeFilters, removeQueryParam, router, type],
   );
 
   return (
