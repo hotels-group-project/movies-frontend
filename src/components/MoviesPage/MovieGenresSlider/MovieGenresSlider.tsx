@@ -8,7 +8,7 @@ import { useAppSelector } from '../../../hooks/redux';
 import LinkComponent from '../../Shared/LinkComponent/LinkComponent';
 import Slider from '../../Shared/Slider/Slider';
 
-import { MOVIE_GENRES_ICON } from './icons';
+import { MOVIE_GENRES_ICON } from './MovieGenresSlider.constants';
 import styles from './MovieGenresSlider.module.scss';
 
 export const BASE_URL = 'http://localhost:3000';
