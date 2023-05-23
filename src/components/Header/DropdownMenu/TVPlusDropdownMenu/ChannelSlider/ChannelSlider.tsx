@@ -14,7 +14,7 @@ const ChannelSlider: FC<ChannelSliderProps> = ({ images }) => {
       {images.map(image => (
         <SwiperSlide className={styles.slide} key={image.id}>
           <Link href={image.link}>
-            <Image key={image.id} src={image.src} alt="Постер фильма" width={88} height={58} />
+            <Image key={image.id} src={image.src} alt="Постер фильма" width={88} height={58} priority />
           </Link>
         </SwiperSlide>
       ))}

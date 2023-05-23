@@ -8,9 +8,11 @@ import { FilterTitle } from '../../../../types/types';
 import { findMovies } from '../../../../utils/Api';
 import { changePlusToUnicode, routerQueryToString } from '../../../../utils/helpers';
 
+import { FILTER_RATING, FILTER_YEARS } from './FilterPopup.constants';
 import styles from './FilterPopup.module.scss';
 import { FilterPopupProps } from './FilterPopup.types';
 import GenresFilter from './GenresFilter/GenresFilter';
+import YearsFilter from './YearsFilter/YearsFilter';
 
 const FilterPopup: FC<FilterPopupProps> = ({ className, title }) => {
   const router = useRouter();
@@ -34,11 +36,12 @@ const FilterPopup: FC<FilterPopupProps> = ({ className, title }) => {
     }
 
     const genresUrl = changePlusToUnicode(routerQueryToString(query.genres));
-    const yearsUrl = changePlusToUnicode(routerQueryToString(query.years));
     const countriesUrl = changePlusToUnicode(routerQueryToString(query.countries));
+    const yearsUrl = changePlusToUnicode(routerQueryToString(query.years));
+    const ratingUrl = changePlusToUnicode(routerQueryToString(query.rating));
     const pageUrl = routerQueryToString(query.page);
 
-    findMovies(genresUrl, yearsUrl, countriesUrl, pageUrl)
+    findMovies(genresUrl, yearsUrl, countriesUrl, ratingUrl, pageUrl)
       .then(res => {
         if (res.statusCode) throw Error(`${res.statusCode} ${res.message}`);
         dispatch(setFilteredMovies(res));
@@ -51,8 +54,8 @@ const FilterPopup: FC<FilterPopupProps> = ({ className, title }) => {
     <div className={`${styles.popup} ${styles[`popup_${title}`]} ${className ? className : ''}`}>
       {title === 'genres' && <GenresFilter removeQueryParam={removeQueryParam} filters={genres} type={title} />}
       {title === 'countries' && <GenresFilter removeQueryParam={removeQueryParam} filters={countries} type={title} />}
-      {title === 'years' && <p>{title}</p>}
-      {title === 'rating' && <p>{title}</p>}
+      {title === 'years' && <YearsFilter removeQueryParam={removeQueryParam} filters={FILTER_YEARS} type={title} />}
+      {title === 'rating' && <YearsFilter removeQueryParam={removeQueryParam} filters={FILTER_RATING} type={title} />}
       {title === 'producer' && <p>{title}</p>}
       {title === 'actor' && <p>{title}</p>}
     </div>

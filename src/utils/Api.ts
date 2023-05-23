@@ -27,7 +27,7 @@ export const getCountries = () => {
   }).then(res => checkResponse(res));
 };
 
-export const findMovies = (genres: string, years: string, countries: string, page: string) => {
+export const findMovies = (genres: string, years: string, countries: string, rating: string, page: string) => {
   return fetch(`${BASE_URL}/movies/search?genres=${genres}&year=${years}&country=${countries}&page${page}`, {
     method: 'GET',
     headers: {

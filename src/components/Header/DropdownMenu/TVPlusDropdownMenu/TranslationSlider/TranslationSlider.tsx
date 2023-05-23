@@ -21,6 +21,7 @@ const TranslationSlider: FC<TranslationSliderProps> = ({ images }) => {
               width={58}
               height={38}
               className={styles.translationSliderImg}
+              priority
             />
             <div>
               <h2 className={styles.translationSliderTitle}>{image.title}</h2>
