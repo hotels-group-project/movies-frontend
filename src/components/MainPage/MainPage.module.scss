@@ -1,0 +1,30 @@
+@import '../../styles/constants.scss';
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 24px;
+  padding-top: 24px;
+  @media (max-width: 880px ) {
+    flex-direction: column;
+    row-gap: 12px;
+    
+  }
+}
+
+.button {
+  width: 100%;
+  height: 48px;
+  color: $colorWhite;
+  @include dominantTextSize(20px, 500);
+}
+
+.buttonSpecial {
+  background-image: url(https://solea-parent.dfs.ivi.ru/picture/bypass/teaserTilePattern_a.svg);
+  background-size: auto 48px;
+  border-radius: 8px;
+  height: 48px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}

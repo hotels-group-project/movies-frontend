@@ -1,8 +1,7 @@
-import { useRef } from 'react';
-import { FC, memo } from 'react';
+import { FC, memo, useState, useEffect, useRef } from 'react';
 
 import { SlArrowRight, SlArrowLeft } from 'react-icons/sl';
-import { Swiper as SwiperType, Navigation, Autoplay, FreeMode } from 'swiper';
+import { Swiper as SwiperType, Navigation, Autoplay, FreeMode, Grid } from 'swiper';
 import { Swiper } from 'swiper/react';
 
 import Button from '../Button/Button';
@@ -27,9 +26,30 @@ const Slider: FC<SliderProps> = ({
   sliderClassName,
   prevButtonClassName,
   nextButtonClassName,
+  variant,
+  breakpoints,
 }) => {
   const isAutoPlay = autoplayDelay ? autoPlayParams : false;
   const swiperRef = useRef<SwiperType>();
+
+  const [isEnd, setIsEnd] = useState(false);
+  const [isBeginning, setIsBeginning] = useState(true);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.on('reachEnd', () => {
+        setIsEnd(true);
+      });
+      swiperRef.current.on('reachBeginning', () => {
+        setIsEnd(false);
+        setIsBeginning(true);
+      });
+      swiperRef.current.on('slideChange', () => {
+        setIsEnd(false);
+        setIsBeginning(false);
+      });
+    }
+  }, [isEnd, isBeginning]);
   return (
     <>
       <Swiper
@@ -39,23 +59,26 @@ const Slider: FC<SliderProps> = ({
         slidesPerGroup={slidesCount}
         freeMode
         autoplay={isAutoPlay}
-        modules={[Navigation, Autoplay, FreeMode]}
+        modules={[Navigation, Autoplay, FreeMode, Grid]}
         className={`${styles.slider} ${sliderClassName ? sliderClassName : ''}`}
         onBeforeInit={swiper => {
           swiperRef.current = swiper;
         }}
+        breakpoints={breakpoints}
       >
         {children}
         <Button
-          variant="arrow_s"
-          elemClassName={`${styles.sliderButtonPrev} ${prevButtonClassName ? prevButtonClassName : ''}`}
+          variant={variant ? variant : 'arrow_s'}
+          elemClassName={`${styles.sliderButtonPrev} ${prevButtonClassName ? prevButtonClassName : ''}
+          ${isBeginning ? styles.btnHidden : ''}`}
           onClick={() => swiperRef.current?.slidePrev()}
         >
           <SlArrowLeft />
         </Button>
         <Button
-          variant="arrow_s"
-          elemClassName={`${styles.sliderButtonNext} ${nextButtonClassName ? nextButtonClassName : ''}`}
+          variant={variant ? variant : 'arrow_s'}
+          elemClassName={`${styles.sliderButtonNext} ${nextButtonClassName ? nextButtonClassName : ''}
+          ${isEnd ? styles.btnHidden : ''}`}
           onClick={() => swiperRef.current?.slideNext()}
         >
           <SlArrowRight />

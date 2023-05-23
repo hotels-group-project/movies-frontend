@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   i18n,
   images: {
-    domains: ['thumbs.dfs.ivi.ru', 'solea-parent.dfs.ivi.ru'],
+    domains: ['thumbs.dfs.ivi.ru', 'solea-parent.dfs.ivi.ru', 'st.kp.yandex.net'],
   },
 };
 

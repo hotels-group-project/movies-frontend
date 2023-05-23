@@ -5,13 +5,22 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  border-radius: 8px;
 }
 
 .poster {
   position: relative;
-  padding: 0px 0px 235/153 * 100% 0px;
-  border-radius: 8px;
+  object-fit: contain;
   background-color: $colorBackgroundButton;
+  max-width: 210px;
+  min-width: 106px;
+  width: 100%;
+  padding-bottom: 153%;
+  transition-duration: .4s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .img {

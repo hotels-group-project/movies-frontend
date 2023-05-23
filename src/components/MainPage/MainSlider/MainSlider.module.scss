@@ -4,12 +4,13 @@
   width: 100%;
   height: auto;
   background-color: inherit;
-  margin: 30px 0;
   overflow: initial;
+
   &Slide {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+
     @media screen and (min-width: 1400px) {
       width: 1200px !important;
       margin: 0;
@@ -28,15 +29,22 @@
       transform: scale(0.8);
       transition: transform 80ms;
     }
+
     @media screen and (min-width: $breakpointTablet) {
       display: flex;
       justify-content: center;
       align-items: center;
+
       &::after {
         font-size: 32px;
       }
     }
+
+    @media screen and (max-width: $breakpointTablet) {
+      display: none;
+    }
   }
+
   &ButtonPrev {
     left: 0;
   }
@@ -59,6 +67,7 @@
   &Active {
     position: relative;
     z-index: 3;
+
     &::after,
     &::before {
       content: '';

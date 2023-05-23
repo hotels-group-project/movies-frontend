@@ -10,10 +10,17 @@
     position: absolute;
     top: 50%;
     z-index: 5;
+
     &:disabled {
       opacity: 0;
     }
+
+    @media (max-width: $breakpointTablet) {
+      display: none;
+      
+    }
   }
+
   &ButtonPrev {
     left: -6px;
     transform: translate(-100%, -50%);
@@ -24,4 +31,10 @@
     right: -6px;
     transform: translate(100%, -50%);
   }
+}
+
+.btnHidden {
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: .4s;
 }

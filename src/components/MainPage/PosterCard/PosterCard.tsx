@@ -1,4 +1,5 @@
 import Image from 'next/legacy/image';
+import { useTranslation } from 'next-i18next';
 import { FC, memo } from 'react';
 
 import { useAppSelector } from '../../../hooks/redux';
@@ -10,6 +11,7 @@ import styles from './PosterCard.module.scss';
 import { PosterCardProps } from './PosterCard.types';
 
 const PosterCard: FC<PosterCardProps> = ({ cardElem }) => {
+  const { t } = useTranslation('posterCard');
   const isTablet = useAppSelector(state => state.breakpoint.isTablet);
   const { img, titleImg, description, buttonTitle, title, link, height, heightTablet, imgTablet } = cardElem;
   return (
@@ -26,6 +28,7 @@ const PosterCard: FC<PosterCardProps> = ({ cardElem }) => {
               width={isTablet ? 1216 : 551}
               height={isTablet ? 524 : 617}
               priority
+              loading="eager"
             />
           </div>
           <div className={styles.infoContainer}>
@@ -38,11 +41,12 @@ const PosterCard: FC<PosterCardProps> = ({ cardElem }) => {
                 layout="responsive"
                 width={isTablet ? 487 : 418}
                 height={isTablet ? height : heightTablet}
+                loading="eager"
               />
             </div>
             <p className={styles.text}>{description}</p>
             <Button variant="default" elemClassName={styles.posterButton}>
-              {buttonTitle}
+              {t(`${buttonTitle}`)}
             </Button>
           </div>
         </LinkComponent>
