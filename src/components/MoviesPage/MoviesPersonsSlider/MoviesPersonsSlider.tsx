@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { FC, memo } from 'react';
 import { SwiperSlide } from 'swiper/react';
 
-//import { useAppSelector } from '../../../hooks/redux';
+import { useAppSelector } from '../../../hooks/redux';
+
 import Slider from '../../Shared/Slider/Slider';
 
 import styles from './MoviesPersonsSlider.module.scss';
@@ -11,29 +12,33 @@ import styles from './MoviesPersonsSlider.module.scss';
 export const BASE_URL = 'http://localhost:3000';
 
 const MoviePersonsSlider: FC = () => {
-  // const persons = useAppSelector(store => store.filters).genres;
-
-  // const slides = persons.map(item => {
-  // return (
-  //   <SwiperSlide key={item.name} className={styles.moviesPersonsSliderSlide}>
-  //     <LinkComponent variant="dark_middle" link={`${BASE_URL}/movies?genres=${item.name}`}>
-  //       <div className={styles.moviesPersonsSliderContainer}>
-  //         <div className={styles.moviesPersonsSliderImg}>
-  //           <Image
-  //             src="https://thumbs.dfs.ivi.ru/storage23/contents/a/e/2d9c7984b2a598f898b84f07c82ee4.jpg/153x183/?q=85"
-  //             alt="person"
-  //             width={83}
-  //             height={153}
-  //           />
-  //         </div>
-  //         <div className={styles.moviesPersonsSliderBadge}>10</div>
-  //         <h3>Семюел Л. Джексон</h3>
-  //         <p>10 фильмов</p>
-  //       </div>
-  //     </LinkComponent>
-  //   </SwiperSlide>
-  // );
-  // });
+  const persons = useAppSelector(state => state.persons).persons;
+  const slides = persons.map(item => {
+    return (
+      <SwiperSlide key={item.person_id} className={styles.moviesPersonsSliderSlide}>
+        <Link href={`${BASE_URL}/person=${item.firstName}${item.lastName}`}>
+          <div className={styles.moviesPersonsSliderWrapper}>
+            <Image
+              className={styles.moviesPersonsSliderImg}
+              src={item.photo}
+              alt="person"
+              width={240}
+              height={380}
+              priority
+              loading="eager"
+            />
+            <div className={styles.moviesPersonsSliderBadge}>
+              <div className={styles.moviesPersonsSliderBadgeBack}> </div>
+              <div className={styles.moviesPersonsSliderBadgeText}>{item.films_count}</div>
+            </div>
+          </div>
+          <h3 className={styles.moviesPersonsSliderName}>{item.firstName}</h3>
+          <h3 className={styles.moviesPersonsSliderName}>{item.lastName}</h3>
+          <p className={styles.moviesPersonsSliderFilmsAmount}>{item.films_count} фильмов</p>
+        </Link>
+      </SwiperSlide>
+    );
+  });
   return (
     <>
       <section className={styles.section}>
@@ -46,26 +51,7 @@ const MoviePersonsSlider: FC = () => {
           prevButtonClassName={styles.prevButton}
           nextButtonClassName={styles.nextButton}
         >
-          {/* {slides} */}
-          <SwiperSlide className={styles.moviesPersonsSliderSlide}>
-            <Link href="https://www.ivi.ru/person/samuel-l-jackson-1278">
-              <div className={styles.moviesPersonsSliderWrapper}>
-                <Image
-                  className={styles.moviesPersonsSliderImg}
-                  src="https://thumbs.dfs.ivi.ru/storage23/contents/a/e/2d9c7984b2a598f898b84f07c82ee4.jpg/153x183/?q=85"
-                  alt="person"
-                  width={153}
-                  height={183}
-                />
-                <div className={styles.moviesPersonsSliderBadge}>
-                  <div className={styles.moviesPersonsSliderBadgeBack}> </div>
-                  <div className={styles.moviesPersonsSliderBadgeText}>10</div>
-                </div>
-              </div>
-              <h3 className={styles.moviesPersonsSliderName}>Сэмюэл Л. Джексон</h3>
-              <p className={styles.moviesPersonsSliderFilmsAmount}>10 фильмов</p>
-            </Link>
-          </SwiperSlide>
+          {slides}
         </Slider>
       </section>
     </>

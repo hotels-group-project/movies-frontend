@@ -7,6 +7,7 @@ import filterActivatedReducer from './reducers/filterActivatedSlice';
 import filteredMoviesReducer from './reducers/filteredMoviesSlice';
 import filtersReducer from './reducers/filtresSlice';
 import moviesReducer from './reducers/moviesSlice';
+import personsForSliderReducer from './reducers/personsForSliderSlice';
 
 const rootReducer = combineReducers({
   activeFilters: activeFiltersReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   filteredMovies: filteredMoviesReducer,
   filters: filtersReducer,
   movies: moviesReducer,
+  persons: personsForSliderReducer,
 });
 
 export const store = configureStore({

@@ -13,12 +13,13 @@
   width: 100%;
   overflow: visible;
   &Slide {
-    height: auto;
-    width: auto;
-    a {
-      height: 217px;
-      width: 153px;
-    }
+    flex-shrink: 1;
+    //   height: auto;
+    //   width: auto;
+    // a {
+    //   height: 217px;
+    //   width: 153px;
+    // }
   }
 
   &Wrapper {
@@ -27,6 +28,7 @@
   }
 
   &Img {
+    width: 153px;
     height: 153px;
     object-fit: cover;
     border-radius: 100%;
