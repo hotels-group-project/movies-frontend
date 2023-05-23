@@ -1,6 +1,7 @@
 @import '../../../styles/constants.scss';
 
 .section {
+  overflow: visible;
   display: flex;
   flex-wrap: wrap;
   padding: 24px 0;
@@ -14,34 +15,36 @@
   overflow: visible;
   &Slide {
     flex-shrink: 1;
-    //   height: auto;
-    //   width: auto;
-    // a {
-    //   height: 217px;
-    //   width: 153px;
-    // }
   }
 
   &Wrapper {
     position: relative;
     width: 100%;
+    &:hover {
+      transform: scale(1.02);
+      transition: transform 0.4s;
+    }
   }
 
   &Img {
     width: 153px;
     height: 153px;
-    object-fit: cover;
     border-radius: 100%;
+    object-fit: cover;
+    margin: 10px;
   }
 
   &Badge {
     position: absolute;
     left: 4px;
-    bottom: 0;
+    bottom: 10px;
     &Text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: #a869f0;
+      width: 30px;
       height: 30px;
-      padding: 5px 8px;
       border-radius: 2px;
     }
     &Back {
