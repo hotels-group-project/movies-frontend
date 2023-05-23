@@ -35,3 +35,12 @@ export const findMovies = (genres: string, years: string, countries: string, pag
     },
   }).then(res => checkResponse(res));
 };
+
+export const getMovies = () => {
+  return fetch(`${BASE_URL}/movies/mainPage`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(res => checkResponse(res));
+};

@@ -22,9 +22,10 @@ const TopCard: FC<TopCardProps> = ({ movie }) => {
               width={224}
               height={456}
               priority
+              loading="eager"
             />
             <div className={styles.title}>
-              <Image src={titleImg} priority alt={title} layout="fill" className={styles.titleImg} />
+              <Image src={titleImg} priority alt={title} layout="fill" className={styles.titleImg} loading="eager" />
             </div>
             <div className={styles.shadow} />
             <div className={styles.num}>
@@ -35,6 +36,7 @@ const TopCard: FC<TopCardProps> = ({ movie }) => {
                 alt={String(id)}
                 object-fit="cover"
                 layout="fill"
+                loading="eager"
               />
             </div>
           </div>

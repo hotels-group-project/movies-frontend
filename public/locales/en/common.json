@@ -7,5 +7,9 @@
     "admin": "Admin",
     "movie": "Movie",
     "not-found": "Not found"
+  },
+  "button-title": {
+    "watch-by-subscription": "Watch by subscription",
+    "watch-for-free": "Watch for free"
   }
 }

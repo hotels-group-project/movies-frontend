@@ -1,0 +1,40 @@
+@import '../../../styles/constants.scss';
+
+.container {
+  margin: 0 12px;
+  padding: 24px 0;
+}
+
+.title {
+  @include movieCompilationTitle($isDesktop: true);
+
+  span {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+}
+
+.movieSlider {
+  overflow: visible;
+}
+
+.movieSwiper {
+  overflow: visible;
+  display: flex;
+  flex-shrink: 1;
+  padding-top: 24px;
+}
+
+.link {
+  width: 153px;
+  height: 234px;
+  margin-top: 24px;
+  color: $colorGrey;
+  @include dominantTextSize(20px, 500);
+  transition-duration: .4s;
+  &:hover {
+    color: $colorWhite;
+    transform: scale(1.05);
+  }
+}

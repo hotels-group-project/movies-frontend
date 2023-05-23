@@ -1,3 +1,5 @@
+import { SwiperOptions } from 'swiper';
+
 export interface Breakpoint {
   isDesktop: boolean;
   isTablet: boolean;
@@ -35,17 +37,23 @@ export interface MovieCard {
   name: string;
   type?: string;
   ageRating: number;
-  link: string;
   genres: Array<string>;
   countries?: Array<string>;
   year: number;
   kprating: number;
-  moveLength: number;
+  movieLength: number;
   alternativeName: string;
 }
 
 export interface FilteredMovies {
   filteredMovies: Array<MovieCard>;
+}
+
+export interface Movies {
+  movies: Array<MovieCard>;
+  russian: Array<MovieCard>;
+  foreign: Array<MovieCard>;
+  cartoons: Array<MovieCard>;
 }
 
 export interface FilterActivated {
@@ -68,4 +76,9 @@ export interface TopCard {
   titleImg: string;
   link: string;
   number: string;
+}
+
+export interface MoveCardBreakpoints {
+  [width: number]: SwiperOptions;
+  [ratio: string]: SwiperOptions;
 }

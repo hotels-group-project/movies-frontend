@@ -9,14 +9,22 @@ import styles from './MovieCard.module.scss';
 import { MovieCardProps } from './MovieCard.types';
 
 const MovieCard: FC<MovieCardProps> = ({ movie }) => {
-  const { poster, name, link, ageRating, genres, year, moveLength, kprating, alternativeName } = movie;
+  const { poster, name, ageRating, genres, year, movieLength, kprating, alternativeName } = movie;
   const router = useRouter();
   return (
     <>
       <div className={styles.card}>
-        <LinkComponent link={link}>
+        <LinkComponent link={`movies/${movie.film_id}`}>
           <div className={styles.poster}>
-            <Image src={poster} object-fit="contain" alt={name} layout="fill" priority className={styles.img} />
+            <Image
+              src={poster}
+              object-fit="contain"
+              alt={name}
+              layout="fill"
+              priority
+              className={styles.img}
+              loading="eager"
+            />
             <div className={styles.ageRating}>
               <p>{ageRating}+</p>
             </div>
@@ -29,7 +37,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
                 <p className={styles.year}>
                   {year}, {genres.join(', ')}
                 </p>
-                <p>{moveLength} минут</p>
+                {movieLength && <p>{movieLength} минут</p>}
               </div>
             </div>
           </div>
