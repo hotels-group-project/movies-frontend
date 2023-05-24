@@ -60,8 +60,6 @@
   }
 
   &Name {
-    white-space: pre-wrap;
-    width: 70%;
     @include dominantTextSize($fw: 500);
     color: $colorLightGrey;
   }
