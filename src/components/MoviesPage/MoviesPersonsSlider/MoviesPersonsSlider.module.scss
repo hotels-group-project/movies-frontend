@@ -1,0 +1,87 @@
+@import '../../../styles/constants.scss';
+
+.section {
+  overflow: visible;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px 0;
+  gap: 24px;
+  &Title {
+    @include pageTitle;
+  }
+}
+.moviesPersonsSlider {
+  width: 100%;
+  overflow: visible;
+  &Slide {
+    flex-shrink: 1;
+  }
+
+  &Wrapper {
+    position: relative;
+    width: 100%;
+    &:hover {
+      transform: scale(1.02);
+      transition: transform 0.4s;
+    }
+  }
+
+  &Img {
+    width: 153px;
+    height: 153px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin: 10px;
+  }
+
+  &Badge {
+    position: absolute;
+    left: 4px;
+    bottom: 10px;
+    &Text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #a869f0;
+      width: 30px;
+      height: 30px;
+      border-radius: 2px;
+    }
+    &Back {
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      top: -2px;
+      bottom: 100%;
+      border-top-left-radius: 1px;
+      border-top-right-radius: 1px;
+      background-color: rgba(168, 105, 240, 0.64);
+    }
+  }
+
+  &Name {
+    white-space: pre-wrap;
+    width: 70%;
+    @include dominantTextSize($fw: 500);
+    color: $colorLightGrey;
+  }
+
+  &FilmsAmount {
+    @include smallTextSize;
+    color: $colorGrey;
+  }
+}
+
+.prevButton,
+.nextButton {
+  &:active {
+    font-size: 12px;
+    transition: font-size 400ms;
+  }
+  @media screen and (min-width: 1272px) {
+    font-size: 32px;
+    &:active {
+      font-size: 28px;
+    }
+  }
+}
