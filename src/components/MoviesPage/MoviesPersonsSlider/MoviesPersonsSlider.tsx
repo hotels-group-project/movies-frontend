@@ -64,6 +64,7 @@ const MoviePersonsSlider: FC = () => {
           sliderClassName={styles.moviesPersonsSlider}
           prevButtonClassName={styles.prevButton}
           nextButtonClassName={styles.nextButton}
+          variant="arrow"
         >
           {slides}
         </Slider>

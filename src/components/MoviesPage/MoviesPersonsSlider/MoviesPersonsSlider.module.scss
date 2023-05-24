@@ -69,17 +69,3 @@
     color: $colorGrey;
   }
 }
-
-.prevButton,
-.nextButton {
-  &:active {
-    font-size: 12px;
-    transition: font-size 400ms;
-  }
-  @media screen and (min-width: 1272px) {
-    font-size: 32px;
-    &:active {
-      font-size: 28px;
-    }
-  }
-}
