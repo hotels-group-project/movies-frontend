@@ -65,3 +65,12 @@ export const getMovies = () => {
     },
   }).then(res => checkResponse(res));
 };
+
+export const getPersonsForSlider = () => {
+  return fetch(`${BASE_URL}/personsForSlider`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(res => checkResponse(res));
+};

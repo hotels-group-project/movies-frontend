@@ -93,3 +93,15 @@ export interface PersonsFilter {
   producers: Array<Person>;
   actors: Array<Person>;
 }
+
+export type PersonForSlider = {
+  person_id: number;
+  firstName: string;
+  lastName: string;
+  photo: string;
+  films_count: number;
+};
+
+export interface PersonsForSlider {
+  persons: Array<PersonForSlider>;
+}

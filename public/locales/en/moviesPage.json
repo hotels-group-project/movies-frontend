@@ -126,5 +126,14 @@
     "million": "+1M",
     "search-1": "Search above",
     "search-2": "votes"
+  },
+  "movies-sections": {
+    "genres": "Genres",
+    "persons": "Persons"
+  },
+  "movies-count": {
+    "first-form": "movies",
+    "second-form": "movies",
+    "third-form": "movies"
   }
 }

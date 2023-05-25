@@ -11,8 +11,6 @@ import Slider from '../../Shared/Slider/Slider';
 import { MOVIE_GENRES_ICON } from './MovieGenresSlider.constants';
 import styles from './MovieGenresSlider.module.scss';
 
-export const BASE_URL = 'http://localhost:3000';
-
 const MovieGenresSlider: FC = () => {
   const { t } = useTranslation('moviesPage');
   const isDesktop = useAppSelector(state => state.breakpoint.isDesktop);
@@ -26,7 +24,7 @@ const MovieGenresSlider: FC = () => {
   const slides = moviesGenres.map(item => {
     return (
       <SwiperSlide key={item.name} className={styles.movieGenresSliderSlide}>
-        <LinkComponent variant="dark_middle" link={`${BASE_URL}/movies?genres=${item.name}`}>
+        <LinkComponent variant="dark_middle" link={`/movies?genres=${item.name}`}>
           <div className={styles.movieGenresSliderContainer}>
             <div className={styles.movieGenresSliderImg}>
               <Image src={MOVIE_GENRES_ICON[`${item.name}`]} alt="icon" width={32} height={32} priority />
@@ -40,7 +38,7 @@ const MovieGenresSlider: FC = () => {
   return (
     <>
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Жанры</h2>
+        <h2 className={styles.sectionTitle}>{t(`movies-sections.genres`)}</h2>
         <Slider
           slidesCount={AdaptiveSlidesCount}
           slidesPerView="auto"

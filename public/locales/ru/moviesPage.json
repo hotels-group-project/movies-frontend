@@ -126,5 +126,14 @@
     "million": "+1млн",
     "search-1": "Искать выше",
     "search-2": "голосов"
+  },
+  "movies-sections": {
+    "genres": "Жанры",
+    "persons": "Персоны"
+  },
+  "movies-count": {
+    "first-form": "фильм",
+    "second-form": "фильма",
+    "third-form": "фильмов"
   }
 }

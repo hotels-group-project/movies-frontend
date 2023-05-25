@@ -7,7 +7,8 @@ import { useEffect } from 'react';
 import MoviesPage from '../../components/MoviesPage/MoviesPage';
 import { useAppDispatch } from '../../hooks/redux';
 import { setFilters } from '../../store/reducers/filtresSlice';
-import { getCountries, getGenres } from '../../utils/Api';
+import { setPersonsForSlider } from '../../store/reducers/personsForSliderSlice';
+import { getCountries, getGenres, getPersonsForSlider } from '../../utils/Api';
 
 const Movies: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { t } = useTranslation(['common']);
@@ -16,7 +17,8 @@ const Movies: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>
   useEffect(() => {
     dispatch(setFilters({ type: 'genres', value: _props.genres }));
     dispatch(setFilters({ type: 'countries', value: _props.countries }));
-  }, [_props.countries, _props.genres, dispatch]);
+    dispatch(setPersonsForSlider({ type: 'persons', value: _props.persons }));
+  }, [_props.countries, _props.genres, _props.persons, dispatch]);
 
   return (
     <>
@@ -32,6 +34,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   try {
     const genres = await getGenres();
     const countries = await getCountries();
+    const persons = await getPersonsForSlider();
 
     if (genres.statusCode || countries.statusCode) {
       return { notFound: true };
@@ -41,6 +44,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       props: {
         genres,
         countries,
+        persons,
         ...(await serverSideTranslations(locale ?? 'ru', ['common', 'header', 'footer', 'moviesPage'])),
       },
     };
