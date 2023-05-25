@@ -98,5 +98,14 @@
     "ОАЭ": "UAE",
     "Португалия": "Portugal",
     "Австрия": "Austria"
+  },
+  "movies-sections": {
+    "genres": "Genres",
+    "persons": "Persons"
+  },
+  "movies-count": {
+    "first-form": "movies",
+    "second-form": "movies",
+    "third-form": "movies"
   }
 }

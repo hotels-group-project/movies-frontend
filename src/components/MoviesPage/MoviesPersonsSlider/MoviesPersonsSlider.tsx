@@ -1,17 +1,25 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC, memo } from 'react';
+import { useTranslation } from 'next-i18next';
+import { FC, memo, useMemo } from 'react';
 import { SwiperSlide } from 'swiper/react';
 
 import { useAppSelector } from '../../../hooks/redux';
-import { moviesEndingChange } from '../../../utils/helpers';
+import { wordEndingChange } from '../../../utils/helpers';
 
 import Slider from '../../Shared/Slider/Slider';
 
 import styles from './MoviesPersonsSlider.module.scss';
 
 const MoviePersonsSlider: FC = () => {
+  const { t } = useTranslation('moviesPage');
+  const isDesktop = useAppSelector(state => state.breakpoint.isDesktop);
+  const isTablet = useAppSelector(state => state.breakpoint.isTablet);
   const persons = useAppSelector(state => state.persons).persons;
+
+  const AdaptiveSlidesCount = useMemo(() => {
+    return isDesktop ? 7 : isTablet ? 3 : 1;
+  }, [isDesktop, isTablet]);
   const slides = persons.map(item => {
     return (
       <SwiperSlide key={item.person_id} className={styles.moviesPersonsSliderSlide}>
@@ -34,7 +42,12 @@ const MoviePersonsSlider: FC = () => {
           <h3 className={styles.moviesPersonsSliderName}>{item.firstName}</h3>
           <h3 className={styles.moviesPersonsSliderName}>{item.lastName}</h3>
           <p className={styles.moviesPersonsSliderFilmsAmount}>
-            {item.films_count} {moviesEndingChange(item.films_count)}
+            {item.films_count}{' '}
+            {wordEndingChange(item.films_count, [
+              `${t(`movies-count.first-form`)}`,
+              `${t(`movies-count.second-form`)}`,
+              `${t(`movies-count.third-form`)}`,
+            ])}
           </p>
         </Link>
       </SwiperSlide>
@@ -43,14 +56,15 @@ const MoviePersonsSlider: FC = () => {
   return (
     <>
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Персоны</h2>
+        <h2 className={styles.sectionTitle}>{t(`movies-sections.persons`)}</h2>
         <Slider
-          slidesCount={7}
+          slidesCount={AdaptiveSlidesCount}
           slidesPerView="auto"
           spaceBetween={1}
           sliderClassName={styles.moviesPersonsSlider}
           prevButtonClassName={styles.prevButton}
           nextButtonClassName={styles.nextButton}
+          variant="arrow"
         >
           {slides}
         </Slider>
