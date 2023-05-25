@@ -129,11 +129,21 @@
   },
   "movies-sections": {
     "genres": "Genres",
-    "persons": "Persons"
+    "persons": "Persons",
+    "news": "New movies"
   },
   "movies-count": {
     "first-form": "movies",
     "second-form": "movies",
     "third-form": "movies"
+  },
+  "new-movies": {
+    "new-movies": "Premiere on Ivi",
+    "new-in-svod": "News by subscription",
+    "luchshee-v-podpiske": "The best by subscription",
+    "russian-new-movies": "Russian novelties",
+    "new-foreign-movies": "Foreign novelties",
+    "best-new-movies-on-ivi": "The best novelties",
+    "avod-movies": "Novelty free of charge"
   }
 }
