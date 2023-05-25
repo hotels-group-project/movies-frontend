@@ -1,0 +1,129 @@
+@import '../../../../../../styles/constants.scss';
+
+$trackHeight: 7px;
+$trackBorderRadius: 4px;
+$thumbHeight: 20px;
+$thumbWidth: 20px;
+
+@mixin boxShadow() {
+  box-shadow: 1px 1px 1px $colorBackgroundPage;
+}
+@mixin thumbBorder() {
+  border: 1px solid $colorWhite;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  @include smallTextSize($fw: 500);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  color: $colorLightGreyTransparent_08;
+}
+
+.label {
+  color: $colorLightGreyTransparent_08;
+}
+
+.input {
+  flex-grow: 1;
+  -webkit-appearance: none;
+  width: 100%;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+
+    &::-webkit-slider-runnable-track {
+      background: $colorLightGreyTransparent_08;
+    }
+
+    &::-ms-fill-lower {
+      background: $colorLightGreyTransparent_08;
+    }
+
+    &::-ms-fill-upper {
+      background: $colorLightGreyTransparent_08;
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: $trackHeight;
+    cursor: pointer;
+    background: $colorLightGreyTransparent_08;
+    border-radius: $trackBorderRadius;
+    border: none;
+  }
+
+  &::-webkit-slider-thumb {
+    @include boxShadow;
+    @include thumbBorder;
+    height: $thumbHeight;
+    width: $thumbWidth;
+    border-radius: 50%;
+    background: $colorFilterHover;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -$trackHeight;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: $trackHeight;
+    cursor: pointer;
+    @include boxShadow;
+    background: $colorLightGreyTransparent_08;
+    border-radius: $trackBorderRadius;
+    border: none;
+  }
+
+  &::-moz-range-thumb {
+    @include boxShadow;
+    @include thumbBorder;
+    height: $thumbHeight;
+    width: $thumbWidth;
+    border-radius: 50%;
+    background: $colorFilterHover;
+    cursor: pointer;
+  }
+
+  &::-ms-track {
+    width: 100%;
+    height: $trackHeight;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    background: $colorLightGreyTransparent_08;
+    border: 0px solid #010101;
+    border-radius: 20px;
+    @include boxShadow;
+  }
+
+  &::-ms-fill-upper {
+    background: $colorLightGreyTransparent_08;
+    border: 0px solid #010101;
+    border-radius: 20px;
+    @include boxShadow;
+  }
+
+  &::-ms-thumb {
+    margin-top: 1px;
+    @include boxShadow;
+    @include thumbBorder;
+    height: $thumbHeight;
+    width: $thumbWidth;
+    border-radius: 50%;
+    background: $colorFilterHover;
+    cursor: pointer;
+  }
+}

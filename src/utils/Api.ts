@@ -10,7 +10,7 @@ const checkResponse = (res: Response) => {
 };
 
 export const getGenres = () => {
-  return fetch(`${BASE_URL}/movies/genres`, {
+  return fetch(`${BASE_URL}/genres`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ export const getGenres = () => {
 };
 
 export const getCountries = () => {
-  return fetch(`${BASE_URL}/movies/countries`, {
+  return fetch(`${BASE_URL}/countries`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -27,8 +27,29 @@ export const getCountries = () => {
   }).then(res => checkResponse(res));
 };
 
-export const findMovies = (genres: string, years: string, countries: string, page: string) => {
-  return fetch(`${BASE_URL}/movies/search?genres=${genres}&year=${years}&country=${countries}&page${page}`, {
+export const findMovies = (
+  genres: string,
+  years: string,
+  countries: string,
+  rating: string,
+  votes: string,
+  producer: string,
+  actor: string,
+  page: string,
+) => {
+  return fetch(
+    `${BASE_URL}/movies/search?genres=${genres}&year=${years}&country=${countries}&rating=${rating}&marksCount=${votes}&actor=${actor}&director=${producer}&page${page}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  ).then(res => checkResponse(res));
+};
+
+export const findPersons = (profession: string, name: string) => {
+  return fetch(`${BASE_URL}/profession/search?profession=${profession}&name=${name}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
-import { FilterTitle } from '../../../../../types/types';
+import { Filter, FilterTitle } from '../../../../../types/types';
 
 export interface GenresFilterProps {
-  filters: Array<{ name: string }>;
+  filters: Array<Filter>;
   type: 'genres' | 'countries';
   removeQueryParam(title: FilterTitle): void;
 }

@@ -23,6 +23,7 @@ export type Variant =
 
 export interface ButtonProps {
   variant?: Variant;
+  type?: 'button' | 'submit';
   elemClassName?: string;
   onClick?(): void;
   startIcon?: ReactNode;

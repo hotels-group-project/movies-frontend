@@ -5,7 +5,8 @@ export interface Breakpoint {
   isTablet: boolean;
 }
 
-type Filter = {
+export type Filter = {
+  id: number;
   name: string;
 };
 
@@ -81,6 +82,16 @@ export interface TopCard {
 export interface MoveCardBreakpoints {
   [width: number]: SwiperOptions;
   [ratio: string]: SwiperOptions;
+}
+
+export interface Person {
+  person_id: number;
+  name: string;
+}
+
+export interface PersonsFilter {
+  producers: Array<Person>;
+  actors: Array<Person>;
 }
 
 export type PersonForSlider = {

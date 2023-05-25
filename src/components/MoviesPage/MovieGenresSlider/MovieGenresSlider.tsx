@@ -27,7 +27,7 @@ const MovieGenresSlider: FC = () => {
         <LinkComponent variant="dark_middle" link={`/movies?genres=${item.name}`}>
           <div className={styles.movieGenresSliderContainer}>
             <div className={styles.movieGenresSliderImg}>
-              <Image src={MOVIE_GENRES_ICON[`${item.name}`]} alt="icon" width={32} height={32} />
+              <Image src={MOVIE_GENRES_ICON[`${item.name}`]} alt="icon" width={32} height={32} priority />
             </div>
             <h3>{t(`genres.${item.name}`)}</h3>
           </div>

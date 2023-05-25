@@ -7,6 +7,7 @@ import filterActivatedReducer from './reducers/filterActivatedSlice';
 import filteredMoviesReducer from './reducers/filteredMoviesSlice';
 import filtersReducer from './reducers/filtresSlice';
 import moviesReducer from './reducers/moviesSlice';
+import personsFilterReducer from './reducers/personsFilterSlice';
 import personsForSliderReducer from './reducers/personsForSliderSlice';
 
 const rootReducer = combineReducers({
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   filteredMovies: filteredMoviesReducer,
   filters: filtersReducer,
   movies: moviesReducer,
+  personsFilter: personsFilterReducer,
   persons: personsForSliderReducer,
 });
 

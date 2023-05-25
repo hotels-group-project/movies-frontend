@@ -99,6 +99,34 @@
     "Португалия": "Portugal",
     "Австрия": "Austria"
   },
+  "years": {
+    "all": "All years",
+    "2023": "2023",
+    "2022": "2022",
+    "2021": "2021",
+    "2020": "2020",
+    "2019": "2019",
+    "2018": "2018",
+    "2017": "2017",
+    "2016": "2016"
+  },
+  "rating": {
+    "all": "Any rating",
+    "9": "Over 9",
+    "8": "Over 8",
+    "7": "Over 7",
+    "6": "Over 6"
+  },
+  "person": {
+    "name": "Enter name",
+    "clear": "Reset"
+  },
+  "votes": {
+    "title": "Filter by votes",
+    "million": "+1M",
+    "search-1": "Search above",
+    "search-2": "votes"
+  },
   "movies-sections": {
     "genres": "Genres",
     "persons": "Persons"

@@ -1,0 +1,28 @@
+@import '../../../../../styles/constants.scss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  @include smallTextSize($fw: 500);
+  color: $colorLightGreyTransparent_08;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: $breakpointDesktop) {
+  .list {
+    &__item {
+      transition: color 0.2s;
+
+      &:hover {
+        color: $colorWhite;
+        transition: color 0.2s;
+      }
+    }
+  }
+}
