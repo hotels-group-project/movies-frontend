@@ -23,11 +23,10 @@ const ActivatedFiltersList: FC<ActivatedFiltersListProps> = ({ title }) => {
 
   return (
     <p className={styles.subtitle}>
-      {activeFilters
-        .slice(0, 5)
-        .map((filter, idx, arr) =>
-          idx === arr.length - 1 ? `${t(`${title}.${filter}`)}` : `${t(`${title}.${filter}`)}, `,
-        )}
+      {activeFilters.slice(0, 5).map((filter, idx, arr) => {
+        if (title === 'actor' || title === 'producer') return filter;
+        return idx === arr.length - 1 ? `${t(`${title}.${filter}`)}` : `${t(`${title}.${filter}`)}, `;
+      })}
     </p>
   );
 };

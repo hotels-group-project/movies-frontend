@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { FC, memo, useState, useCallback, ChangeEvent } from 'react';
 
+import VotesFilter from './VotesFilter/VotesFilter';
 import styles from './YearsFilter.module.scss';
 import { YearsFilterProps } from './YearsFilter.types';
 import YearsFilterItem from './YearsFilterItem/YearsFilterItem';
@@ -31,13 +32,16 @@ const YearsFilter: FC<YearsFilterProps> = ({ type, filters, removeQueryParam }) 
   );
 
   return (
-    <ul className={styles.list}>
-      {filters.map(({ id, name }) => (
-        <li key={id} className={styles.list__item}>
-          <YearsFilterItem year={name} yearState={yearState} onChange={yearChange} type={type} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className={styles.list}>
+        {filters.map(({ id, name }) => (
+          <li key={id} className={styles.list__item}>
+            <YearsFilterItem year={name} yearState={yearState} onChange={yearChange} type={type} />
+          </li>
+        ))}
+      </ul>
+      {type === 'rating' && <VotesFilter />}
+    </>
   );
 };
 

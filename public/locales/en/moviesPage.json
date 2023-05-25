@@ -116,5 +116,15 @@
     "8": "Over 8",
     "7": "Over 7",
     "6": "Over 6"
+  },
+  "person": {
+    "name": "Enter name",
+    "clear": "Reset"
+  },
+  "votes": {
+    "title": "Filter by votes",
+    "million": "+1M",
+    "search-1": "Search above",
+    "search-2": "votes"
   }
 }

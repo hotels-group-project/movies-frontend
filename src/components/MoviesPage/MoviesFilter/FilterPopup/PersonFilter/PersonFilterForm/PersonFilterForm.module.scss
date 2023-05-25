@@ -1,0 +1,29 @@
+@import '../../../../../../styles/constants.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  @include smallTextSize($fw: 500);
+  color: $colorLightGreyTransparent_08;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  padding: 5px;
+  border: 1px solid $colorLightGreyTransparent_08;
+  border-radius: 4px;
+  background-color: transparent;
+  @include smallTextSize($fw: 500);
+  color: $colorLightGreyTransparent_08;
+}
+
+.button {
+  padding: 4px 10px;
+  color: $colorLightGreyTransparent_08;
+}
