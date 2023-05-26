@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import ActorPage from '../../components/ActorPage/ActorPage';
+
 const Actor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { t } = useTranslation(['common']);
 
@@ -15,6 +17,7 @@ const Actor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
       <Head>
         <title>{`${t('head-title.actor')}: ${name}`}</title>
       </Head>
+      <ActorPage />
     </>
   );
 };

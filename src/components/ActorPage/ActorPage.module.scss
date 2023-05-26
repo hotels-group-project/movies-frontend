@@ -1,0 +1,113 @@
+@import '../../styles/constants.scss';
+
+.main {
+  background-color: inherit;
+  margin-top: 80px;
+}
+
+.actor {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+
+  @media screen and (min-width: 880px) {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  &MainTitle {
+    @include moviePageTitle($fs: 40px, $lh: 44px);
+    @media screen and (min-width: $breakpointDesktop) {
+      font-size: 56px;
+      line-height: 56px;
+    }
+  }
+
+  &ForeignTitle {
+    color: $colorGrey;
+  }
+
+  &FilmographyTitle {
+    @include pageTitle;
+    margin-top: -6px;
+  }
+
+  &Container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    @media screen and (min-width: $breakpointDesktop) {
+      flex-wrap: nowrap;
+      gap: 8px;
+    }
+  }
+
+  &Img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &FilmCount {
+    font-size: 18px;
+    line-height: 21px;
+    color: $colorGrey;
+    &_white {
+      @extend .actorFilmCount;
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 500;
+    }
+  }
+
+  &FilmList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 1px solid $colorGreyTransparent_16;
+    padding: 20px 0;
+  }
+
+  &FilmItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &FilmContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    @media screen and (min-width: $breakpointTablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &FilmInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    @media screen and (min-width: $breakpointTablet) {
+      gap: 6px;
+    }
+  }
+
+  &FilmTitle {
+    font-weight: 500;
+  }
+
+  &FilmsPoster {
+    width: 75px;
+    height: 115px;
+    border-radius: 4px;
+  }
+
+  &FilmRating {
+    @include smallTextSize($fw: 500);
+    color: $colorGrey;
+  }
+}
