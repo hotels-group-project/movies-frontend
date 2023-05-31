@@ -74,3 +74,12 @@ export const getPersonsForSlider = () => {
     },
   }).then(res => checkResponse(res));
 };
+
+export const getPerson = (person_id: number) => {
+  return fetch(`${BASE_URL}/person/${person_id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(res => checkResponse(res));
+};
