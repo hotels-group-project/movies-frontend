@@ -105,3 +105,28 @@ export type PersonForSlider = {
 export interface PersonsForSlider {
   persons: Array<PersonForSlider>;
 }
+
+export interface Film {
+  film_id: number;
+  name: string;
+  alternativeName?: string;
+  year: number;
+  kprating: number;
+  type?: string;
+  poster: string;
+}
+
+export interface PersonForPage {
+  person_id: number;
+  name: string;
+  enName?: string;
+  photo: string;
+  profession: string;
+  description?: string;
+  enProfession?: string;
+  films: Array<Film>;
+}
+
+export interface PersonForPageProps {
+  person: PersonForPage;
+}
