@@ -8,6 +8,12 @@
   vertical-align: top;
   padding-right: 32px;
   top: 0;
+
+  @media (max-width: $breakpointDesktop) {
+    width: 100%;
+    position: relative;
+    margin-top: 24px;
+  }
 }
 
 .trailerWrapper {

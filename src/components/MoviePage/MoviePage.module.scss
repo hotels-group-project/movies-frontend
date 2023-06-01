@@ -33,6 +33,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
+
+  @media (max-width: $breakpointDesktop) {
+    flex-direction: column;
+  }
 }
 
 .info {
@@ -44,6 +48,10 @@
   position: relative;
   z-index: 1;
   transform: translate3d(0, 0, 0);
+
+  @media (max-width: $breakpointDesktop) {
+    width: 100%;
+  }
 }
 
 .buttonContainer {
@@ -76,7 +84,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 16px;
-  
+
   p {
     &:first-of-type {
       @include dominantTextSize(20px, 500);

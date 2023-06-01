@@ -1,5 +1,5 @@
 import { FilmForMoviePage } from '../../../types/types';
 
-export interface MovieDescriptionProps {
+export interface MovieRatingButtonProps {
   film: FilmForMoviePage;
 }
