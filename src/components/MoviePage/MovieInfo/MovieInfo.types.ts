@@ -1,5 +1,5 @@
-import { Film } from '../../../types/types';
+import { FilmForMoviePage } from '../../../types/types';
 
-export interface MovieInfoProps {
-  film: Film;
+export interface MovieTrailerProps {
+  film: FilmForMoviePage;
 }

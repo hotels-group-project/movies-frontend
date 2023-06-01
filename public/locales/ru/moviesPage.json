@@ -129,11 +129,21 @@
   },
   "movies-sections": {
     "genres": "Жанры",
-    "persons": "Персоны"
+    "persons": "Персоны",
+    "news": "Фильмы-новинки"
   },
   "movies-count": {
     "first-form": "фильм",
     "second-form": "фильма",
     "third-form": "фильмов"
+  },
+  "new-movies": {
+    "new-movies": "Премьеры на Иви",
+    "new-in-svod": "Новинки подписки",
+    "luchshee-v-podpiske": "Лучшее в подписке",
+    "russian-new-movies": "Российские новинки",
+    "new-foreign-movies": "Зарубежные новинки",
+    "best-new-movies-on-ivi": "Лучшие новинки",
+    "avod-movies": "Бесплатные новинки"
   }
 }

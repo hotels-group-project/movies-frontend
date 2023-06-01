@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Movie, MovieCard, Film } from '../../types/types';
+import { Movie, MovieCard, FilmForMoviePage } from '../../types/types';
 
 interface MovieState {
   movie: Movie | null;
-  film: Film;
+  film: FilmForMoviePage;
   lookWith: Array<MovieCard>;
 }
 

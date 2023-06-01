@@ -23,7 +23,7 @@ const MoviePersonsSlider: FC = () => {
   const slides = persons.map(item => {
     return (
       <SwiperSlide key={item.person_id} className={styles.moviesPersonsSliderSlide}>
-        <Link href={`/actor/${item.firstName}${item.lastName}`}>
+        <Link href={`/person/${item.person_id}`}>
           <div className={styles.moviesPersonsSliderWrapper}>
             <Image
               className={styles.moviesPersonsSliderImg}
