@@ -105,3 +105,40 @@ export type PersonForSlider = {
 export interface PersonsForSlider {
   persons: Array<PersonForSlider>;
 }
+
+export interface Movie {
+  film: Film;
+  lookWith: Array<MovieCard>;
+}
+
+export interface MovieStaff {
+  person_id: number;
+  name: string;
+  enName: string;
+  photo: string;
+  profession: string;
+  description: string;
+  enProfession: string;
+}
+
+export interface Film {
+  film_id: number;
+  poster: string;
+  name: string;
+  type: string;
+  ageRating: number;
+  genres: Array<string>;
+  countries: Array<string>;
+  year: number;
+  kprating: number;
+  movieLength: number;
+  alternativeName: string;
+  description: string;
+  shortDescription: string;
+  slogan: string;
+  kpvotes: number;
+  trailer: string;
+  staff: Array<MovieStaff>;
+  lookWith?: Array<MovieCard>;
+  reviews: Array<string>;
+}

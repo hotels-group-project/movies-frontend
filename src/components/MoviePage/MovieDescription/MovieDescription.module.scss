@@ -1,0 +1,79 @@
+@import '../../../styles/constants.scss';
+
+.descriptionContainer {
+  @include dominantTextSize(22px, 400);
+  color: $colorGreyTransparent_72;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.description {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: 8px;
+}
+
+.collapse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  line-clamp: 7;
+  box-orient: vertical;
+
+  p {
+    margin-bottom: 8px;
+  }
+}
+
+.button {
+  align-self: flex-start;
+  font-weight: 400;
+  color: $colorGreyTransparent_48;
+}
+
+.moreInfo {
+  padding: 16px 0 32px;
+  margin: 32px 0 8px;
+  border-top: 1px solid $colorGreyTransparent_16;
+  border-bottom: 1px solid $colorGreyTransparent_16;
+
+  span {
+    color: $colorGreyTransparent_48;
+    margin-left: 5px;
+  }
+}
+
+.text {
+  color: $colorWhite;
+  margin: 4px 0 16px;
+}
+
+.qualityContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.quality {
+  box-shadow: 0 4px 12px transparent;
+  background-color: rgba(255, 255, 255, .16);
+  height: 20px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: $colorWhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
