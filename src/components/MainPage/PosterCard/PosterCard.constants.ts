@@ -6,7 +6,7 @@ export const POSTER_CARDS = [
     description: 'Крошечная фея Виолетта знакомится с обычной школьницей Макси, и это меняет жизнь обеих девочек',
     buttonTitle: 'watch-by-subscription',
     title: 'Моя Фея проказница',
-    link: 'https://www.ivi.ru/watch/506530',
+    link: 'http://localhost:3000/movies/444',
     height: 200,
     heightTablet: 140,
     imgTablet: 'https://thumbs.dfs.ivi.ru/storage2/contents/e/5/fbc88041380515de06594076cafa90.jpg/1216x1358/?q=60',

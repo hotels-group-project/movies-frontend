@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { FC, memo } from 'react';
 import { SwiperSlide } from 'swiper/react';
@@ -17,14 +18,25 @@ const MovieSlider: FC<MovieSliderProps> = ({
   title,
   slidesPerView,
   breakpoints,
+  link,
 }) => {
   const { t } = useTranslation('movieSlider');
+  const router = useRouter();
+  const isMoviePage = router.pathname === '/movies/[id]';
   return (
     <>
       <section className={styles.container}>
-        <h2 className={styles.title}>
-          {title} <span>&rang;</span>
-        </h2>
+        {isMoviePage ? (
+          <h2 className={styles.title}>
+            {title} <span>&rang;</span>
+          </h2>
+        ) : (
+          <LinkComponent link={link || '/'}>
+            <h2 className={styles.title}>
+              {title} <span>&rang;</span>
+            </h2>
+          </LinkComponent>
+        )}
         <Slider
           slidesCount={slidesCount}
           spaceBetween={spaceBetween}
@@ -38,11 +50,13 @@ const MovieSlider: FC<MovieSliderProps> = ({
               <MovieCard movie={image} />
             </SwiperSlide>
           ))}
-          <SwiperSlide>
-            <LinkComponent link="/" variant="dark_big" elemClassName={styles.link}>
-              {t('all')}
-            </LinkComponent>
-          </SwiperSlide>
+          {!isMoviePage && (
+            <SwiperSlide>
+              <LinkComponent link="/" variant="dark_big" elemClassName={styles.link}>
+                {t('all')}
+              </LinkComponent>
+            </SwiperSlide>
+          )}
         </Slider>
       </section>
     </>

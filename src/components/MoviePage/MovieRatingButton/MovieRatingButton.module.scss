@@ -1,0 +1,57 @@
+@import '../../../styles/constants.scss';
+
+.buttonContainer {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:hover {
+    background-color: $colorGreyTransparent_08;
+  }
+}
+
+.rating {
+  width: 64px;
+  height: 64px;
+  background-color: $ratingBackground;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include movieCompilationTitle();
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 16px;
+  
+  p {
+    &:first-of-type {
+      @include dominantTextSize(20px, 500);
+      color: $colorWhite;
+    }
+
+    &:last-of-type {
+      @include dominantTextSize(20px, 400);
+      color: $colorGreyTransparent_72;
+    }
+  }
+}
+
+.estimate {
+  border: 1px solid $colorGreyTransparent_32;
+  border-radius: 6px;
+  padding: 3px 7px;
+  height: 24px;
+  color: $colorWhite;
+  @include smallTextSize(500);
+  margin-right: 10px;
+  position: absolute;
+  right: 10px;
+}

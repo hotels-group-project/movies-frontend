@@ -1,0 +1,74 @@
+@import '../../../styles/constants.scss';
+
+.titleContainer {
+  margin: 8px 0 20px;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title {
+  @include moviePageTitle(42px, 44px);
+  color: $colorWhite;
+  text-align: center;
+}
+
+.subtitleContainer {
+  @include dominantTextSize();
+  color: $colorLightGreyTransparent_08;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+
+  &:not(:first-of-type) {
+    gap: 0;
+
+    li {
+      &:not(:first-of-type) {
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 2px;
+          height: 2px;
+          text-align: center;
+          background-color: rgba(255, 255, 255, .72);
+          margin-left: 6px;
+          margin-right: 6px;
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+}
+
+.subInfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  margin-top: 8px;
+  li {
+    display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  }
+}
+
+.link {
+  color: $colorLightGreyTransparent_08;
+}
+
+.quality {
+  box-shadow: 0 4px 12px transparent;
+  background-color: rgba(255, 255, 255, .16);
+  height: 20px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: $colorWhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

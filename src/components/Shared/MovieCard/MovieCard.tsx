@@ -14,7 +14,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
   return (
     <>
       <div className={styles.card}>
-        <LinkComponent link={`movies/${movie.film_id}`}>
+        <LinkComponent link={`http://localhost:3000/movies/${movie.film_id}`}>
           <div className={styles.poster}>
             <Image
               src={poster}

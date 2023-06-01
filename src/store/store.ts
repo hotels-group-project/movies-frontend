@@ -6,6 +6,7 @@ import dropdownMenuReducer from './reducers/dropdownMenuSlice';
 import filterActivatedReducer from './reducers/filterActivatedSlice';
 import filteredMoviesReducer from './reducers/filteredMoviesSlice';
 import filtersReducer from './reducers/filtresSlice';
+import movieReducer from './reducers/movieSlice';
 import moviesReducer from './reducers/moviesSlice';
 import personsFilterReducer from './reducers/personsFilterSlice';
 import personsForSliderReducer from './reducers/personsForSliderSlice';
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   personsFilter: personsFilterReducer,
   persons: personsForSliderReducer,
   person: personReducer,
+   movie: movieReducer,
 });
 
 export const store = configureStore({

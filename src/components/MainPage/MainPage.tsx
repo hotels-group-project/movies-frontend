@@ -4,12 +4,12 @@ import { FC, useMemo } from 'react';
 
 import { useAppSelector } from '../../hooks/redux';
 import Button from '../Shared/Button/Button';
+import MovieSlider from '../Shared/MovieSlider/MovieSlider';
 
 import Description from './Description/Description';
 import { BREAKPOINTS } from './MainPage.constants';
 import styles from './MainPage.module.scss';
 import MainSlider from './MainSlider/MainSlider';
-import MovieSlider from './MovieSlider/MovieSlider';
 import { POSTER_CARDS } from './PosterCard/PosterCard.constants';
 import { TOP_CARDS } from './TopCard/TopCard.constants';
 
@@ -54,6 +54,7 @@ const Main: FC = () => {
         slidesPerView={1}
         title={t('russian')}
         breakpoints={BREAKPOINTS}
+        link="http://localhost:3000/movies?countries=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F"
       />
       <MovieSlider
         images={foreignMovies}
@@ -62,6 +63,7 @@ const Main: FC = () => {
         slidesPerView={1}
         title={t('foreign')}
         breakpoints={BREAKPOINTS}
+        link="http://localhost:3000/en/movies?countries=%D0%A1%D0%A8%D0%90"
       />
       <MovieSlider
         images={cartoons}
@@ -70,6 +72,7 @@ const Main: FC = () => {
         slidesPerView={1}
         title={t('cartoons')}
         breakpoints={BREAKPOINTS}
+        link="http://localhost:3000/movies?genres=%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D1%84%D0%B8%D0%BB%D1%8C%D0%BC"
       />
     </>
   );

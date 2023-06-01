@@ -1,0 +1,61 @@
+@import '../../../styles/constants.scss';
+
+.trailerContainer {
+  width: 62.5%;
+  position: -webkit-sticky;
+  position: sticky;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 32px;
+  top: 0;
+
+  @media (max-width: $breakpointDesktop) {
+    width: 100%;
+    position: relative;
+    margin-top: 24px;
+  }
+}
+
+.trailerWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: calc(9 / 16 * 100%); 
+}
+
+.trailer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ageRating {
+  width: 24px;
+  height: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  color: $colorGrey;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 24px 0 16px;
+  gap: 16px;
+}
+
+.button {
+  border: $colorGreyTransparent_08;
+  
+}

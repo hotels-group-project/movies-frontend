@@ -83,3 +83,12 @@ export const getPerson = (person_id: number) => {
     },
   }).then(res => checkResponse(res));
 };
+
+export const getMovieById = (id: number) => {
+  return fetch(`${BASE_URL}/movies/id/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(res => checkResponse(res));
+};

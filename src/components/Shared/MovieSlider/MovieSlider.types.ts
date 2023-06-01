@@ -7,4 +7,5 @@ export interface MovieSliderProps {
   title: string;
   slidesPerView: number | 'auto' | undefined;
   breakpoints?: MoveCardBreakpoints;
+  link?: string;
 }
